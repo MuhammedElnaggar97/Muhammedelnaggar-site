@@ -429,14 +429,61 @@ p {
 }
 
 .hero-photo {
-    flex: 0 0 320px;
+    flex: 0 0 380px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-photo::before {
+    content: '';
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    background: var(--accent);
+    opacity: 0.1;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    animation: blob-float 10s infinite alternate linear;
+    z-index: 1;
 }
 
 .hero-photo img {
     width: 100%;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+    height: auto;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+    transition: transform var(--transition);
+    animation: human-float 5s ease-in-out infinite;
+}
+
+.hero-photo:hover img {
+    transform: translateY(-10px) scale(1.02);
+}
+
+@keyframes blob-float {
+    0% {
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        transform: rotate(0deg) scale(1);
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70% / 50% 60% 40% 60%;
+        transform: rotate(15deg) scale(1.1);
+    }
+}
+
+@keyframes human-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
 }
 
 /* ============================
@@ -876,13 +923,28 @@ p {
 
 .about-teaser-photo {
     flex: 0 0 clamp(200px, 24vw, 300px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-teaser-photo::before {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background: var(--accent);
+    opacity: 0.08;
+    border-radius: 50%;
+    z-index: 1;
 }
 
 .about-teaser-photo img {
     width: 100%;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    border: 3px solid var(--border);
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
 }
 
 .about-teaser-body {
@@ -1912,8 +1974,14 @@ p {
 
     .hero-photo {
         flex: none;
-        width: 260px;
+        width: 300px;
+        height: 300px;
         margin: 0 auto;
+    }
+
+    .hero-photo::before {
+        width: 260px;
+        height: 260px;
     }
 
     .hero-desc {
@@ -2018,7 +2086,13 @@ p {
     }
 
     .hero-photo {
+        width: 280px;
+        height: 280px;
+    }
+
+    .hero-photo::before {
         width: 220px;
+        height: 220px;
     }
 
     .hero-text h1 {
@@ -2123,7 +2197,13 @@ p {
    ============================ */
 @media (max-width: 480px) {
     .hero-photo {
+        width: 240px;
+        height: 240px;
+    }
+
+    .hero-photo::before {
         width: 180px;
+        height: 180px;
     }
 
     .stat-item h3 {
