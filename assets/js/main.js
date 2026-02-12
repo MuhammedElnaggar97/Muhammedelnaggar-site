@@ -1,41 +1,87 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Define your Meta Data (SEO)
-    const seoData = {
-        title: " محمد النجار | استشارات بحثية وحلول إحصائية متكاملة",
-        description: "أُقدم استشارات بحثية، تحليل إحصائي، ودورات تدريبية في المراجعات المنهجية والبحث العلمي. ساعدت أكثر من 200 مشروع بحثي.",
-        keywords: "تحليل إحصائي, بحث علمي, استشارات بحثية, مراجعة منهجية, كورسات إحصاء حيوي, Systematic Review, Biostatistics",
-        image: "https://pub-5ffbaa38106d451ba0b52807cf3ad274.r2.dev/Biostats%20101%20Thumbnail.png"
+    // 1. Define Page-Specific Meta Data
+    const defaultImage = "assets/img/logo.png"; // Set Logo as Social Sharing Image
+    const defaultType = "website";
+
+    const pageMeta = {
+        "index.html": {
+            title: "محمد النجار | استشارات بحثية وحلول إحصائية متكاملة",
+            description: "طريقك للتميز في البحث العلمي. أقدم استشارات بحثية، تحليل إحصائي (SPSS, R)، ودورات تدريبية متخصصة لمساعدتك في نشر أبحاثك في مجلات عالمية.",
+            url: "https://muhamedelnaggar.com/"
+        },
+        "about.html": {
+            title: "عن محمد النجار | باحث واستشاري إحصائي",
+            description: "تعرف على رحلة محمد النجار في المعلوماتية الحيوية والإحصاء الحيوي. خبرة تزيد عن 6 سنوات في مساعدة الباحثين وطلاب الدراسات العليا.",
+            url: "https://muhamedelnaggar.com/about"
+        },
+        "stats.html": {
+            title: "خدمات التحليل الإحصائي | SPSS, R, Meta-Analysis",
+            description: "خدمات تحليل إحصائي احترافية لرسائل الماجستير والدكتوراه. نغطي كافة أنواع التحليلات باستخدام SPSS و R و GraphPad Prism بدقة علمية عالية.",
+            url: "https://muhamedelnaggar.com/stats"
+        },
+        "podcast.html": {
+            title: "بودكاست ومصادر تعليمية | محمد النجار",
+            description: "مكتبة شاملة من الفيديوهات التعليمية، المقالات، والبودكاست حول البحث العلمي، الإحصاء، وكيفية كتابة الأوراق العلمية ونشرها.",
+            url: "https://muhamedelnaggar.com/podcast"
+        },
+        "advising.html": {
+            title: "حجز استشارة بحثية | جلسة خاصة (Zoom)",
+            description: "احجز جلسة استشارية خاصة لمدة 60 دقيقة لمناقشة مشروعك البحثي، حل المشكلات الإحصائية، أو الحصول على توجيه أكاديمي مخصص.",
+            url: "https://muhamedelnaggar.com/advising"
+        }
     };
 
-    // 2. Update Page Title
-    document.title = seoData.title;
+    // Determine current page
+    const path = window.location.pathname;
+    let page = path.split("/").pop() || "index.html";
+    if (page === "") page = "index.html"; // Handle root path
 
-    // 3. Function to create/update meta tags
-    function setMeta(property, content, isProperty = false) {
-        let element = isProperty ?
-            document.querySelector(`meta[property="${property}"]`) :
-            document.querySelector(`meta[name="${property}"]`);
+    // Fallback to index if page not found in map (or handle 404 conceptually)
+    const currentMeta = pageMeta[page] || pageMeta["index.html"];
 
+    // 2. Set Favicon Dynamically
+    let link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.head.appendChild(link);
+    }
+    link.href = 'assets/img/logo.png';
+
+    // 3. Update Page Title
+    document.title = currentMeta.title;
+
+    // 4. Function to create/update meta tags
+    function setMeta(name, content, attribute = 'name') {
+        let element = document.querySelector(`meta[${attribute}="${name}"]`);
         if (!element) {
             element = document.createElement('meta');
-            if (isProperty) element.setAttribute('property', property);
-            else element.setAttribute('name', property);
+            element.setAttribute(attribute, name);
             document.head.appendChild(element);
         }
         element.setAttribute('content', content);
     }
 
-    // 4. Inject Tags
-    setMeta('description', seoData.description);
-    setMeta('keywords', seoData.keywords);
+    // 5. Inject Standard Meta Tags
+    setMeta('description', currentMeta.description);
+    setMeta('keywords', "تحليل إحصائي, بحث علمي, استشارات بحثية, مراجعة منهجية, كورسات إحصاء حيوي, Systematic Review, Biostatistics, SPSS, R programming");
+    setMeta('author', "Muhamed Elnaggar");
 
-    // Open Graph (Social Media)
-    setMeta('og:title', seoData.title, true);
-    setMeta('og:description', seoData.description, true);
-    setMeta('og:image', seoData.image, true);
-    setMeta('og:type', 'website', true);
+    // 6. Inject Open Graph (Social Media) Tags
+    setMeta('og:title', currentMeta.title, 'property');
+    setMeta('og:description', currentMeta.description, 'property');
+    setMeta('og:image', window.location.origin + '/' + defaultImage, 'property');
+    setMeta('og:url', currentMeta.url, 'property');
+    setMeta('og:type', defaultType, 'property');
+    setMeta('og:site_name', "Muhamed Elnaggar - Research Consultant", 'property');
 
-    // 5. Inject JSON-LD Structured Data
+    // 7. Inject Twitter Card Tags
+    setMeta('twitter:card', 'summary_large_image');
+    setMeta('twitter:title', currentMeta.title);
+    setMeta('twitter:description', currentMeta.description);
+    setMeta('twitter:image', window.location.origin + '/' + defaultImage);
+
+    // 8. Inject JSON-LD Structured Data
     const schemaScript = document.createElement('script');
     schemaScript.type = 'application/ld+json';
     schemaScript.text = JSON.stringify({
@@ -43,15 +89,23 @@ document.addEventListener('DOMContentLoaded', () => {
         "@type": "Person",
         "name": "Muhammed Elnaggar",
         "jobTitle": "Statistical Consultant",
-        "description": seoData.description,
-        "url": window.location.href,
+        "description": currentMeta.description,
+        "url": currentMeta.url,
+        "image": window.location.origin + '/' + defaultImage,
         "sameAs": [
-            "https://www.youtube.com/@muhamedelnaggar"
+            "https://www.youtube.com/@muhamedelnaggar",
+            "https://www.linkedin.com/in/muhamedelnaggar",
+            "https://www.facebook.com/Biostats.muhamedelnaggar"
         ]
     });
+    // Remove old schema if exists to avoid duplicates (optional, but good practice)
+    const oldSchema = document.querySelector('script[type="application/ld+json"]');
+    if (oldSchema) oldSchema.remove();
     document.head.appendChild(schemaScript);
 
-    // 6. Mobile Menu Logic
+    // --- Interaction Logic ---
+
+    // Mobile Menu Logic
     const menuBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
 
@@ -61,16 +115,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 7. Active Link Highlighting
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    // Active Link Highlighting
     const links = document.querySelectorAll('.nav-link');
     links.forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
+        // Simple check: if href matches current page filename
+        if (link.getAttribute('href') === page) {
             link.classList.add('active');
         }
     });
 
-    // 8. WhatsApp Button Animation
+    // WhatsApp Button Animation
     setTimeout(() => {
         const waBtn = document.getElementById('waBtn');
         if (waBtn) {
