@@ -283,7 +283,7 @@ p {
 }
 
 .brand-logo {
-    height: 38px;
+    height: 50px;
     width: auto;
 }
 
@@ -1902,7 +1902,7 @@ p {
 }
 
 /* ============================
-   RESPONSIVE — Tablet
+   RESPONSIVE — Tablet (≤1024px)
    ============================ */
 @media (max-width: 1024px) {
     .hero-inner {
@@ -1922,6 +1922,14 @@ p {
 
     .hero-cta {
         justify-content: center;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .footer-grid {
@@ -1946,12 +1954,17 @@ p {
     .image-comparison-grid {
         grid-template-columns: 1fr;
     }
+
+    .callout-features {
+        flex-direction: column;
+        gap: 8px;
+    }
 }
 
 /* ============================
-   RESPONSIVE — Mobile
+   RESPONSIVE — iPad Portrait (≤820px)
    ============================ */
-@media (max-width: 768px) {
+@media (max-width: 820px) {
     .nav-links {
         display: none;
         position: absolute;
@@ -1959,10 +1972,11 @@ p {
         right: 0;
         left: 0;
         flex-direction: column;
-        background: var(--bg);
-        padding: 14px;
+        background: var(--surface);
+        padding: 16px;
         border-top: 1px solid var(--border);
-        gap: 2px;
+        gap: 4px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
     }
 
     .nav-links.active {
@@ -1977,6 +1991,27 @@ p {
         display: flex;
     }
 
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================
+   RESPONSIVE — Mobile (≤768px)
+   ============================ */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+
     .hero {
         padding: 120px 0 50px;
         min-height: auto;
@@ -1984,6 +2019,10 @@ p {
 
     .hero-photo {
         width: 220px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.6rem;
     }
 
     .hero-cta {
@@ -2001,16 +2040,9 @@ p {
         gap: 14px;
     }
 
-    .cards-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .testimonials-grid {
-        grid-template-columns: 1fr;
+    .section,
+    .cards-section {
+        padding: 50px 0;
     }
 
     .pricing-cards-container {
@@ -2043,6 +2075,11 @@ p {
         gap: 28px;
     }
 
+    .article-row {
+        flex-direction: column;
+        gap: 4px;
+    }
+
     .article-line {
         display: none;
     }
@@ -2066,8 +2103,24 @@ p {
     .volunteer-box {
         flex-direction: column;
     }
+
+    .trust-track-wrapper {
+        overflow: hidden;
+    }
+
+    .callout-box {
+        padding: 32px 20px;
+    }
+
+    .section-header h2,
+    .cards-header h2 {
+        font-size: 1.5rem;
+    }
 }
 
+/* ============================
+   RESPONSIVE — Small Mobile (≤480px)
+   ============================ */
 @media (max-width: 480px) {
     .hero-photo {
         width: 180px;
@@ -2075,5 +2128,19 @@ p {
 
     .stat-item h3 {
         font-size: 1.4rem;
+    }
+
+    .brand-logo {
+        height: 40px;
+    }
+
+    .service-card,
+    .testimonial-card,
+    .card {
+        padding: 20px;
+    }
+
+    .callout-box h2 {
+        font-size: 1.3rem;
     }
 }
