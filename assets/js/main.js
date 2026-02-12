@@ -1,4 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Theme Toggle Logic
+    const themeBtn = document.getElementById('themeToggleBtn');
+    const htmlEl = document.documentElement;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        htmlEl.setAttribute('data-theme', 'dark');
+    }
+
+    if (themeBtn) {
+        themeBtn.onclick = function () {
+            if (htmlEl.getAttribute('data-theme') === 'dark') {
+                htmlEl.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlEl.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        };
+    }
+
     // 1. Define Page-Specific Meta Data
     const defaultImage = "assets/img/logo.png"; // Set Logo as Social Sharing Image
     const defaultType = "website";
