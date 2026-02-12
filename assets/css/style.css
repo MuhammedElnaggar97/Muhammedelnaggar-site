@@ -13,35 +13,54 @@
     --text-muted: #5b6b7c;
     --highlight-color: #3d6498;
     --highlight-hover: #2c4c77;
-    --nav-bg: rgba(255, 255, 255, 0.85);
-    --nav-border: rgba(0, 0, 0, 0.05);
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --nav-border: rgba(255, 255, 255, 0.2);
     --card-bg: #ffffff;
     --section-bg: #fdfdfb;
     --item-bg: #f8fafc;
     --success-color: #009b00;
     --accent-color: #f4c150;
+    --accent-glow: rgba(61, 100, 152, 0.3);
+
+    /* Layered Shadows */
     --shadow-color: rgba(61, 100, 152, 0.15);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
     --border-color: rgba(0, 0, 0, 0.05);
-    --main-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Spring Animation */
+    --main-transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --smooth-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-theme="dark"] {
-    /* Dark Theme - True Black/Charcoal */
-    --bg-color: #050505;
+    /* Dark Theme - Refined Charcoal */
+    --bg-color: #0f172a;
     --text-color: #e2e8f0;
     --text-muted: #94a3b8;
-    --highlight-color: #f8fafc;
-    /* White/Off-white for high contrast headers */
+    --highlight-color: #bfdbfe;
+    /* Lighter blue for better contrast in dark mode */
     --highlight-hover: #e2e8f0;
-    --nav-bg: rgba(5, 5, 5, 0.85);
-    --nav-border: rgba(255, 255, 255, 0.1);
-    --card-bg: #121212;
-    --section-bg: #0a0a0a;
-    --item-bg: #1a1a1a;
-    /* For list items/cards */
+
+    --nav-bg: rgba(15, 23, 42, 0.85);
+    --nav-border: rgba(255, 255, 255, 0.05);
+
+    /* Elevation Colors */
+    --card-bg: #1e293b;
+    --section-bg: #0f172a;
+    --item-bg: #1e293b;
+
     --success-color: #4ade80;
     --accent-color: #fbbf24;
+    --accent-glow: rgba(61, 100, 152, 0.4);
+
     --shadow-color: rgba(0, 0, 0, 0.5);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+
     --border-color: rgba(255, 255, 255, 0.08);
 }
 
@@ -56,7 +75,7 @@ body {
 body {
     direction: rtl;
     background-color: var(--bg-color);
-    font-family: 'TheYearofHandicrafts', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: var(--text-color);
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -64,7 +83,28 @@ body {
 
 * {
     box-sizing: border-box;
-    font-family: 'TheYearofHandicrafts', sans-serif !important;
+}
+
+/* Typography Hierarchy */
+h1,
+h2,
+h3,
+h4,
+.brand-logo,
+.slider-title,
+.cards-header,
+.text-banner-header h4,
+.stat-box h2,
+.nav-cta,
+.buy-btn,
+.service-header,
+.accordion-header h3,
+.package-header,
+.price-tag,
+.blog-content h3,
+.blog-content b,
+.added-main-button {
+    font-family: 'TheYearofHandicrafts', sans-serif;
 }
 
 a {
@@ -81,8 +121,8 @@ a {
     position: sticky;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     transition: background 0.3s ease, border-color 0.3s ease;
 }
 
@@ -138,6 +178,7 @@ a {
 /* Specific style for the CTA button in nav */
 .nav-cta {
     background-color: var(--highlight-color);
+    /* Kept original highlight for button for consistency */
     color: #fff !important;
     padding: 10px 24px;
     border-radius: 50px;
@@ -145,9 +186,15 @@ a {
     box-shadow: 0 4px 12px var(--shadow-color);
 }
 
+[data-theme="dark"] .nav-cta {
+    background-color: #3d6498;
+    color: #fff !important;
+}
+
 .nav-cta:hover {
     background-color: var(--highlight-hover);
     transform: translateY(-2px);
+    box-shadow: 0 0 15px var(--accent-glow);
 }
 
 /* Theme Toggle Button */
@@ -166,6 +213,7 @@ a {
 
 .theme-toggle-btn:hover {
     background-color: rgba(128, 128, 128, 0.1);
+    transform: rotate(15deg);
 }
 
 .theme-toggle-btn svg {
@@ -201,8 +249,8 @@ a {
         background: var(--nav-bg);
         padding: 20px;
         border-bottom: 1px solid var(--nav-border);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
@@ -222,17 +270,19 @@ a {
     width: 100%;
     overflow-x: hidden;
     min-height: calc(100vh - 160px);
-    /* Adjust for header/footer */
+    background-color: var(--bg-color);
 }
 
 /* --- 2. Advising Banner & Stats --- */
 .banner-stats-section {
     padding: 50px 20px;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .text-banner-header {
-    background-color: #fff;
+    background-color: var(--card-bg);
     width: fit-content;
     max-width: 100%;
     display: flex;
@@ -241,13 +291,15 @@ a {
     padding: 8px 20px;
     border-radius: 40px;
     margin: 0 auto 30px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
 }
 
 .text-banner-header h4 {
     font-weight: 500;
     font-size: 22px;
-    padding-right: 25px;
+    padding-inline-end: 25px;
+    /* RTL aware */
     position: relative;
     color: var(--text-color);
     margin: 0;
@@ -257,6 +309,10 @@ a {
     position: absolute;
     top: 50%;
     right: 0px;
+    /* In RTL, right is the start if pos absolute is relative to parent. Check parent. */
+    /* Since body is RTL, right is actually the left visually usually if direction is RTL, BUT position properties are physical. */
+    /* Wait, text-banner-header h4 should be relative. */
+    /* 'right: 0' places it on the right edge. In RTL layout, start is right. So this is correct for "start of line". */
     transform: translateY(-50%);
     width: 10px;
     height: 10px;
@@ -274,10 +330,11 @@ a {
 .dot-container::after {
     content: "";
     position: absolute;
-    background-color: rgba(0, 190, 0, 0.7);
+    background-color: var(--success-color);
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    opacity: 0.7;
     animation: pop-pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
@@ -304,6 +361,11 @@ a {
     color: #fff !important;
     font-weight: 600;
     transition: var(--main-transition);
+}
+
+.pill-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--accent-glow);
 }
 
 .main-description {
@@ -336,16 +398,29 @@ a {
 }
 
 .btn-main {
-    background-color: var(--highlight-color);
+    background-color: #3d6498;
     color: #fff !important;
     cursor: pointer;
     border: none;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-main:hover {
+    background-color: #2c4c77;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--accent-glow);
 }
 
 .btn-sub {
-    background-color: #f0eeeb;
+    background-color: var(--card-bg);
     color: var(--text-color) !important;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-sub:hover {
+    background-color: var(--item-bg);
+    transform: translateY(-2px);
 }
 
 .stats-grid {
@@ -359,12 +434,12 @@ a {
 .stat-box {
     flex: 1 1 150px;
     max-width: 200px;
-    border-left: 1px solid rgba(26, 37, 48, 0.1);
+    border-inline-end: 1px solid rgba(26, 37, 48, 0.1);
     padding: 10px;
 }
 
 .stat-box:last-child {
-    border-left: none;
+    border-inline-end: none;
 }
 
 .stat-box h2 {
@@ -411,12 +486,12 @@ a {
 
 .slider-box::before {
     left: 0;
-    box-shadow: inset 20px 0 10px -10px var(--bg-color);
+    background: linear-gradient(to right, var(--bg-color), transparent);
 }
 
 .slider-box::after {
     right: 0;
-    box-shadow: inset -20px 0 10px -10px var(--bg-color);
+    background: linear-gradient(to left, var(--bg-color), transparent);
 }
 
 .slider-track {
@@ -483,18 +558,19 @@ a {
 }
 
 .card {
-    background: #fff;
+    background: var(--card-bg);
     border-radius: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
     overflow: hidden;
-    box-shadow: 0 4px 15px var(--shadow-color);
+    box-shadow: var(--shadow-lg);
     display: flex;
     flex-direction: column;
     transition: var(--main-transition);
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .udemy-card {
@@ -514,13 +590,14 @@ a {
 }
 
 .card-body h3 {
-    font-size: 32px;
+    font-size: 28px;
     color: var(--highlight-color);
     margin-bottom: 10px;
+    font-family: 'TheYearofHandicrafts', sans-serif;
 }
 
 .card-desc {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 15px;
     color: var(--text-color);
 }
@@ -558,12 +635,13 @@ a {
 .udemy-meta {
     padding: 0 25px 20px;
     font-size: 18px;
+    color: var(--text-color);
 }
 
 .buy-btn {
     display: block;
     padding: 15px;
-    background: var(--udemy-buy-color);
+    background: #3d6498;
     color: #fff !important;
     text-align: center;
     border-radius: 8px;
@@ -572,10 +650,13 @@ a {
     text-decoration: none;
     margin-top: 15px;
     transition: var(--main-transition);
+    box-shadow: var(--shadow-md);
 }
 
 .buy-btn:hover {
-    opacity: 0.9;
+    background: #2c4c77;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--accent-glow);
 }
 
 /* --- 5. Articles Section --- */
@@ -583,7 +664,7 @@ a {
     max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--border-color);
 }
 
 .articles-list {
@@ -592,8 +673,8 @@ a {
 }
 
 .articles-list li {
-    border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
-    padding: 10px 0;
+    border-bottom: 1px dashed var(--border-color);
+    padding: 15px 0;
 }
 
 .article-link {
@@ -606,9 +687,10 @@ a {
 }
 
 .article-link h4 {
-    font-size: 26px;
+    font-size: 22px;
     transition: 0.3s;
     margin: 0;
+    font-family: 'TheYearofHandicrafts', sans-serif;
 }
 
 .article-line {
@@ -618,6 +700,10 @@ a {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
+}
+
+[data-theme="dark"] .article-line {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .article-line::before {
@@ -639,19 +725,21 @@ a {
 }
 
 .article-date {
-    font-size: 20px;
-    color: #8b8b8b;
+    font-size: 18px;
+    color: var(--text-muted);
 }
 
 /* --- 5.5 Advising Section Styles --- */
 .advising-callout {
-    background: #f1f5f9;
+    background: var(--card-bg);
+    /* Use Elevation specific Variable */
     padding: 60px 20px;
     margin: 40px auto;
     border-radius: 20px;
     max-width: 1100px;
     text-align: center;
     border: 1px solid rgba(61, 100, 152, 0.1);
+    box-shadow: var(--shadow-lg);
 }
 
 .advising-callout h2 {
@@ -679,41 +767,45 @@ a {
 .advising-features span {
     font-size: 18px;
     font-weight: 700;
-    background: #fff;
+    background: var(--bg-color);
+    color: var(--text-color);
     padding: 8px 15px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
 }
 
 /* --- 5.6 Products Section Styles --- */
 .products-shortcut-section {
     padding: 40px 20px;
     text-align: center;
-    background: #fff;
+    background: var(--card-bg);
     border-radius: 20px;
     max-width: 1100px;
     margin: 20px auto;
     border: 1px dashed var(--highlight-color);
+    box-shadow: var(--shadow-md);
 }
 
 .products-shortcut-section h2 {
     font-size: 38px;
     color: var(--text-color);
     margin-bottom: 15px;
+    font-family: 'TheYearofHandicrafts', sans-serif;
 }
 
 .products-shortcut-section p {
     font-size: 22px;
-    color: #555;
+    color: var(--text-muted);
     margin-bottom: 25px;
 }
 
 /* --- 6. About Me Section --- */
 .about-me-teaser {
-    background: #fff;
+    background: var(--card-bg);
     padding: 60px 20px;
     margin-top: 50px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 1px solid var(--border-color);
 }
 
 .about-teaser-container {
@@ -755,23 +847,20 @@ a {
 }
 
 /* --- 7. WhatsApp Floating --- */
-@keyframes vibrate {
+@keyframes pulse-gentle {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
 
-    0%,
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+
     100% {
-        transform: translateX(0);
-    }
-
-    25% {
-        transform: translateX(-5px) rotate(-5deg);
-    }
-
-    50% {
-        transform: translateX(5px) rotate(5deg);
-    }
-
-    75% {
-        transform: translateX(-5px) rotate(-5deg);
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
     }
 }
 
@@ -781,34 +870,24 @@ a {
     height: 50px;
     bottom: 30px;
     left: 30px;
-    background: #29a71a;
+    background: #25D366;
     border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    animation: vibrate 0.8s infinite;
+    animation: pulse-gentle 2s infinite;
     transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.wa-float:hover {
+    transform: translateY(-5px);
 }
 
 .wa-float img {
-    width: 40px;
-    height: 40px;
-}
-
-/* --- Footer --- */
-.site-footer {
-    background: #fff;
-    padding: 30px 20px;
-    text-align: center;
-    margin-top: auto;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.site-footer p {
-    font-size: 18px;
-    color: #666;
-    margin: 0;
+    width: 32px;
+    height: 32px;
 }
 
 /* --- Mobile Breakpoints --- */
@@ -819,11 +898,12 @@ a {
 
     .stat-box {
         flex: 1 1 45%;
-        border-left: 1px solid rgba(0, 0, 0, 0.1);
+        border-inline-end: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     .stat-box:nth-child(2n) {
-        border-left: none;
+        border-inline-end: none;
     }
 
     .cards-header,
@@ -839,8 +919,18 @@ a {
         font-size: 18px !important;
     }
 
+    .article-link {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .article-line {
+        display: none;
+    }
+
     .article-date {
         font-size: 14px !important;
+        align-self: flex-end;
     }
 
     .wa-float {
@@ -870,22 +960,31 @@ a {
     .products-shortcut-section h2 {
         font-size: 28px;
     }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-col {
+        width: 100%;
+    }
 }
 
 /* --- NEW ADVISING PAGE STYLES --- */
 :root {
-    --card-bg: #ffffff;
     --border-radius: 12px;
 }
 
 .blog-content {
     direction: rtl !important;
-    background-color: var(--bg-color);
+    background-color: var(--card-bg);
     max-width: 950px;
     margin: 0 auto !important;
     padding: 20px 30px !important;
     font-family: 'TheYearofHandicrafts', serif !important;
     position: relative;
+    border-radius: 20px;
 }
 
 .blog-content * {
@@ -914,11 +1013,12 @@ a {
     font-weight: 500 !important;
     font-style: italic;
     background-color: rgba(61, 100, 152, 0.05);
-    border-right: 5px solid var(--highlight-color);
+    border-inline-start: 5px solid var(--highlight-color);
     padding: 20px !important;
     border-radius: 4px;
     font-size: 24px !important;
     line-height: 1.6;
+    color: var(--text-color);
 }
 
 /* --- Image Comparison --- */
@@ -933,7 +1033,7 @@ a {
     position: relative;
     border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
 }
 
 .image-container img {
@@ -963,11 +1063,17 @@ a {
 /* --- Accordion --- */
 .accordion-item {
     background: var(--card-bg);
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     margin-bottom: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    box-shadow: var(--shadow-sm);
+    transition: var(--main-transition);
+}
+
+.accordion-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
 }
 
 .accordion-header {
@@ -997,7 +1103,7 @@ a {
 .plus-icon {
     font-size: 28px;
     color: var(--highlight-color);
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     font-weight: bold;
 }
 
@@ -1006,14 +1112,15 @@ a {
     overflow: hidden;
     transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 0 25px;
-    background: #fff;
+    background: var(--card-bg);
 }
 
 .accordion-content .inner-box {
     padding: 20px 0;
     font-size: 22px !important;
-    border-top: 1px solid #f0f0f0;
+    border-top: 1px solid var(--border-color);
     line-height: 1.7;
+    color: var(--text-color);
 }
 
 .accordion-content ul {
@@ -1024,12 +1131,12 @@ a {
 
 .accordion-content ul li {
     position: relative;
-    padding-right: 30px;
+    padding-inline-start: 30px;
     margin-bottom: 12px;
 }
 
 .accordion-content ul li::before {
-    content: '?';
+    content: 'âœ“';
     position: absolute;
     right: 0;
     color: var(--highlight-color);
@@ -1053,13 +1160,18 @@ a {
 }
 
 .testimonial-card {
-    background: linear-gradient(145deg, #ffffff, #f9f9f9);
+    background: var(--card-bg);
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-lg);
     border-top: 4px solid var(--highlight-color);
     display: flex;
     flex-direction: column;
+    transition: var(--main-transition);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
 }
 
 .quote-text {
@@ -1068,10 +1180,11 @@ a {
     font-style: italic;
     margin-bottom: 20px;
     flex-grow: 1;
+    color: var(--text-color);
 }
 
 .client-info {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--border-color);
     padding-top: 15px;
     font-weight: 700;
     color: var(--highlight-color);
@@ -1084,12 +1197,12 @@ a {
     padding: 40px;
     background: var(--card-bg);
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-lg);
 }
 
 .original-price {
     font-size: 28px !important;
-    color: #888;
+    color: var(--text-muted);
     text-decoration: line-through;
     font-weight: 400;
 }
@@ -1114,7 +1227,7 @@ a {
     margin-top: 60px;
     text-align: center;
     padding: 40px;
-    border-top: 2px dashed #ddd;
+    border-top: 2px dashed var(--border-color);
 }
 
 .resource-btn {
@@ -1132,6 +1245,7 @@ a {
 .resource-btn:hover {
     background: var(--highlight-color);
     transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--accent-glow);
 }
 
 /* --- Buttons --- */
@@ -1149,8 +1263,9 @@ a {
 }
 
 .added-main-button:hover {
+    background-color: var(--highlight-hover);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(61, 100, 152, 0.4);
+    box-shadow: 0 5px 15px var(--accent-glow);
 }
 
 .whatsapp-btn {
@@ -1180,8 +1295,8 @@ a {
 
 /* --- New Footer --- */
 .site-footer {
-    background: #1A2530;
-    color: #fff;
+    background: #111820;
+    color: #e0e0e0;
     padding: 60px 20px 20px;
     margin-top: auto;
     border-top: none;
@@ -1202,9 +1317,13 @@ a {
 }
 
 .footer-col h3 {
-    color: var(--highlight-color);
+    color: #fff;
+    border-bottom: 2px solid var(--highlight-color);
+    padding-bottom: 10px;
     margin-bottom: 20px;
     font-size: 24px;
+    display: inline-block;
+    font-family: 'TheYearofHandicrafts', sans-serif;
 }
 
 .footer-links {
@@ -1226,7 +1345,7 @@ a {
 
 .footer-links a:hover {
     color: var(--highlight-color);
-    padding-right: 5px;
+    padding-inline-start: 5px;
 }
 
 .footer-about p {
@@ -1255,7 +1374,7 @@ a {
     text-align: center;
     margin-top: 50px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     color: #888;
     font-size: 16px;
 }
@@ -1280,34 +1399,23 @@ a {
 .banner-stats-section,
 .about-me-teaser,
 div.master-site-wrapper {
-    background-image: radial-gradient(circle at 10% 20%, rgba(61, 100, 152, 0.03) 0%, transparent 20%),
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(61, 100, 152, 0.03) 0%, transparent 20%),
         radial-gradient(circle at 90% 80%, rgba(61, 100, 152, 0.03) 0%, transparent 20%);
-    background-attachment: fixed;
+    background-attachment: local;
+    /* Smoother on mobile */
     background-size: cover;
 }
 
-/* --- Professional Footer Update --- */
-.site-footer {
-    background: #111820;
-    /* Darker, more professional */
-    color: #e0e0e0;
-}
+@media (min-width: 1024px) {
 
-.footer-col h3 {
-    color: #fff;
-    border-bottom: 2px solid var(--highlight-color);
-    padding-bottom: 10px;
-    display: inline-block;
-}
-
-.footer-links a:hover {
-    color: #fff;
-    padding-right: 8px;
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    color: #777;
+    .parallax-section,
+    .master-service-section,
+    .banner-stats-section,
+    .about-me-teaser,
+    div.master-site-wrapper {
+        background-attachment: fixed;
+    }
 }
 
 /* --- Stats Service Page Specifics --- */
@@ -1337,6 +1445,7 @@ div.master-site-wrapper {
     font-weight: 700;
     color: var(--highlight-color);
     margin-bottom: 25px;
+    font-family: 'TheYearofHandicrafts', sans-serif;
 }
 
 .service-intro-container p.intro-text {
@@ -1356,6 +1465,7 @@ div.master-site-wrapper {
     text-align: right;
     border-right: 4px solid var(--highlight-color);
     padding-right: 15px;
+    font-family: 'TheYearofHandicrafts', sans-serif;
 }
 
 .service-intro-container ul.bullet-list {
@@ -1368,11 +1478,11 @@ div.master-site-wrapper {
     font-size: 22px;
     padding: 10px 0;
     position: relative;
-    padding-right: 30px;
+    padding-inline-start: 30px;
 }
 
 .service-intro-container ul.bullet-list li::before {
-    content: '?';
+    content: 'â—ڈ';
     position: absolute;
     right: 0;
     color: var(--highlight-color);
@@ -1399,11 +1509,11 @@ div.master-site-wrapper {
     max-width: 400px;
     background-color: var(--card-bg);
     border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-md);
     transition: var(--main-transition);
     position: relative;
     padding-bottom: 40px;
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--border-color);
 }
 
 .price-card:hover {
@@ -1461,14 +1571,15 @@ div.master-site-wrapper {
 .features-list li {
     font-size: 19px;
     padding: 12px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    border-bottom: 1px solid var(--border-color);
     display: flex;
     align-items: center;
     gap: 10px;
+    color: var(--text-color);
 }
 
 .features-list li::before {
-    content: '?';
+    content: 'âœ“';
     color: var(--highlight-color);
 }
 
@@ -1481,7 +1592,7 @@ div.master-site-wrapper {
     color: #fff !important;
     font-size: 22px;
     font-weight: 700;
-    transition: all 0.3s ease;
+    transition: var(--main-transition);
 }
 
 .price-buy-button:hover {
@@ -1513,13 +1624,14 @@ div.master-site-wrapper {
     border-radius: 20px;
     margin: 40px auto;
     max-width: 1100px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-lg);
 }
 
 .newsletter-content h2 {
     font-size: 36px;
     margin-bottom: 15px;
     color: #fff;
+    font-family: 'TheYearofHandicrafts', sans-serif;
 }
 
 .newsletter-content p {
@@ -1569,7 +1681,6 @@ div.master-site-wrapper {
     margin-top: 15px;
     font-size: 18px;
     height: 27px;
-    /* preserve space */
 }
 
 @media (max-width: 768px) {
@@ -1592,14 +1703,14 @@ div.master-site-wrapper {
     direction: rtl;
     background-color: var(--bg-color);
     padding: 60px 20px;
-    font-family: 'Markazi Text', serif !important;
+    font-family: 'TheYearofHandicrafts', serif !important;
     color: var(--text-color);
     width: 90%;
     max-width: 1100px;
     margin: 0 auto;
 }
 
-/* طھظ†ط³ظٹظ‚ ط§ظ„ط¹ظ†ط§ظˆظٹظ† ظ…ط¹ ط§ظ„ط´ط¹ط§ط±ط§طھ */
+/* Professional Section Titles */
 .title-with-logo {
     display: flex;
     align-items: center;
@@ -1617,7 +1728,7 @@ div.master-site-wrapper {
     height: 25px !important;
 }
 
-/* ط£ظ‚ط³ط§ظ… ط§ظ„ط´ط¨ظƒط© */
+/* Grid Sections */
 .edu-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1632,7 +1743,7 @@ div.master-site-wrapper {
     margin-bottom: 50px;
 }
 
-/* ظ‚ط³ظ… ط§ظ„ظ…ظ‡ط§ط±ط§طھ */
+/* Skills Section */
 .skills-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1642,22 +1753,22 @@ div.master-site-wrapper {
 
 .skill-tag {
     display: inline-block;
-    background: #f0f2f5;
-    color: #3d6498;
+    background: var(--item-bg);
+    color: var(--highlight-color);
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 16px;
     margin: 5px;
-    font-family: sans-serif !important;
-    border: 1px solid #e0e0e0;
+    font-family: 'Inter', sans-serif !important;
+    border: 1px solid var(--border-color);
 }
 
 .edu-card {
-    background: white;
+    background: var(--card-bg);
     padding: 20px;
     border-radius: 12px;
     border-right: 4px solid var(--highlight-color);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
 }
@@ -1670,15 +1781,17 @@ div.master-site-wrapper {
     font-size: 22px;
     margin: 0;
     line-height: 1.3;
+    font-family: 'TheYearofHandicrafts', sans-serif;
+    color: var(--text-color);
 }
 
 .edu-card p {
     font-size: 18px;
     margin: 10px 0 0;
-    color: #444;
+    color: var(--text-muted);
 }
 
-/* طھظ†ط³ظٹظ‚ طµظˆط± ط§ظ„طھط·ظˆط¹ */
+/* Volunteer Images */
 .volunteer-box {
     display: flex;
     align-items: flex-start;
@@ -1692,15 +1805,15 @@ div.master-site-wrapper {
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
     flex-shrink: 0;
 }
 
-/* ط§ظ„ط¬ط¯ظˆظ„ ط§ظ„ط²ظ…ظ†ظٹ */
+/* Timeline */
 .timeline {
     position: relative;
     padding-right: 40px;
-    border-right: 3px solid #e0e0e0;
+    border-right: 3px solid var(--border-color);
     margin-bottom: 50px;
 }
 
@@ -1718,7 +1831,7 @@ div.master-site-wrapper {
     height: 16px;
     background: var(--highlight-color);
     border-radius: 50%;
-    border: 4px solid white;
+    border: 4px solid var(--card-bg);
     z-index: 1;
 }
 
@@ -1741,310 +1854,4 @@ div.master-site-wrapper {
         max-width: 200px;
         height: auto;
     }
-
-    /* --- Blog Post Styles (Professional & Fluid) --- */
-    .master-site-wrapper {
-        background-color: var(--section-bg);
-        padding-bottom: 60px;
-        width: 100%;
-        transition: background-color 0.3s ease;
-    }
-
-    .blog-content,
-    .arts-and-src,
-    .services {
-        direction: rtl;
-        font-family: 'Markazi Text', serif !important;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .blog-content *,
-    .arts-and-src *,
-    .services * {
-        font-family: 'Markazi Text', serif !important;
-    }
-
-    /* Hero Image - Controlled height for all devices */
-    .img {
-        max-width: 100%;
-        width: 100%;
-        margin: 0 auto;
-        padding: 0;
-        overflow: hidden;
-    }
-
-    .img img {
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-        display: block;
-    }
-
-    @media (max-width: 1024px) {
-        .img img {
-            height: 380px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .img img {
-            height: 280px;
-        }
-    }
-
-    /* Blog Content - Preventing hidden text and improving iPad/Web flow */
-    .blog-content {
-        max-width: 860px;
-        background: var(--card-bg);
-        margin: -60px auto 40px;
-        padding: 60px clamp(20px, 10%, 80px);
-        border-radius: 20px;
-        box-shadow: 0 20px 60px var(--shadow-color);
-        position: relative;
-        z-index: 5;
-        border: 1px solid var(--border-color);
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .blog-content h3 {
-        text-align: center;
-        font-size: clamp(2.2rem, 5vw, 3.8rem) !important;
-        color: var(--highlight-color);
-        margin-bottom: 2rem;
-        font-weight: 700 !important;
-        line-height: 1.2;
-    }
-
-    .blog-content p {
-        font-size: clamp(1.3rem, 3.5vw, 1.8rem);
-        line-height: 1.9;
-        color: var(--text-color);
-        margin-bottom: 1.5rem;
-        text-align: justify;
-        font-weight: 400;
-    }
-
-    .blog-content b {
-        display: block;
-        font-size: clamp(1.7rem, 4vw, 2.4rem) !important;
-        color: var(--highlight-color);
-        margin: 3rem 0 1rem;
-        font-weight: 700 !important;
-        border-right: 5px solid var(--accent-color);
-        padding-right: 18px;
-    }
-
-    .blog-content ul {
-        margin: 1.5rem 2.5rem 1.5rem 0;
-        list-style: none !important;
-    }
-
-    .blog-content ul li {
-        font-size: clamp(1.25rem, 3.2vw, 1.65rem);
-        margin-bottom: 15px;
-        position: relative;
-        padding-right: 32px;
-        color: var(--text-muted);
-    }
-
-    .blog-content ul li::before {
-        content: "•";
-        position: absolute;
-        right: 0;
-        color: var(--accent-color);
-        font-weight: bold;
-        font-size: 2.2rem;
-        line-height: 1;
-    }
-
-    /* Premium WhatsApp Block */
-    .whatsapp-cta-block {
-        background: linear-gradient(135deg, var(--item-bg) 0%, var(--bg-color) 100%);
-        border-radius: 20px;
-        padding: 40px 20px;
-        margin: 60px 0;
-        text-align: center;
-        border: 1px solid var(--border-color);
-    }
-
-    .whatsapp-cta-block p {
-        font-weight: 600;
-        font-size: clamp(1.4rem, 4.5vw, 2rem);
-        margin-bottom: 25px;
-        color: var(--highlight-color);
-    }
-
-    .added-main-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        background-color: #25D366;
-        color: #fff !important;
-        padding: 15px 40px;
-        border-radius: 50px;
-        font-size: 1.6rem;
-        font-weight: 700;
-        text-decoration: none;
-        transition: 0.3s ease;
-        box-shadow: 0 10px 30px rgba(37, 211, 102, 0.25);
-    }
-
-    .added-main-button:hover {
-        background-color: #128C7E;
-        transform: translateY(-4px);
-        box-shadow: 0 15px 40px rgba(37, 211, 102, 0.35);
-    }
-
-    /* Services Grid Redesign */
-    .services {
-        max-width: 860px;
-        margin: 80px auto;
-        padding: 0 20px;
-    }
-
-    .services .section-header {
-        font-size: clamp(2rem, 5vw, 2.8rem);
-        font-weight: 700;
-        color: var(--highlight-color);
-        margin-bottom: 35px;
-        text-align: right;
-    }
-
-    .services-links {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        list-style: none;
-        padding: 0;
-    }
-
-    .services-links li a {
-        background: var(--card-bg);
-        padding: 25px;
-        border-radius: 15px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        text-align: center;
-        transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 4px 15px var(--border-color);
-        border: 1px solid var(--border-color);
-    }
-
-    .services-links li a:hover {
-        transform: translateY(-10px);
-        border-color: var(--highlight-color);
-        box-shadow: 0 25px 40px var(--shadow-color);
-    }
-
-    .services-links li a .icon {
-        width: 60px;
-        height: 60px;
-        background: var(--item-bg);
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.3s;
-    }
-
-    .services-links li a:hover .icon {
-        background: var(--highlight-color);
-    }
-
-    .services-links li a:hover .icon svg path {
-        stroke: #fff !important;
-        fill: #fff !important;
-    }
-
-    .services-links li a .text p {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin: 0;
-        color: var(--text-color);
-    }
-
-    /* Other Articles List Redesign */
-    .arts-and-src {
-        max-width: 860px;
-        margin: 80px auto 120px;
-        padding: 0 20px;
-    }
-
-    .arts-and-src .section-header {
-        font-size: clamp(2rem, 5vw, 2.8rem);
-        font-weight: 700;
-        color: var(--highlight-color);
-        margin-bottom: 30px;
-    }
-
-    .arts-and-src-links {
-        list-style: none;
-        padding: 0;
-    }
-
-    .arts-and-src-links li a {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 20px 25px;
-        background: var(--item-bg);
-        border-radius: 12px;
-        margin-bottom: 12px;
-        transition: 0.3s;
-        border: 1px solid transparent;
-    }
-
-    .arts-and-src-links li a:hover {
-        background: var(--card-bg);
-        border-color: var(--highlight-color);
-        transform: scale(1.01) translateX(-5px);
-        box-shadow: 0 10px 25px var(--shadow-color);
-    }
-
-    .arts-and-src-links li a h4 {
-        font-size: 1.7rem !important;
-        margin: 0 !important;
-        color: var(--text-color);
-        flex: 1;
-    }
-
-    .arts-and-src-links li a .date {
-        font-size: 1.2rem !important;
-        color: var(--text-muted);
-        margin-right: 20px;
-    }
-
-    /* Mobile & iPad Specific Tweak Overrides */
-    @media (max-width: 768px) {
-        .blog-content {
-            width: 95%;
-            margin-top: -30px;
-            padding: 40px 20px;
-            border-radius: 15px;
-        }
-
-        .blog-content p {
-            text-align: right;
-        }
-
-        .services-links {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    @media (max-width: 480px) {
-        .services-links {
-            grid-template-columns: 1fr;
-        }
-
-        .arts-and-src-links li a {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
-        }
-    }
+}
