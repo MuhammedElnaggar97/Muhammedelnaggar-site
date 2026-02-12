@@ -1,5 +1,10 @@
 /* --- 1. Global Config & Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;700&display=swap');
+@font-face {
+    font-family: 'TheYearofHandicrafts';
+    src: url('../fonts/TheYearofHandicrafts-SemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
 
 :root {
     --bg-color: #faf9f6;
@@ -12,7 +17,8 @@
     --main-transition: all 0.3s ease;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -22,14 +28,14 @@ html, body {
 body {
     direction: rtl;
     background-color: var(--bg-color);
-    font-family: 'Markazi Text', serif;
+    font-family: 'TheYearofHandicrafts', sans-serif;
     color: var(--text-color);
     line-height: 1.6;
 }
 
 * {
     box-sizing: border-box;
-    font-family: 'Markazi Text', serif !important;
+    font-family: 'TheYearofHandicrafts', sans-serif !important;
 }
 
 a {
@@ -41,7 +47,7 @@ a {
 .navbar {
     background: #fff;
     padding: 15px 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -76,7 +82,8 @@ a {
     transition: var(--main-transition);
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
     color: var(--highlight-color);
 }
 
@@ -104,7 +111,7 @@ a {
         width: 100%;
         background: #fff;
         padding: 20px;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
         text-align: center;
     }
 
@@ -117,7 +124,8 @@ a {
 .master-site-wrapper {
     width: 100%;
     overflow-x: hidden;
-    min-height: calc(100vh - 160px); /* Adjust for header/footer */
+    min-height: calc(100vh - 160px);
+    /* Adjust for header/footer */
 }
 
 /* --- 2. Advising Banner & Stats --- */
@@ -177,10 +185,13 @@ a {
 }
 
 @keyframes pop-pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1);
         opacity: 0.8;
     }
+
     50% {
         transform: scale(2.5);
         opacity: 0.0;
@@ -347,6 +358,7 @@ a {
     0% {
         transform: translate3d(0, 0, 0);
     }
+
     100% {
         transform: translate3d(-50%, 0, 0);
     }
@@ -647,10 +659,23 @@ a {
 
 /* --- 7. WhatsApp Floating --- */
 @keyframes vibrate {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px) rotate(-5deg); }
-    50% { transform: translateX(5px) rotate(5deg); }
-    75% { transform: translateX(-5px) rotate(-5deg); }
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateX(5px) rotate(5deg);
+    }
+
+    75% {
+        transform: translateX(-5px) rotate(-5deg);
+    }
 }
 
 .wa-float {
@@ -680,7 +705,7 @@ a {
     padding: 30px 20px;
     text-align: center;
     margin-top: auto;
-    border-top: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .site-footer p {
@@ -691,17 +716,61 @@ a {
 
 /* --- Mobile Breakpoints --- */
 @media (max-width: 768px) {
-    .main-description { font-size: 24px; }
-    .stat-box { flex: 1 1 45%; border-left: 1px solid rgba(0, 0, 0, 0.1); }
-    .stat-box:nth-child(2n) { border-left: none; }
-    .cards-header, .slider-title { font-size: 32px; }
-    .card { flex: 1 1 100%; }
-    .article-link h4 { font-size: 18px !important; }
-    .article-date { font-size: 14px !important; }
-    .wa-float { width: 45px; height: 45px; bottom: 20px; left: 20px; }
-    .about-teaser-container { text-align: center; flex-direction: column; }
-    .about-teaser-text h2 { font-size: 35px; }
-    .advising-callout h2 { font-size: 30px; }
-    .advising-callout p { font-size: 20px; }
-    .products-shortcut-section h2 { font-size: 28px; }
+    .main-description {
+        font-size: 24px;
+    }
+
+    .stat-box {
+        flex: 1 1 45%;
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-box:nth-child(2n) {
+        border-left: none;
+    }
+
+    .cards-header,
+    .slider-title {
+        font-size: 32px;
+    }
+
+    .card {
+        flex: 1 1 100%;
+    }
+
+    .article-link h4 {
+        font-size: 18px !important;
+    }
+
+    .article-date {
+        font-size: 14px !important;
+    }
+
+    .wa-float {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .about-teaser-container {
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .about-teaser-text h2 {
+        font-size: 35px;
+    }
+
+    .advising-callout h2 {
+        font-size: 30px;
+    }
+
+    .advising-callout p {
+        font-size: 20px;
+    }
+
+    .products-shortcut-section h2 {
+        font-size: 28px;
+    }
 }
