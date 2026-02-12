@@ -62,9 +62,14 @@ a {
 }
 
 .brand-logo {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--highlight-color);
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo img {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-links {
