@@ -115,7 +115,7 @@ textarea {
     --font: 'Handicrafts', 'Tajawal', sans-serif;
     --logo: #3d6498;
     --bg: #F4F7F9;
-    --accent: #16A085;
+    --accent: #5F7D76;
     --surface: #FFFFFF;
     --text: #1a2332;
     --text-secondary: #4a5568;
@@ -132,7 +132,7 @@ textarea {
 [data-theme="dark"] {
     --logo: #4A7FB9;
     --bg: #0F172A;
-    --accent: #64FFDA;
+    --accent: #84A59D;
     --surface: #1E293B;
     --text: #e2e8f0;
     --text-secondary: #94a3b8;
