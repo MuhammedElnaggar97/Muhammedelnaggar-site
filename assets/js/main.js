@@ -10,10 +10,8 @@
     var content = document.getElementById('pageContent');
     if (!preloader || !content) return;
 
-    // Check if user has already seen preloader in this session
-    var preloaderSeen = sessionStorage.getItem('naggar_preloader_seen');
-
-    if (preloaderSeen) {
+    // Check if user has already seen preloader in this session (Force skip for now)
+    if (true) {
         // Skip preloader
         preloader.style.display = 'none';
         content.classList.add('visible');
