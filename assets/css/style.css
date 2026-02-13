@@ -283,7 +283,7 @@ p {
 }
 
 .brand-logo {
-    height: 62px;
+    height: 60px;
     width: auto;
 }
 
@@ -2666,9 +2666,7 @@ p {
     right: -100px;
 }
 
-.brand-logo {
-    height: 40px;
-}
+
 
 .service-card,
 .testimonial-card,
