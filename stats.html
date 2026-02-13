@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل إحصائي - استشارات بحثية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/img/logo.png" alt="Naggar Logo" class="brand-logo">
+            </a>
+            <div class="nav-controls">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+                    <li><a href="stats.html" class="nav-link">تحليل إحصائي</a></li>
+                    <li><a href="about.html" class="nav-link">عن محمد</a></li>
+                    <li><a href="https://www.youtube.com/playlist?list=PL9GrBMsvivVXepashqv9Ws02J2UFClzti"
+                            class="nav-link" target="_blank">بودكاست طويلب علم</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggleBtn" aria-label="تبديل الوضع">🌙</button>
+                <a href="advising.html" class="nav-cta">ابدأ استشارة</a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="master-service-section">
+        <div class="service-intro-container">
+            <img src="https://pub-a79fe43b6f7746d0b960c7f56fc39224.r2.dev/1.png" class="main-img" alt="Strategy">
+
+            <h3 class="main-title">التحليلات الإحصائية</h3>
+
+            <p class="intro-text">
+                ليس مطلوباً من جميع طلبة الدراسات العليا إتقان كل ما يتعلق بالتحليلات الإحصائية، ولكن لابد من تطبيق
+                الفهم النظري على البيانات الخاصة بهم. في هذه الخدمة، نساعدك في تحويل أرقامك إلى نتائج علمية موثوقة.
+            </p>
+
+            <b class="sub-title">من يستفيد من هذه الخدمة؟</b>
+            <ul class="bullet-list">
+                <li>طلبة الدراسات العليا (الماجستير والدكتوراة).</li>
+                <li>الباحثون في المجال الطبي والعلوم الطبيعية.</li>
+            </ul>
+
+            <b class="sub-title">أكثر الخدمات طلباً:</b>
+            <ul class="bullet-list">
+                <li>تحليل البيانات باستخدام SPSS, Jamovi, Excel, ولغة R.</li>
+                <li>إعداد الرسوم البيانية والجداول التفصيلية.</li>
+                <li>كتابة النتائج الإحصائية بشكل علمي صحيح.</li>
+            </ul>
+        </div>
+
+        <div class="pricing-wrapper">
+            <div class="pricing-cards-container">
+                <div class="price-card">
+                    <div class="package-header">الباقة الأساسية</div>
+                    <div class="price-details">
+                        <span class="price-tag">استشارة مُسبقة للمشروع</span>
+                        <ul class="features-list">
+                            <li>إجراء كافة التحليلات الإحصائية.</li>
+                            <li>صياغة دقيقة لنتائج الجداول.</li>
+                            <li>تعديل جوهري واحد (Major Edit).</li>
+                            <li>دعم فني عبر الواتساب.</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/+201558087630" target="_blank" class="price-buy-button">طلب الخدمة الآن</a>
+                </div>
+
+                <div class="price-card most-chosen-card">
+                    <div class="badge-chosen">القيمة الأفضل</div>
+                    <div class="package-header">الباقة الشاملة</div>
+                    <div class="price-details">
+                        <span class="price-tag">دعم بحثي متكامل</span>
+                        <ul class="features-list">
+                            <li>كافة مميزات الباقة الأساسية.</li>
+                            <li>تعديلات غير محدودة (Unlimited).</li>
+                            <li>جلسة زووم لشرح النتائج بالتفصيل.</li>
+                            <li>المساعدة في الرد على تعليقات المحكمين.</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/+201558087630" target="_blank" class="price-buy-button">اطلب الباقة
+                        الشاملة</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <div class="newsletter-section">
+        <div class="newsletter-content">
+            <h2>اشترك في النشرة البريدية</h2>
+            <p>احصل على أحدث المصادر، المقالات، والنصائح البحثية مباشرة إلى بريدك الإلكتروني.</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" id="newsletterEmail" class="newsletter-input" placeholder="البريد الإلكتروني"
+                    required>
+                <button type="submit" class="newsletter-btn">اشترك الآن</button>
+            </form>
+            <div class="newsletter-message" id="newsletterMsg" style="min-height: 27px;"></div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col footer-about">
+                <h3>محمد النجار</h3>
+                <p>استشاري إحصائي وباحث متخصص. أساعد الباحثين وطلاب الدراسات العليا في إنجاز أبحاثهم بدقة علمية ومنهجية
+                    رصينة.</p>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@muhamedelnaggar" target="_blank">YouTube</a>
+                    <a href="https://www.linkedin.com/in/muhamedelnaggar" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3>روابط سريعة</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">عن محمد</a></li>
+                    <li><a href="stats.html">تحليل إحصائي</a></li>
+                    <li><a href="https://www.youtube.com/playlist?list=PL9GrBMsvivVXepashqv9Ws02J2UFClzti"
+                            target="_blank">بودكاست طويلب علم</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>تواصل معنا</h3>
+                <ul class="footer-links">
+                    <li><a href="advising.html">حجز استشارة</a></li>
+                    <li><a href="mailto:info@muhamedelnaggar.com">info@muhamedelnaggar.com</a></li>
+                    <li><a href="mailto:info@muhamedelnaggar.com">info@muhamedelnaggar.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Muhamed Elnaggar. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- GSAP Animations -->
+    <script src="assets/js/vendor/gsap.min.js"></script>
+    <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

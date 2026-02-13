@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حجز استشارة - د. محمد النجار</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/img/logo.png" alt="Naggar Logo" class="brand-logo">
+            </a>
+            <div class="nav-controls">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+                    <li><a href="stats.html" class="nav-link">تحليل إحصائي</a></li>
+                    <li><a href="about.html" class="nav-link">عن محمد</a></li>
+                    <li><a href="https://www.youtube.com/playlist?list=PL9GrBMsvivVXepashqv9Ws02J2UFClzti"
+                            class="nav-link" target="_blank">بودكاست طويلب علم</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggleBtn" aria-label="تبديل الوضع">🌙</button>
+                <a href="advising.html" class="nav-cta">ابدأ استشارة</a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content visible advising-page">
+        <!-- HERO -->
+        <section class="advising-hero">
+            <div class="advising-bg-shape shape-1"></div>
+            <div class="advising-bg-shape shape-2"></div>
+            <div class="container" data-gsap="fade-up">
+                <span class="badge">نخبة الاستشارات البحثية</span>
+                <h1>حوّل تعثرك البحثي إلى إنجاز أكاديمي متقن</h1>
+                <p class="intro-quote">
+                    "كثير من المشاريع البحثية لا تفشل بسبب ضعف الجهد، بل بسبب أخطاء منهجية كان يمكن تجنبها باستشارة
+                    واحدة في الوقت المناسب."
+                </p>
+                <div class="hero-actions">
+                    <a href="booking.html" class="btn btn-accent btn-lg">
+                        <span>احجز موعدك الآن</span>
+                    </a>
+                    <p class="sessions-stat">أكثر من 200+ ساعة استشارية تم تقديمها</p>
+                </div>
+
+                <div class="image-comparison-grid">
+                    <div class="image-container" data-gsap="fade-right">
+                        <img src="https://pub-a79fe43b6f7746d0b960c7f56fc39224.r2.dev/advising-session.jpg"
+                            alt="د. محمد النجار">
+                        <div class="image-label">عن بعد (Zoom meeting)</div>
+                    </div>
+                    <div class="image-container" data-gsap="fade-left">
+                        <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/Whiteboard%2027.png"
+                            alt="شرح عملي">
+                        <div class="image-label">شرح تفاعلي (Whiteboard)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFO SECTION -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title" data-gsap="fade-up">
+                    <span class="section-tag">التفاصيل</span>
+                    <h2>كل ما تحتاج معرفته عن الجلسة</h2>
+                    <p>إجابات واضحة لمساعدتك في اتخاذ القرار الصحيح لمستقبلك البحثي.</p>
+                </div>
+
+                <div class="accordion-container" data-gsap="fade-up">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <h3>لمن هذه الجلسة الاستشارية؟</h3>
+                            <span class="plus-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y1="19"></line>
+                                    <line x1="5" y1="12" x2="19" y1="12"></line>
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="inner-box">
+                                <p>صُممت هذه الجلسة خصيصاً لطلبة الدراسات العليا (ماجستير ودكتوراه) والباحثين في
+                                    المجالات الطبية والعلوم الحياتية الذين يبحثون عن إجابات دقيقة وموثوقة لتحريك عجلة
+                                    بحثهم للأمام.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <h3>أكثر المواضيع مناقشة في الجلسات</h3>
+                            <span class="plus-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y1="19"></line>
+                                    <line x1="5" y1="12" x2="19" y1="12"></line>
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="inner-box">
+                                <ul class="checklist">
+                                    <li>اختيار فكرة بحثية لرسالة الماجستير أو الدكتوراه.</li>
+                                    <li>التأكد من صحة الفكرة البحثية وصياغة الفرضيات.</li>
+                                    <li>مناقشة الخطوات العملية للفكرة البحثية من البداية حتى النشر.</li>
+                                    <li>الرد على أسئلة وتعليقات المشرفين والمحكمين الأجانب.</li>
+                                    <li>تعلم مهارات تطبيقية معقدة (مثل الرسوم التوضيحية، PRISMA، وغيرها).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <h3>ما الذي تحصل عليه بعد الجلسة؟</h3>
+                            <span class="plus-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y1="19"></line>
+                                    <line x1="5" y1="12" x2="19" y1="12"></line>
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="inner-box">
+                                <div class="perks-grid">
+                                    <div class="perk-item">
+                                        <h4>تسجيل المحاضرة</h4>
+                                        <p>فيديو كامل للمراجعة في أي وقت</p>
+                                    </div>
+                                    <div class="perk-item">
+                                        <h4>النقوشات اليدوية</h4>
+                                        <p>كافة الرسومات والشروحات التوضيحية</p>
+                                    </div>
+                                    <div class="perk-item">
+                                        <h4>قائمة المصادر</h4>
+                                        <p>روابط ومراجع مخصصة لمشروعك</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+        <section class="section pricing-section">
+            <div class="container">
+                <div class="pricing-card" data-gsap="fade-up">
+                    <div class="pricing-badge">الأكثر طلباً</div>
+                    <b>الاستشارة الفردية</b>
+                    <div class="price-wrapper">
+                        <span class="original-price">150 دولار</span>
+                        <b class="discounted-price">100 دولار</b>
+                    </div>
+                    <p class="pricing-note">توفير 33% لفترة محدودة</p>
+
+                    <div class="pricing-features">
+                        <span>• جلسة مباشرة 60 دقيقة</span>
+                        <span>• إجابات على كافة تساؤلاتك</span>
+                        <span>• خطة عمل واضحة للمستقبل</span>
+                    </div>
+
+                    <div class="dual-buttons">
+                        <a href="booking.html" class="btn btn-accent btn-lg btn-block">
+                            احجز مكانك الآن
+                        </a>
+                        <a href="https://wa.me/+201558087630" target="_blank"
+                            class="btn btn-outline btn-lg btn-block whatsapp-btn">
+                            استفسر عبر واتساب
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="testimonials-section section">
+            <div class="container">
+                <div class="section-title" data-gsap="fade-up">
+                    <span class="section-tag">آراء</span>
+                    <h2>ماذا يقول الباحثون</h2>
+                </div>
+                <div class="testimonials-grid" data-gsap="stagger-up">
+                    <div class="testimonial-card">
+                        <div class="quote-icon">“</div>
+                        <p class="quote-text">هذه الجلسة كانت خطوة حاسمة في رحلتي للدكتوراه، فقد أوضحت كل أفكاري ووجهتني
+                            جيداً في الاتجاه الصحيح.</p>
+                        <div class="testimonial-footer">
+                            <div class="client-info">
+                                <div class="client-name">ماجد الأحمد</div>
+                                <div class="client-role">جامعة كينغز كوليدج لندن</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card highlighted">
+                        <div class="quote-icon">“</div>
+                        <p class="quote-text">كان عندي لبس كبير في منهجية PRISMA، والاستشارة وضّحت لي الخطوات بدقة
+                            وسهّلت عليّ التطبيق العملي الفوري.</p>
+                        <div class="testimonial-footer">
+                            <div class="client-info">
+                                <div class="client-name">أحمد الرائس</div>
+                                <div class="client-role">وزارة الصحة، الكويت</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="quote-icon">“</div>
+                        <p class="quote-text">أرى هذه الجلسة ضرورية لأي طالب دراسات عليا ليفهم حقاً ما سيواجهه ويختصر
+                            عليه شهوراً من التخبط.</p>
+                        <div class="testimonial-footer">
+                            <div class="client-info">
+                                <div class="client-name">منى الزهراني</div>
+                                <div class="client-role">جامعة الملك سعود</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- NEWSLETTER -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-inner">
+                    <h2>اشترك في النشرة البريدية</h2>
+                    <p>احصل على أحدث المصادر والنصائح البحثية مباشرة إلى بريدك الإلكتروني.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" id="newsletterEmail" class="newsletter-input"
+                            placeholder="البريد الإلكتروني" required>
+                        <button type="submit" class="newsletter-btn">اشترك</button>
+                    </form>
+                    <div class="newsletter-message" id="newsletterMsg"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h3>Naggar | نجار</h3>
+                    <p>استشاري إحصائي وباحث متخصص. أساعد الباحثين وطلاب الدراسات العليا في إنجاز أبحاثهم بدقة علمية
+                        ومنهجية رصينة.</p>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@muhamedelnaggar" target="_blank">YouTube</a>
+                        <a href="https://www.linkedin.com/in/muhamedelnaggar" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">عن محمد</a></li>
+                        <li><a href="stats.html">تحليل إحصائي</a></li>
+                        <li><a href="https://www.youtube.com/playlist?list=PL9GrBMsvivVXepashqv9Ws02J2UFClzti"
+                                target="_blank">بودكاست طويلب علم</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>تواصل معنا</h3>
+                    <ul class="footer-links">
+                        <li><a href="advising.html">حجز استشارة</a></li>
+                        <li><a href="mailto:info@muhamedelnaggar.com">info@muhamedelnaggar.com</a></li>
+                        <li><a href="mailto:info@muhamedelnaggar.com">info@muhamedelnaggar.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Naggar | نجار — جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="assets/js/vendor/gsap.min.js"></script>
+    <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
