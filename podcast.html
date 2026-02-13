@@ -26,7 +26,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="index.html" class="brand">
-                <img src="assets/img/logo.png" alt="Naggar Logo" class="brand-logo">
+                <img src="assets/img/logo20.png" alt="Naggar Logo" class="brand-logo">
             </a>
             <div class="nav-controls">
                 <ul class="nav-links" id="navLinks">
@@ -43,135 +43,88 @@
         </div>
     </nav>
 
-    <div class="master-site-wrapper">
-        <section class="cards-section">
-            <h2 class="cards-header">مصادر البحث والإحصاء </h2>
-            <div class="cards-grid">
-                <div class="card udemy-card">
-                    <div class="card-body">
-                        <p style="color:var(--udemy-buy-color);font-weight:700;">🔥 دورة احترافية على Udemy</p>
-                        <h3>Master database searching</h3>
-                        <p class="card-desc">المهارة الأهم لكل باحث: كيف تبحث بكفاءة لإعداد مراجعة منهجية.</p>
-                    </div>
-                    <div class="udemy-meta">
-                        <strong>4.6</strong> ★★★★☆ | <strong>1 ساعة</strong> | <strong>+720</strong> طالب<br><br>
-                        <a href="https://www.udemy.com/course/searching-databases/?referralCode=0A0C71230D05A267E1B7"
-                            class="buy-btn" target="_blank" rel="noopener noreferrer">التسجيل الآن</a>
-                    </div>
+    <main class="page-content visible">
+        <div class="master-site-wrapper" style="padding-top: 100px;">
+            <div class="podcast-hero" style="text-align: center; margin-bottom: 60px;">
+                <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 20px;">بودكاست ومصادر تعليمية</h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+                    مجموعة مختارة من البودكاست والمصادر التي تساعدك في رحلتك العلمية والبحثية.
+                </p>
+            </div>
+
+            <div class="podcast-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 80px;">
+                <div class="podcast-card"
+                    style="background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 30px; transition: transform 0.3s ease;">
+                    <h3>بودكاست طويلب علم</h3>
+                    <p>بودكاست يجمع بين العلم والحكايات، نتحدث فيه عن رحلة البحث العلمي وتحدياتها.</p>
+                    <a href="https://www.youtube.com/playlist?list=PL9GrBMsvivVXepashqv9Ws02J2UFClzti" target="_blank"
+                        class="btn btn-accent" style="margin-top: 20px; display: inline-block;">استمع الآن</a>
                 </div>
-                <div class="card yt-card">
-                    <div class="card-body">
-                        <h3>الإحصاء الحيوي 101</h3>
-                        <p class="card-desc">دليلك العملي لفهم المبادئ الإحصائية الأساسية.</p>
-                    </div>
-                    <div class="card-video">
-                        <div class="video-container"><a
-                                href="https://www.youtube.com/playlist?list=PL9GrBMsvivVWZ2Ztg5VXzKhxVF2F1q5Ld"
-                                class="video-btn" target="_blank" rel="noopener noreferrer"></a><img
-                                src="https://pub-5ffbaa38106d451ba0b52807cf3ad274.r2.dev/Biostats%20101%20Thumbnail.png">
+
+                <div class="podcast-card"
+                    style="background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 30px; transition: transform 0.3s ease;">
+                    <h3>أساسيات البحث العلمي</h3>
+                    <p>سلسلة دروس مخصصة للمبتدئين في عالم البحث العلمي، من الفكرة وحتى النشر.</p>
+                    <a href="https://www.youtube.com/playlist?list=PL9GrBMsvivVWZ2Ztg5VXzKhxVF2F1q5Ld" target="_blank"
+                        class="btn btn-outline" style="margin-top: 20px; display: inline-block;">شاهد السلسلة</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEWSLETTER -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-inner">
+                    <h2>اشترك في النشرة البريدية</h2>
+                    <p>احصل على أحدث المصادر والنصائح البحثية مباشرة إلى بريدك الإلكتروني.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" id="newsletterEmail" class="newsletter-input"
+                            placeholder="البريد الإلكتروني" required>
+                        <button type="submit" class="newsletter-btn">اشترك</button>
+                    </form>
+                    <div class="newsletter-message" id="newsletterMsg"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col footer-about">
+                        <h3>Naggar | نجار</h3>
+                        <p>استشاري إحصائي وباحث متخصص. أساعد الباحثين وطلاب الدراسات العليا في إنجاز أبحاثهم بدقة علمية
+                            ومنهجية رصينة.</p>
+                        <div class="social-links">
+                            <a href="https://www.youtube.com/@muhamedelnaggar" target="_blank">YouTube</a>
+                            <a href="https://www.linkedin.com/in/muhamedelnaggar" target="_blank">LinkedIn</a>
                         </div>
                     </div>
-                </div>
-                <div class="card yt-card">
-                    <div class="card-body">
-                        <h3>المراجعات المنهجية</h3>
-                        <p class="card-desc">تعلم كيفية إجراء مراجعات منهجية دقيقة.</p>
+                    <div class="footer-col">
+                        <h3>روابط سريعة</h3>
+                        <ul class="footer-links">
+                            <li><a href="index.html">الرئيسية</a></li>
+                            <li><a href="about.html">عن محمد</a></li>
+                            <li><a href="stats.html">تحليل إحصائي</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PL9GrBMsvivVXepashqv9Ws02J2UFClzti"
+                                    target="_blank">بودكاست طويلب علم</a></li>
+                        </ul>
                     </div>
-                    <div class="card-video">
-                        <div class="video-container"><a
-                                href="https://www.youtube.com/playlist?list=PL9GrBMsvivVWMywC_8aSJqU6RdwLmbVmC"
-                                class="video-btn" target="_blank" rel="noopener noreferrer"></a><img
-                                src="https://pub-5ffbaa38106d451ba0b52807cf3ad274.r2.dev/sys%20reviews.jpg"></div>
-                    </div>
-                </div>
-                <div class="card yt-card">
-                    <div class="card-body">
-                        <h3>أساسيات البحث العلمي</h3>
-                        <p class="card-desc">كل ما تحتاجه للبدء في رحلتك البحثية بنجاح.</p>
-                    </div>
-                    <div class="card-video">
-                        <div class="video-container"><a
-                                href="https://www.youtube.com/playlist?list=PL9GrBMsvivVUzs49w_nFdKu74AtwFdH5H"
-                                class="video-btn" target="_blank" rel="noopener noreferrer"></a><img
-                                src="https://pub-5ffbaa38106d451ba0b52807cf3ad274.r2.dev/basics%20101.webp"></div>
+                    <div class="footer-col">
+                        <h3>تواصل معنا</h3>
+                        <ul class="footer-links">
+                            <li><a href="advising.html">حجز استشارة</a></li>
+                            <li><a href="mailto:info@muhamedelnaggar.com">info@muhamedelnaggar.com</a></li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="articles-section">
-            <h2 class="slider-title" style="text-align:right;">المقالات والمصادر</h2>
-            <ul class="articles-list">
-                <li><a href="/master-stats" class="article-link" target="_blank" rel="noopener noreferrer">
-                        <h4>ازاي تعمل الإحصاء بتاعت الرسالة بتاعتك</h4><span class="article-line"></span><span
-                            class="article-date">Oct 7, 2024</span>
-                    </a></li>
-                <li><a href="/reviews-types" class="article-link" target="_blank" rel="noopener noreferrer">
-                        <h4>الفرق بين أنواع الريفيوهات العلمية</h4><span class="article-line"></span><span
-                            class="article-date">Oct 7, 2024</span>
-                    </a></li>
-                <li><a href="/risk-of-bias-assesment" class="article-link" target="_blank" rel="noopener noreferrer">
-                        <h4>الدليل الشامل للrisk of bias assesment</h4><span class="article-line"></span><span
-                            class="article-date">Oct 5, 2024</span>
-                    </a></li>
-                <li><a href="/telegram-bot" class="article-link" target="_blank" rel="noopener noreferrer">
-                        <h4>أداة التليجرام لتعلم البحث العلمي</h4><span class="article-line"></span><span
-                            class="article-date">Jan 10, 2024</span>
-                    </a></li>
-            </ul>
-        </section>
-    </div>
-
-    <!-- Newsletter Section -->
-    <div class="newsletter-section">
-        <div class="newsletter-content">
-            <h2>اشترك في النشرة البريدية</h2>
-            <p>احصل على أحدث المصادر، المقالات، والنصائح البحثية مباشرة إلى بريدك الإلكتروني.</p>
-            <form class="newsletter-form" id="newsletterForm">
-                <input type="email" id="newsletterEmail" class="newsletter-input" placeholder="البريد الإلكتروني"
-                    required>
-                <button type="submit" class="newsletter-btn">اشترك الآن</button>
-            </form>
-            <div class="newsletter-message" id="newsletterMsg" style="min-height: 27px;"></div>
-        </div>
-    </div>
-
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-col footer-about">
-                <h3>محمد النجار</h3>
-                <p>استشاري إحصائي وباحث متخصص. أساعد الباحثين وطلاب الدراسات العليا في إنجاز أبحاثهم بدقة علمية ومنهجية
-                    رصينة.</p>
-                <div class="social-links">
-                    <a href="https://www.youtube.com/@muhamedelnaggar" target="_blank">YouTube</a>
-                    <a href="https://www.linkedin.com/in/muhamedelnaggar" target="_blank">LinkedIn</a>
+                <div class="footer-bottom">
+                    <p>© 2026 Naggar | نجار — جميع الحقوق محفوظة</p>
                 </div>
             </div>
-
-            <div class="footer-col">
-                <h3>روابط سريعة</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="about.html">عن محمد</a></li>
-                    <li><a href="stats.html">تحليل إحصائي</a></li>
-                    <li><a href="https://www.youtube.com/playlist?list=PL9GrBMsvivVXepashqv9Ws02J2UFClzti"
-                            target="_blank">بودكاست طويلب علم</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h3>تواصل معنا</h3>
-                <ul class="footer-links">
-                    <li><a href="advising.html">حجز استشارة</a></li>
-                    <li><a href="mailto:info@muhamedelnaggar.com">info@muhamedelnaggar.com</a></li>
-                    <li><a href="mailto:info@muhamedelnaggar.com">info@muhamedelnaggar.com</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 Muhamed Elnaggar. جميع الحقوق محفوظة.</p>
-        </div>
-    </footer>
+        </footer>
+    </main>
 
     <!-- GSAP Animations -->
     <script src="assets/js/vendor/gsap.min.js"></script>
