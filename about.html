@@ -145,7 +145,7 @@
 
         .timeline-milestone {
             position: relative;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             padding-right: 80px;
         }
 
@@ -169,10 +169,11 @@
             top: 4px;
             font-weight: 800;
             color: var(--accent);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             background: rgba(var(--accent-rgb), 0.1);
             padding: 2px 10px;
             border-radius: 50px;
+            white-space: nowrap;
         }
 
         .milestone-content {
@@ -193,12 +194,12 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .milestone-logo {
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             object-fit: contain;
             border-radius: 10px;
             background: #fff;
@@ -207,35 +208,48 @@
         }
 
         .milestone-title h3 {
-            font-size: 1.15rem;
-            margin-bottom: 4px;
+            font-size: 1.1rem;
+            margin-bottom: 2px;
         }
 
         .milestone-title p {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
             font-weight: 500;
         }
 
         .milestone-desc {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             line-height: 1.6;
             color: var(--text-secondary);
         }
 
         .milestone-tags {
-            margin-top: 15px;
+            margin-top: 12px;
             display: flex;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
         }
 
         .milestone-tag {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             padding: 2px 8px;
             background: var(--background);
             border-radius: 4px;
             color: var(--text-muted);
+        }
+
+        .milestone-img-box {
+            margin-top: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .milestone-img-box img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
         }
 
         @media (max-width: 768px) {
@@ -292,7 +306,9 @@
                 </div>
                 <h1 class="hero-name">محمد النجار</h1>
                 <p class="hero-tagline">
-                    باحث في المعلوماتية الحيوية | خبير في التعلم الآلي | المؤسس والرئيس التنفيذي لشركة Naggar Analytics
+                    Bioinformatics | Machine Learning | Science Communication
+                    <br>
+                    المؤسس والرئيس التنفيذي لشركة **Naggar Analytics**
                     <br>
                     <small style="font-size: 0.9rem; opacity: 0.8;">الرياض، المملكة العربية السعودية 🇸🇦</small>
                 </p>
@@ -313,9 +329,12 @@
                             <span class="skill-pill">Biostatistics</span>
                             <span class="skill-pill">R Language</span>
                             <span class="skill-pill">Python</span>
-                            <span class="skill-pill">SPSS / Jamovi</span>
+                            <span class="skill-pill">SPSS / Jamovi / JASP</span>
                             <span class="skill-pill">Single Cell Analysis</span>
                             <span class="skill-pill">Meta-Analysis</span>
+                            <span class="skill-pill">Systematic Review</span>
+                            <span class="skill-pill">Scientific Writing</span>
+                            <span class="skill-pill">Molecular Biology Techniques</span>
                         </div>
                     </div>
                     <!-- Soft Skills -->
@@ -326,8 +345,8 @@
                             <span class="skill-pill">Leadership</span>
                             <span class="skill-pill">Public Speaking</span>
                             <span class="skill-pill">Content Creation</span>
+                            <span class="skill-pill">Photo & Video Editing</span>
                             <span class="skill-pill">Project Management</span>
-                            <span class="skill-pill">Strategic Planning</span>
                         </div>
                     </div>
                 </div>
@@ -339,7 +358,7 @@
             <div class="container">
                 <div style="text-align: center; margin-top: 80px;">
                     <h2 style="font-size: 2.5rem; margin-bottom: 20px;">الجدول الزمني للرحلة</h2>
-                    <p style="color: var(--text-muted);">تسلسل هرمي للمؤهلات والخبرات المهنية</p>
+                    <p style="color: var(--text-muted);">التسلسل الهرمي للمؤهلات والخبرات المهنية والتأثير</p>
                 </div>
 
                 <div class="hierarchy-timeline">
@@ -357,10 +376,6 @@
                             </div>
                             <p class="milestone-desc">قيادة رؤية الشركة لتقديم حلول إحصائية متقدمة وأبحاث عالية الدقة
                                 للباحثين والمؤسسات العلمية.</p>
-                            <div class="milestone-tags">
-                                <span class="milestone-tag">Executive Leadership</span>
-                                <span class="milestone-tag">Business Strategy</span>
-                            </div>
                         </div>
                     </div>
 
@@ -383,7 +398,7 @@
 
                     <!-- 2025 - Technical Director -->
                     <div class="timeline-milestone">
-                        <span class="milestone-year">2025</span>
+                        <span class="milestone-year">2025 - الآن</span>
                         <div class="milestone-content">
                             <div class="milestone-header">
                                 <div class="milestone-title">
@@ -413,7 +428,7 @@
                         </div>
                     </div>
 
-                    <!-- Clinical Data Specialist -->
+                    <!-- 2023 - Mendel AI -->
                     <div class="timeline-milestone">
                         <span class="milestone-year">2023</span>
                         <div class="milestone-content">
@@ -430,7 +445,41 @@
                         </div>
                     </div>
 
-                    <!-- BSc 2021 -->
+                    <!-- Elsevier -->
+                    <div class="timeline-milestone">
+                        <span class="milestone-year">خبير معتمد</span>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/Mendeley.png"
+                                    class="milestone-logo" alt="Mendeley">
+                                <div class="milestone-title">
+                                    <h3>Mendeley Advisor</h3>
+                                    <p>Elsevier</p>
+                                </div>
+                            </div>
+                            <p class="milestone-desc">توجيه وتدريب الباحثين على أدوات إدارة المراجع والبحث العلمي بموجب
+                                اعتماد شركة Elsevier.</p>
+                        </div>
+                    </div>
+
+                    <!-- Guidepoint -->
+                    <div class="timeline-milestone">
+                        <span class="milestone-year">خبير دولي</span>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/Guidepoint-Logo-large.jpg"
+                                    class="milestone-logo" alt="Guidepoint">
+                                <div class="milestone-title">
+                                    <h3>Subject Matter Expert</h3>
+                                    <p>Guidepoint New York</p>
+                                </div>
+                            </div>
+                            <p class="milestone-desc">تقديم استشارات متخصصة لشبكة الخبراء العالمية في المجالات التقنية
+                                والعلمية.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2021 - BSc -->
                     <div class="timeline-milestone">
                         <span class="milestone-year">2021</span>
                         <div class="milestone-content">
@@ -442,13 +491,30 @@
                                     <p>جامعة عين شمس</p>
                                 </div>
                             </div>
-                            <p class="milestone-desc">تأسيس أكاديمي قوي في العمليات الحيوية والكيمياء التحليلية.</p>
+                            <p class="milestone-desc">تأسيس أكاديمي قوي في الكيمياء الحيوية والعمليات الجزيئية.</p>
                         </div>
                     </div>
 
-                    <!-- Leadership / Founder Tetraploid -->
+                    <!-- CMCCM -->
                     <div class="timeline-milestone">
-                        <span class="milestone-year">الرواد</span>
+                        <span class="milestone-year">البدايات البحثية</span>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/cmccm.png"
+                                    class="milestone-logo" alt="CMCCM">
+                                <div class="milestone-title">
+                                    <h3>باحث مساعد - CMCCM</h3>
+                                    <p>كلية الطب، جامعة قناة السويس</p>
+                                </div>
+                            </div>
+                            <p class="milestone-desc">العمل في مركز التميز في البيولوجيا الجزيئية والطب لتطوير الأبحاث
+                                الأساسية.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tetraploid -->
+                    <div class="timeline-milestone">
+                        <span class="milestone-year">تأسيس وقيادة</span>
                         <div class="milestone-content">
                             <div class="milestone-header">
                                 <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/logo%20tetra.png"
@@ -458,8 +524,71 @@
                                     <p>مبادرة بحثية مستقلة</p>
                                 </div>
                             </div>
-                            <p class="milestone-desc">قيادة فريق من الباحثين لنشر أبحاث في مجلات دولية مرموقة مثل Nature
-                                (Scientific Reports).</p>
+                            <p class="milestone-desc">تأسيس أول فريق بحثي مستقل ناجح في نشر أبحاث دولية في دوريات
+                                مرموقة.</p>
+                        </div>
+                    </div>
+
+                    <!-- Zewail City -->
+                    <div class="timeline-milestone">
+                        <span class="milestone-year">تأثير مجتمعي</span>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/zcf%20logo%20.jpeg"
+                                    class="milestone-logo" alt="ZCF">
+                                <div class="milestone-title">
+                                    <h3>أصدقاء مدينة زويل (ZCF)</h3>
+                                    <p>رئاسة اللجنة التنظيمية</p>
+                                </div>
+                            </div>
+                            <p class="milestone-desc">نشر العلوم والوعي التكنولوجي في المجتمع المصري من خلال مدينة زويل
+                                للعلوم والتكنولوجيا.</p>
+                            <div class="milestone-img-box">
+                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/zcf%201.jpg"
+                                    alt="ZCF Activity">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GOL Team -->
+                    <div class="timeline-milestone">
+                        <span class="milestone-year">2014</span>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/GOL%20logo%20.jpg"
+                                    class="milestone-logo" alt="GOL">
+                                <div class="milestone-title">
+                                    <h3>رئيس اللوجستيات - فريق GOL</h3>
+                                    <p>مشروع جامعة Stanford - السفارة الأمريكية</p>
+                                </div>
+                            </div>
+                            <p class="milestone-desc">إدارة العمليات اللوجستية لمشروعات القيادة والابتكار تحت إشراف
+                                جامعة ستانفورد.</p>
+                            <div class="milestone-img-box">
+                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/GOL%20photo.jpg"
+                                    alt="GOL Activity">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Amideast -->
+                    <div class="timeline-milestone">
+                        <span class="milestone-year">تطوير قيادي</span>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/CCC%20logo.jpg"
+                                    class="milestone-logo" alt="CCC">
+                                <div class="milestone-title">
+                                    <h3>Competitive College Club</h3>
+                                    <p>Amideast - برنامج السفارة الأمريكية</p>
+                                </div>
+                            </div>
+                            <p class="milestone-desc">برنامج مكثف لتطوير المهارات القيادية والأكاديمية والتبادل الثقافي.
+                            </p>
+                            <div class="milestone-img-box">
+                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/ccc%20photo%201.jpg"
+                                    alt="Amideast Meeting">
+                            </div>
                         </div>
                     </div>
 
@@ -542,7 +671,7 @@
             y: 50,
             opacity: 0,
             duration: 1,
-            stagger: 0.2,
+            stagger: 0.1,
             ease: "power2.out"
         });
 
