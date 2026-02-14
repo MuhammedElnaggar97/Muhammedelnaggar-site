@@ -13,262 +13,313 @@
 
         gtag('config', 'G-YBZ9P9EPNN');
     </script>
-    <title>عن محمد النجار - رحلة البحث والابتكار</title>
+    <title>About | Mohamed Elnaggar</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        /* Custom Styles for Redesigned About Page */
         :root {
-            --timeline-line: var(--border);
-            --timeline-dot: var(--accent);
+            --premium-gold: #c5a059;
+            --premium-dark: #0f172a;
+            --premium-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
-        .about-hero {
-            padding: 120px 0 60px;
-            text-align: center;
-            background: radial-gradient(circle at center, rgba(var(--accent-rgb), 0.05) 0%, transparent 70%);
+        body {
+            background-color: var(--background);
+            overflow-x: hidden;
         }
 
-        .profile-container {
-            margin-bottom: 30px;
+        /* --- Luxury Hero Section --- */
+        .premium-about-hero {
             position: relative;
-            display: inline-block;
+            padding: 160px 0 100px;
+            background: var(--premium-gradient);
+            color: #fff;
+            overflow: hidden;
         }
 
-        .profile-img {
-            width: 180px;
-            height: 180px;
+        .premium-about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            opacity: 0.1;
+        }
+
+        .hero-floating-circle {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(var(--accent-rgb), 0.15) 0%, transparent 70%);
             border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--surface);
-            box-shadow: var(--shadow-lg);
-            background: var(--surface);
+            top: -100px;
+            left: -100px;
+            filter: blur(50px);
         }
 
-        .hero-name {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+        .about-main-title {
+            font-family: 'Tajawal', sans-serif;
+            font-size: clamp(3rem, 8vw, 5rem);
             font-weight: 900;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #fff, var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .hero-tagline {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 30px;
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 800px;
+            margin: 0 auto 40px;
             line-height: 1.6;
         }
 
-        /* Skills Section */
-        .skills-section {
-            padding: 60px 0;
-            background: var(--surface);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .skills-matrix {
+        /* --- Stats/Influence Bar --- */
+        .influence-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 60px;
         }
 
-        .skill-category {
-            background: var(--background);
+        .influence-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
             padding: 30px;
-            border-radius: 24px;
-            border: 1px solid var(--border);
-            transition: var(--transition);
+            border-radius: 30px;
+            text-align: center;
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .skill-category:hover {
-            transform: translateY(-5px);
+        .influence-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.07);
             border-color: var(--accent);
-            box-shadow: var(--shadow-md);
         }
 
-        .skill-category h3 {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1.25rem;
-        }
-
-        .skill-pills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-pill {
-            padding: 6px 14px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            font-size: 0.88rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            transition: var(--transition);
-        }
-
-        .skill-pill:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: rgba(var(--accent-rgb), 0.05);
-        }
-
-        /* Hierarchical Timeline */
-        .hierarchy-timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-
-        .hierarchy-timeline::before {
-            content: '';
-            position: absolute;
-            right: 50px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--accent) 0%, var(--border) 100%);
-        }
-
-        .timeline-milestone {
-            position: relative;
-            margin-bottom: 40px;
-            padding-right: 80px;
-        }
-
-        .timeline-milestone::after {
-            content: '';
-            position: absolute;
-            right: 44px;
-            top: 10px;
-            width: 14px;
-            height: 14px;
-            background: var(--surface);
-            border: 3px solid var(--accent);
-            border-radius: 50%;
-            z-index: 2;
-            box-shadow: 0 0 0 4px var(--background);
-        }
-
-        .milestone-year {
-            position: absolute;
-            right: 110px;
-            top: 4px;
+        .influence-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
             font-weight: 800;
+            display: block;
             color: var(--accent);
-            font-size: 0.8rem;
-            background: rgba(var(--accent-rgb), 0.1);
-            padding: 2px 10px;
-            border-radius: 50px;
-            white-space: nowrap;
         }
 
-        .milestone-content {
+        .influence-label {
+            font-size: 1rem;
+            color: #fff;
+            opacity: 0.8;
+            font-weight: 600;
+        }
+
+        /* --- Skills Section (Luxury Grid) --- */
+        .luxury-skills-section {
+            padding: 100px 0;
+            background: var(--background);
+        }
+
+        .skills-bento {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 25px;
+        }
+
+        .bento-item {
             background: var(--surface);
-            padding: 24px;
-            border-radius: 20px;
             border: 1px solid var(--border);
+            border-radius: 40px;
+            padding: 40px;
             transition: var(--transition);
-            box-shadow: var(--shadow-sm);
         }
 
-        .milestone-content:hover {
-            box-shadow: var(--shadow-md);
-            border-color: rgba(var(--accent-rgb), 0.3);
+        .bento-item:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-xl);
         }
 
-        .milestone-header {
+        .bento-item.large {
+            grid-column: span 7;
+        }
+
+        .bento-item.medium {
+            grid-column: span 5;
+        }
+
+        .bento-item.full {
+            grid-column: span 12;
+        }
+
+        .bento-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: var(--text);
             display: flex;
             align-items: center;
             gap: 15px;
-            margin-bottom: 12px;
         }
 
-        .milestone-logo {
-            width: 44px;
-            height: 44px;
-            object-fit: contain;
-            border-radius: 10px;
-            background: #fff;
-            padding: 4px;
+        /* --- Unified Hierarchical History --- */
+        .history-section {
+            padding: 100px 0;
+            background: var(--surface);
+        }
+
+        .vertical-ladder {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .ladder-step {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .ladder-left {
+            flex: 0 0 150px;
+            text-align: left;
+            padding-top: 10px;
+        }
+
+        .step-date {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--accent);
+            position: sticky;
+            top: 120px;
+        }
+
+        .ladder-center {
+            position: relative;
+            flex: 0 0 2px;
+            background: var(--border);
+        }
+
+        .ladder-center::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            background: var(--background);
+            border: 4px solid var(--accent);
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .ladder-right {
+            flex: 1;
+            background: var(--background);
+            padding: 40px;
+            border-radius: 35px;
             border: 1px solid var(--border);
+            transition: 0.5s ease;
         }
 
-        .milestone-title h3 {
-            font-size: 1.1rem;
-            margin-bottom: 2px;
+        .ladder-step:hover .ladder-right {
+            transform: translateX(-15px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-lg);
         }
 
-        .milestone-title p {
-            font-size: 0.8rem;
+        .step-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .step-brand-info h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .step-location {
             color: var(--text-muted);
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.95rem;
         }
 
-        .milestone-desc {
-            font-size: 0.9rem;
-            line-height: 1.6;
+        .step-logo-box {
+            width: 60px;
+            height: 60px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-logo-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .step-body p {
+            font-size: 1.1rem;
+            line-height: 1.8;
             color: var(--text-secondary);
         }
 
-        .milestone-tags {
-            margin-top: 12px;
+        .media-scroller {
             display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+            overflow-x: auto;
+            padding-bottom: 15px;
         }
 
-        .milestone-tag {
-            font-size: 0.7rem;
-            padding: 2px 8px;
-            background: var(--background);
-            border-radius: 4px;
-            color: var(--text-muted);
-        }
-
-        .milestone-img-box {
-            margin-top: 15px;
-            border-radius: 12px;
+        .media-card {
+            flex: 0 0 280px;
+            border-radius: 20px;
             overflow: hidden;
             border: 1px solid var(--border);
         }
 
-        .milestone-img-box img {
+        .media-card img {
             width: 100%;
-            max-height: 200px;
+            height: 180px;
             object-fit: cover;
         }
 
-        @media (max-width: 768px) {
-            .hierarchy-timeline::before {
-                right: 20px;
+        @media (max-width: 992px) {
+            .ladder-step {
+                flex-direction: column;
+                gap: 20px;
             }
 
-            .timeline-milestone {
-                padding-right: 45px;
+            .ladder-left {
+                text-align: right;
+                flex: none;
             }
 
-            .timeline-milestone::after {
-                right: 14px;
+            .ladder-center {
+                display: none;
             }
 
-            .milestone-year {
-                position: static;
-                display: inline-block;
-                margin-bottom: 10px;
+            .ladder-step:hover .ladder-right {
+                transform: translateY(-10px);
             }
         }
     </style>
@@ -286,308 +337,283 @@
                     <li><a href="index.html" class="nav-link">الرئيسية</a></li>
                     <li><a href="stats.html" class="nav-link">تحليل إحصائي</a></li>
                     <li><a href="about.html" class="nav-link">عن محمد</a></li>
-                    <li><a href="https://www.youtube.com/playlist?list=PL9GrBMsvivVXepashqv9Ws02J2UFClzti"
-                            class="nav-link" target="_blank">بودكاست طويلب علم</a></li>
+                    <li><a href="https://www.youtube.com/@muhamedelnaggar" class="nav-link" target="_blank">يوتيوب</a>
+                    </li>
                 </ul>
-                <button class="theme-toggle" id="themeToggleBtn" aria-label="تبديل الوضع">🌙</button>
-                <a href="advising.html" class="nav-cta">ابدأ استشارة</a>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                <button class="theme-toggle" id="themeToggleBtn">🌙</button>
+                <a href="advising.html" class="nav-cta">حجز استشارة</a>
             </div>
         </div>
     </nav>
 
     <main class="page-content visible">
 
-        <!-- HERO SECTION -->
-        <section class="about-hero">
-            <div class="container">
-                <div class="profile-container">
-                    <img src="assets/img/1.png" alt="Mohamed Elnaggar" class="profile-img">
-                </div>
-                <h1 class="hero-name">محمد النجار</h1>
-                <p class="hero-tagline">
-                    Bioinformatics | Machine Learning | Science Communication
+        <!-- HERO -->
+        <section class="premium-about-hero">
+            <div class="hero-floating-circle"></div>
+            <div class="container" style="text-align: center;">
+                <h1 class="about-main-title">محمد النجار</h1>
+                <p class="hero-subtitle">
+                    Founder & CEO @ Naggar Analytics | Bioinformatics Scientist | Science Communicator
                     <br>
-                    المؤسس والرئيس التنفيذي لشركة **Naggar Analytics**
-                    <br>
-                    <small style="font-size: 0.9rem; opacity: 0.8;">الرياض، المملكة العربية السعودية 🇸🇦</small>
+                    نصنع الفرق عبر البيانات، ونبني الجسور بين العلم والمجتمع.
                 </p>
+
+                <div class="influence-grid">
+                    <div class="influence-card">
+                        <span class="influence-number">1,000,000+</span>
+                        <span class="influence-label">Views on YouTube</span>
+                    </div>
+                    <div class="influence-card">
+                        <span class="influence-number">25,000+</span>
+                        <span class="influence-label">Social Media Followers</span>
+                    </div>
+                    <div class="influence-card">
+                        <span class="influence-number">10+</span>
+                        <span class="influence-label">International Publications</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- SKILLS MATRIX -->
-        <section class="skills-section">
+        <!-- SKILLS BENTO -->
+        <section class="luxury-skills-section">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 50px;">القدرات والخبرات التقنية</h2>
-                <div class="skills-matrix">
-                    <!-- Tech Skills -->
-                    <div class="skill-category">
-                        <h3>🔬 علوم البيانات والبحث</h3>
+                <div class="skills-bento">
+                    <div class="bento-item large">
+                        <div class="bento-title">🔬 التحليل الإحصائي الحيوي</div>
                         <div class="skill-pills">
                             <span class="skill-pill">Bioinformatics</span>
-                            <span class="skill-pill">Machine Learning</span>
-                            <span class="skill-pill">Biostatistics</span>
-                            <span class="skill-pill">R Language</span>
-                            <span class="skill-pill">Python</span>
-                            <span class="skill-pill">SPSS / Jamovi / JASP</span>
-                            <span class="skill-pill">Single Cell Analysis</span>
+                            <span class="skill-pill">Single Cell RNA-seq</span>
+                            <span class="skill-pill">Biostatistics (R & Python)</span>
                             <span class="skill-pill">Meta-Analysis</span>
-                            <span class="skill-pill">Systematic Review</span>
-                            <span class="skill-pill">Scientific Writing</span>
-                            <span class="skill-pill">Molecular Biology Techniques</span>
+                            <span class="skill-pill">Systematic Reviews</span>
+                            <span class="skill-pill">SPSS / Jamovi / JASP</span>
                         </div>
                     </div>
-                    <!-- Soft Skills -->
-                    <div class="skill-category">
-                        <h3>📢 التواصل والقيادة</h3>
+                    <div class="bento-item medium">
+                        <div class="bento-title">🧠 الذكاء الاصطناعي</div>
+                        <div class="skill-pills">
+                            <span class="skill-pill">Machine Learning</span>
+                            <span class="skill-pill">Clinical Data AI</span>
+                            <span class="skill-pill">NLP for Healthcare</span>
+                        </div>
+                    </div>
+                    <div class="bento-item full">
+                        <div class="bento-title">📢 صناعة المحتوى والقيادة</div>
                         <div class="skill-pills">
                             <span class="skill-pill">Science Communication</span>
-                            <span class="skill-pill">Leadership</span>
-                            <span class="skill-pill">Public Speaking</span>
-                            <span class="skill-pill">Content Creation</span>
-                            <span class="skill-pill">Photo & Video Editing</span>
-                            <span class="skill-pill">Project Management</span>
+                            <span class="skill-pill">Leadership & Strategy</span>
+                            <span class="skill-pill">Professional Podcasting</span>
+                            <span class="skill-pill">Video Production & Design</span>
+                            <span class="skill-pill">Academic Mentoring</span>
+                            <span class="skill-pill">Community Building</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- THE HIERARCHICAL JOURNEY -->
-        <section class="journey-section">
+        <!-- HIERARCHICAL LADDER -->
+        <section class="history-section">
             <div class="container">
-                <div style="text-align: center; margin-top: 80px;">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">الجدول الزمني للرحلة</h2>
-                    <p style="color: var(--text-muted);">التسلسل الهرمي للمؤهلات والخبرات المهنية والتأثير</p>
-                </div>
+                <h2 style="text-align: center; font-size: 3rem; margin-bottom: 80px;">The Professional Odyssey</h2>
 
-                <div class="hierarchy-timeline">
+                <div class="vertical-ladder">
 
-                    <!-- 2026 Milestone - CEO -->
-                    <div class="timeline-milestone">
-                        <span class="milestone-year">2026 - الآن</span>
-                        <div class="milestone-content" style="border-right: 4px solid var(--accent);">
-                            <div class="milestone-header">
-                                <img src="assets/img/1.png" class="milestone-logo" alt="Naggar Analytics">
-                                <div class="milestone-title">
-                                    <h3>المؤسس والرئيس التنفيذي</h3>
-                                    <p>Naggar Analytics</p>
+                    <!-- CEO NAGGAR -->
+                    <div class="ladder-step">
+                        <div class="ladder-left">
+                            <span class="step-date">2026 - Present</span>
+                        </div>
+                        <div class="ladder-center"></div>
+                        <div class="ladder-right" style="border-right: 5px solid var(--accent);">
+                            <div class="step-header">
+                                <div class="step-brand-info">
+                                    <h3>Founder & CEO</h3>
+                                    <p class="step-location">Naggar Analytics | Global</p>
+                                </div>
+                                <div class="step-logo-box">
+                                    <img src="assets/img/1.png" alt="Naggar Analytics">
                                 </div>
                             </div>
-                            <p class="milestone-desc">قيادة رؤية الشركة لتقديم حلول إحصائية متقدمة وأبحاث عالية الدقة
-                                للباحثين والمؤسسات العلمية.</p>
+                            <div class="step-body">
+                                <p>بناء وقيادة مؤسسة متخصصة في التحليلات الإحصائية المتقدمة، نخدم الباحثين عالمياً
+                                    بمعايير الـ Double-blind والالتزام الأخلافي الصارم.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- 2026 - Master's -->
-                    <div class="timeline-milestone">
-                        <span class="milestone-year">2026 (متوقع)</span>
-                        <div class="milestone-content">
-                            <div class="milestone-header">
-                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/guc.png"
-                                    class="milestone-logo" alt="GUC">
-                                <div class="milestone-title">
-                                    <h3>ماجستير المعلوماتية الحيوية</h3>
-                                    <p>الجامعة الألمانية بالقاهرة (GUC)</p>
+                    <!-- TECH DIRECTOR RIYADH -->
+                    <div class="ladder-step">
+                        <div class="ladder-left">
+                            <span class="step-date">2025 - Present</span>
+                        </div>
+                        <div class="ladder-center"></div>
+                        <div class="ladder-right">
+                            <div class="step-header">
+                                <div class="step-brand-info">
+                                    <h3>Technical Director</h3>
+                                    <p class="step-location">Research Assistant for Research and Studies | Riyadh, SA
+                                    </p>
                                 </div>
                             </div>
-                            <p class="milestone-desc">تخصص متقدم في دمج علوم الأحياء مع التحليل الحاسوبي والبيانات
-                                الجينية المعقدة.</p>
+                            <div class="step-body">
+                                <p>قيادة العمليات العلمية والتقنية، وتأسيس معايير الجودة للأبحاث الأكاديمية والاستشارات
+                                    الإحصائية في المملكة.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- 2025 - Technical Director -->
-                    <div class="timeline-milestone">
-                        <span class="milestone-year">2025 - الآن</span>
-                        <div class="milestone-content">
-                            <div class="milestone-header">
-                                <div class="milestone-title">
-                                    <h3>المدير التقني | Technical Director</h3>
-                                    <p>Research Assistant for Research and Studies - الرياض</p>
-                                </div>
-                            </div>
-                            <p class="milestone-desc">الإشراف على العمليات العلمية والتقنية وتوجيه الفرق البحثية لضمان
-                                جودة المخرجات العلمية.</p>
+                    <!-- MENDEL AI -->
+                    <div class="ladder-step">
+                        <div class="ladder-left">
+                            <span class="step-date">2023 - 2024</span>
                         </div>
-                    </div>
-
-                    <!-- 2024 - ML Diploma -->
-                    <div class="timeline-milestone">
-                        <span class="milestone-year">2024</span>
-                        <div class="milestone-content">
-                            <div class="milestone-header">
-                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/guc.png"
-                                    class="milestone-logo" alt="GUC">
-                                <div class="milestone-title">
-                                    <h3>دبلوم التعلم الآلي</h3>
-                                    <p>الجامعة الألمانية بالقاهرة (GUC)</p>
-                                </div>
-                            </div>
-                            <p class="milestone-desc">دراسة مكثفة للخوارزميات والذكاء الاصطناعي وتطبيقاته في تحليل
-                                البيانات الضخمة.</p>
-                        </div>
-                    </div>
-
-                    <!-- 2023 - Mendel AI -->
-                    <div class="timeline-milestone">
-                        <span class="milestone-year">2023</span>
-                        <div class="milestone-content">
-                            <div class="milestone-header">
-                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/mendel-logo.webp"
-                                    class="milestone-logo" alt="Mendel AI">
-                                <div class="milestone-title">
+                        <div class="ladder-center"></div>
+                        <div class="ladder-right">
+                            <div class="step-header">
+                                <div class="step-brand-info">
                                     <h3>Clinical Data Specialist</h3>
-                                    <p>Mendel AI</p>
+                                    <p class="step-location">Mendel AI | Silicon Valley (Remote)</p>
+                                </div>
+                                <div class="step-logo-box">
+                                    <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/mendel-logo.webp"
+                                        alt="Mendel AI">
                                 </div>
                             </div>
-                            <p class="milestone-desc">تحليل البيانات السريرية وتحويل النصوص الطبية غير المنظمة إلى
-                                بيانات مهيكلة باستخدام AI.</p>
+                            <div class="step-body">
+                                <p>المساهمة في تطوير محركات الذكاء الاصطناعي لفهم البيانات السريرية المعقدة لمرضى
+                                    السرطان.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Elsevier -->
-                    <div class="timeline-milestone">
-                        <span class="milestone-year">خبير معتمد</span>
-                        <div class="milestone-content">
-                            <div class="milestone-header">
-                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/Mendeley.png"
-                                    class="milestone-logo" alt="Mendeley">
-                                <div class="milestone-title">
+                    <!-- ELSEVIER / MENDELEY -->
+                    <div class="ladder-step">
+                        <div class="ladder-left">
+                            <span class="step-date">Advisor Role</span>
+                        </div>
+                        <div class="ladder-center"></div>
+                        <div class="ladder-right">
+                            <div class="step-header">
+                                <div class="step-brand-info">
                                     <h3>Mendeley Advisor</h3>
-                                    <p>Elsevier</p>
+                                    <p class="step-location">Elsevier | Global</p>
+                                </div>
+                                <div class="step-logo-box">
+                                    <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/Mendeley.png"
+                                        alt="Elsevier">
                                 </div>
                             </div>
-                            <p class="milestone-desc">توجيه وتدريب الباحثين على أدوات إدارة المراجع والبحث العلمي بموجب
-                                اعتماد شركة Elsevier.</p>
+                            <div class="step-body">
+                                <p>مستشار معتمد لشركة Elsevier، قمت بتدريب آلاف الباحثين على أدوات البحث العلمي الحديثة.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Guidepoint -->
-                    <div class="timeline-milestone">
-                        <span class="milestone-year">خبير دولي</span>
-                        <div class="milestone-content">
-                            <div class="milestone-header">
-                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/Guidepoint-Logo-large.jpg"
-                                    class="milestone-logo" alt="Guidepoint">
-                                <div class="milestone-title">
+                    <!-- GUIDEPOINT -->
+                    <div class="ladder-step">
+                        <div class="ladder-left">
+                            <span class="step-date">Consultancy</span>
+                        </div>
+                        <div class="ladder-center"></div>
+                        <div class="ladder-right">
+                            <div class="step-header">
+                                <div class="step-brand-info">
                                     <h3>Subject Matter Expert</h3>
-                                    <p>Guidepoint New York</p>
+                                    <p class="step-location">Guidepoint | New York, USA</p>
+                                </div>
+                                <div class="step-logo-box">
+                                    <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/Guidepoint-Logo-large.jpg"
+                                        alt="Guidepoint">
                                 </div>
                             </div>
-                            <p class="milestone-desc">تقديم استشارات متخصصة لشبكة الخبراء العالمية في المجالات التقنية
-                                والعلمية.</p>
-                        </div>
-                    </div>
-
-                    <!-- 2021 - BSc -->
-                    <div class="timeline-milestone">
-                        <span class="milestone-year">2021</span>
-                        <div class="milestone-content">
-                            <div class="milestone-header">
-                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/Ain_Shams_logo.png"
-                                    class="milestone-logo" alt="Ain Shams">
-                                <div class="milestone-title">
-                                    <h3>بكالوريوس الكيمياء الحيوية</h3>
-                                    <p>جامعة عين شمس</p>
-                                </div>
-                            </div>
-                            <p class="milestone-desc">تأسيس أكاديمي قوي في الكيمياء الحيوية والعمليات الجزيئية.</p>
-                        </div>
-                    </div>
-
-                    <!-- CMCCM -->
-                    <div class="timeline-milestone">
-                        <span class="milestone-year">البدايات البحثية</span>
-                        <div class="milestone-content">
-                            <div class="milestone-header">
-                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/cmccm.png"
-                                    class="milestone-logo" alt="CMCCM">
-                                <div class="milestone-title">
-                                    <h3>باحث مساعد - CMCCM</h3>
-                                    <p>كلية الطب، جامعة قناة السويس</p>
-                                </div>
-                            </div>
-                            <p class="milestone-desc">العمل في مركز التميز في البيولوجيا الجزيئية والطب لتطوير الأبحاث
-                                الأساسية.</p>
-                        </div>
-                    </div>
-
-                    <!-- Tetraploid -->
-                    <div class="timeline-milestone">
-                        <span class="milestone-year">تأسيس وقيادة</span>
-                        <div class="milestone-content">
-                            <div class="milestone-header">
-                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/logo%20tetra.png"
-                                    class="milestone-logo" alt="Tetraploid">
-                                <div class="milestone-title">
-                                    <h3>مؤسس فريق Tetraploid Team</h3>
-                                    <p>مبادرة بحثية مستقلة</p>
-                                </div>
-                            </div>
-                            <p class="milestone-desc">تأسيس أول فريق بحثي مستقل ناجح في نشر أبحاث دولية في دوريات
-                                مرموقة.</p>
-                        </div>
-                    </div>
-
-                    <!-- Zewail City -->
-                    <div class="timeline-milestone">
-                        <span class="milestone-year">تأثير مجتمعي</span>
-                        <div class="milestone-content">
-                            <div class="milestone-header">
-                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/zcf%20logo%20.jpeg"
-                                    class="milestone-logo" alt="ZCF">
-                                <div class="milestone-title">
-                                    <h3>أصدقاء مدينة زويل (ZCF)</h3>
-                                    <p>رئاسة اللجنة التنظيمية</p>
-                                </div>
-                            </div>
-                            <p class="milestone-desc">نشر العلوم والوعي التكنولوجي في المجتمع المصري من خلال مدينة زويل
-                                للعلوم والتكنولوجيا.</p>
-                            <div class="milestone-img-box">
-                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/zcf%201.jpg"
-                                    alt="ZCF Activity">
+                            <div class="step-body">
+                                <p>تقديم استشارات تخصصية لمجموعات استثمارية وشركات عالمية في مجالات التقنيات الحيوية
+                                    والطب.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- GOL Team -->
-                    <div class="timeline-milestone">
-                        <span class="milestone-year">2014</span>
-                        <div class="milestone-content">
-                            <div class="milestone-header">
-                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/GOL%20logo%20.jpg"
-                                    class="milestone-logo" alt="GOL">
-                                <div class="milestone-title">
-                                    <h3>رئيس اللوجستيات - فريق GOL</h3>
-                                    <p>مشروع جامعة Stanford - السفارة الأمريكية</p>
+                    <!-- TETRAPLOID FOUNDER -->
+                    <div class="ladder-step">
+                        <div class="ladder-left">
+                            <span class="step-date">Legacy Maker</span>
+                        </div>
+                        <div class="ladder-center"></div>
+                        <div class="ladder-right">
+                            <div class="step-header">
+                                <div class="step-brand-info">
+                                    <h3>Founder of Tetraploid Team</h3>
+                                    <p class="step-location">Independent Research Group</p>
+                                </div>
+                                <div class="step-logo-box">
+                                    <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/logo%20tetra.png"
+                                        alt="Tetraploid">
                                 </div>
                             </div>
-                            <p class="milestone-desc">إدارة العمليات اللوجستية لمشروعات القيادة والابتكار تحت إشراف
-                                جامعة ستانفورد.</p>
-                            <div class="milestone-img-box">
-                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/GOL%20photo.jpg"
-                                    alt="GOL Activity">
+                            <div class="step-body">
+                                <p>تأسيس وقيادة فريق بحثي مستقل نجح في نشر أبحاث دولية في دوريات Q1 مثل Nature
+                                    Portfolio.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Amideast -->
-                    <div class="timeline-milestone">
-                        <span class="milestone-year">تطوير قيادي</span>
-                        <div class="milestone-content">
-                            <div class="milestone-header">
-                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/CCC%20logo.jpg"
-                                    class="milestone-logo" alt="CCC">
-                                <div class="milestone-title">
-                                    <h3>Competitive College Club</h3>
-                                    <p>Amideast - برنامج السفارة الأمريكية</p>
+                    <!-- ZCF LEADERSHIP -->
+                    <div class="ladder-step">
+                        <div class="ladder-left">
+                            <span class="step-date">Leadership</span>
+                        </div>
+                        <div class="ladder-center"></div>
+                        <div class="ladder-right">
+                            <div class="step-header">
+                                <div class="step-brand-info">
+                                    <h3>Organizational President</h3>
+                                    <p class="step-location">Zewail City Friends (ZCF) | Cairo</p>
+                                </div>
+                                <div class="step-logo-box">
+                                    <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/zcf%20logo%20.jpeg"
+                                        alt="ZCF">
                                 </div>
                             </div>
-                            <p class="milestone-desc">برنامج مكثف لتطوير المهارات القيادية والأكاديمية والتبادل الثقافي.
-                            </p>
-                            <div class="milestone-img-box">
-                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/ccc%20photo%201.jpg"
-                                    alt="Amideast Meeting">
+                            <div class="step-body">
+                                <p>قيادة أكبر مؤسسة طلابية لنشر العلوم في مصر تحت مظلة مدينة زويل للعلوم والتكنولوجيا.
+                                </p>
+                                <div class="media-scroller">
+                                    <div class="media-card"><img
+                                            src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/zcf%201.jpg"
+                                            alt="Activity"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GOL / AMIDEAST -->
+                    <div class="ladder-step">
+                        <div class="ladder-left">
+                            <span class="step-date">2014 - 2017</span>
+                        </div>
+                        <div class="ladder-center"></div>
+                        <div class="ladder-right">
+                            <div class="step-header">
+                                <div class="step-brand-info">
+                                    <h3>Global Leadership Fellow</h3>
+                                    <p class="step-location">AMIDEAST & Stanford GOL | US Embassy Cairo</p>
+                                </div>
+                            </div>
+                            <div class="step-body">
+                                <p>المشاركة في برامج القيادة التنافسية (CCC) ورئاسة العمليات اللوجستية لمشروع القيادة
+                                    العالمية.</p>
+                                <div class="media-scroller">
+                                    <div class="media-card"><img
+                                            src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/ccc%20photo%201.jpg"
+                                            alt="CCC"></div>
+                                    <div class="media-card"><img
+                                            src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/GOL%20photo.jpg"
+                                            alt="GOL"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -596,17 +622,16 @@
             </div>
         </section>
 
-        <!-- QUOTE -->
-        <section style="padding: 100px 0; background: var(--background);">
+        <!-- LUXURY QUOTE -->
+        <section style="padding: 120px 0; background: var(--background); position: relative;">
             <div class="container" style="text-align: center;">
                 <div
-                    style="max-width: 800px; margin: 0 auto; padding: 40px; background: var(--surface); border-radius: 40px; border: 1px solid var(--border); box-shadow: var(--shadow-lg);">
-                    <span
-                        style="font-size: 4rem; color: var(--accent); opacity: 0.2; display: block; height: 30px; line-height: 1;">"</span>
-                    <h3 style="font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.5; margin-bottom: 20px;">
-                        استخدم عقلك، كن مبدعاً، وتحلَّ بالمهارات التي تتطلب العمل الجاد والمثابرة.
+                    style="max-width: 900px; margin: 0 auto; padding: 80px 40px; background: var(--premium-gradient); border-radius: 60px; color: #fff; box-shadow: 0 40px 100px rgba(0,0,0,0.2);">
+                    <h3 style="font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.4; font-weight: 800;">
+                        "استخدم عقلك، كن مبدعاً، وتحلَّ بالمهارات التي تتطلب العمل الجاد والمثابرة."
                     </h3>
-                    <p style="color: var(--accent); font-weight: 700; font-size: 1.1rem;">— محمد النجار</p>
+                    <p style="margin-top: 30px; font-size: 1.3rem; color: var(--accent); font-weight: 700;">— محمد
+                        النجار</p>
                 </div>
             </div>
         </section>
@@ -662,29 +687,16 @@
     <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-        // Custom Reveal Animations for Timeline
-        gsap.from(".timeline-milestone", {
-            scrollTrigger: {
-                trigger: ".hierarchy-timeline",
-                start: "top 80%",
-            },
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.1,
-            ease: "power2.out"
+        gsap.from(".influence-card", {
+            scrollTrigger: ".influence-grid",
+            y: 40, opacity: 0, duration: 1, stagger: 0.2, ease: "power4.out"
         });
-
-        gsap.from(".skill-category", {
+        gsap.from(".ladder-step", {
             scrollTrigger: {
-                trigger: ".skills-matrix",
-                start: "top 85%",
+                trigger: ".vertical-ladder",
+                start: "top 70%"
             },
-            x: 30,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.2,
-            ease: "power2.out"
+            x: 50, opacity: 0, duration: 1.2, stagger: 0.3, ease: "power3.out"
         });
     </script>
 </body>
