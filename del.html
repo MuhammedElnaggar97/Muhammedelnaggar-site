@@ -13,322 +13,212 @@
 
         gtag('config', 'G-YBZ9P9EPNN');
     </script>
-    <title>Naggar | نجار — استشارات بحثية وإحصاء حيوي</title>
+    <title>محمد النجار - استشارات بحثية وإحصاء حيوي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Custom Styles for Sara Al Humaidan Clone */
+        body {
+            background-color: #ffffff !important;
+            /* Force white background for clean look */
+            color: #333;
+        }
+
+        .clean-hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .clean-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1.3;
+            margin-bottom: 30px;
+            color: var(--text);
+            font-weight: 800;
+        }
+
+        .clean-hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .clean-hero .btn-main {
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+        }
+
+        .section-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 100px 0;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .split-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: var(--text);
+        }
+
+        .split-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .split-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .services-grid-clean {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .service-item-clean {
+            padding: 40px;
+            background: #fafafa;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .service-item-clean:hover {
+            transform: translateY(-5px);
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-item-clean h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .section-split {
+                grid-template-columns: 1fr;
+                padding: 60px 0;
+                text-align: center;
+            }
+
+            .split-content {
+                order: 2;
+            }
+
+            .split-image {
+                order: 1;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- PRELOADER -->
-    <div class="preloader" id="preloader">
-        <video class="preloader-video" id="preloaderVideo" autoplay muted playsinline>
-            <source src="assets/animation.webm" type="video/webm">
-        </video>
-    </div>
-
-    <!-- MAIN CONTENT (hidden until load) -->
-    <div class="page-content" id="pageContent" style="opacity: 0;">
-
-        <!-- NAVBAR -->
-        <nav class="navbar" id="navbar">
-            <div class="nav-container">
-                <a href="index.html" class="brand">
-                    <img src="assets/img/logo20.png" alt="Naggar Logo" class="brand-logo">
-                </a>
-                <div class="nav-controls">
-                    <ul class="nav-links" id="navLinks">
-                        <li><a href="stats.html" class="nav-link">تحليل إحصائي</a></li>
-                        <li><a href="about.html" class="nav-link">عن محمد</a></li>
-                        <li><a href="del.html" class="nav-link">DEL</a></li>
-                        <li><a href="https://www.youtube.com/playlist?list=PL9GrBMsvivVXepashqv9Ws02J2UFClzti"
-                                class="nav-link" target="_blank">بودكاست طويلب علم</a></li>
-                    </ul>
-                    <button class="theme-toggle" id="themeToggleBtn" aria-label="تبديل الوضع">🌙</button>
-                    <a href="advising.html" class="nav-cta">ابدأ استشارة</a>
-                    <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
-                </div>
-            </div>
-        </nav>
-
-        <!-- HERO -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-inner">
-                    <div class="hero-text">
-                        <div class="hero-tag">
-                            <span class="dot"></span> متاح للاستشارات
-                        </div>
-                        <h1>أنا <span>محمد النجار</span></h1>
-                        <p class="hero-desc">
-                            أُقدم استشارات بحثية وحلول إحصائية متكاملة لتحويل بياناتك إلى نتائج واضحة وموثوقة.
-                        </p>
-                        <div class="hero-cta">
-                            <a href="advising.html" class="btn btn-accent">احجز جلسة استشارية</a>
-                            <a href="stats.html" class="btn btn-outline">اطلب تحليل إحصائي</a>
-                        </div>
-                    </div>
-                    <div class="hero-photo">
-                        <img src="assets/img/without bg.webp" alt="محمد النجار">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- STATS -->
-        <div class="stats-bar">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <h3>+٦</h3>
-                        <p>سنوات خبرة</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>٢١٧+</h3>
-                        <p>مشروع مكتمل</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>٩٧٪</h3>
-                        <p>رضا العملاء</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>+١ مليون</h3>
-                        <p>مشاهدة على يوتيوب</p>
-                    </div>
-                </div>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/img/logo20.png" alt="Naggar Logo" class="brand-logo">
+            </a>
+            <div class="nav-controls">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="stats.html" class="nav-link">تحليل إحصائي</a></li>
+                    <li><a href="about.html" class="nav-link">عن محمد</a></li>
+                    <li><a href="del.html" class="nav-link">DEL</a></li>
+                    <li><a href="https://www.youtube.com/playlist?list=PL9GrBMsvivVXepashqv9Ws02J2UFClzti"
+                            class="nav-link" target="_blank">بودكاست طويلب علم</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggleBtn">🌙</button>
+                <a href="advising.html" class="nav-cta">ابدأ استشارة</a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
             </div>
         </div>
+    </nav>
 
-        <!-- TRUST -->
-        <section class="trust-section">
+    <main class="page-content visible">
+
+        <!-- Minimal Hero -->
+        <section class="clean-hero">
             <div class="container">
-                <h3>نفخر بخدمة طلاب هذه الجامعات</h3>
-                <div class="trust-track-wrapper">
-                    <div class="trust-track">
-                        <div class="trust-item"><img src="https://i.imgur.com/jnzYafu.png"><span>كلية الملك في
-                                لندن</span>
-                        </div>
-                        <div class="trust-item"><img src="https://i.imgur.com/pCPbVwi.png"><span>جامعة نوتنغهام</span>
-                        </div>
-                        <div class="trust-item"><img src="https://i.imgur.com/Df2upTu.png"><span>جامعة الملك سعود</span>
-                        </div>
-                        <div class="trust-item"><img src="https://i.imgur.com/sGZ8qzB.png"><span>جامعة عين شمس</span>
-                        </div>
-                        <div class="trust-item"><img src="https://i.imgur.com/MY5jImA.png"><span>جامعة القاهرة</span>
-                        </div>
-                        <div class="trust-item"><img src="https://i.imgur.com/wkQdJfS.png"><span>الجامعة
-                                البريطانية</span>
-                        </div>
-                        <div class="trust-item"><img src="https://i.imgur.com/skaYHU4.png"><span>جامعة الملك خالد</span>
-                        </div>
-                        <div class="trust-item"><img src="https://i.imgur.com/V1WnmMu.png"><span>جامعة دبلن</span></div>
-                        <div class="trust-item"><img src="https://i.imgur.com/JwYG3B5.png"><span>جامعة كاوست</span>
-                        </div>
-                        <div class="trust-item"><img src="https://i.imgur.com/jnzYafu.png"><span>كلية الملك في
-                                لندن</span>
-                        </div>
-                        <div class="trust-item"><img src="https://i.imgur.com/pCPbVwi.png"><span>جامعة نوتنغهام</span>
-                        </div>
-                        <div class="trust-item"><img src="https://i.imgur.com/Df2upTu.png"><span>جامعة الملك سعود</span>
-                        </div>
-                        <div class="trust-item"><img src="https://i.imgur.com/sGZ8qzB.png"><span>جامعة عين شمس</span>
-                        </div>
-                    </div>
+                <h1>أساعدك على بناء بحث علمي متقن وتحليل بيانات دقيقة لنشر دولي مرموق</h1>
+                <p>سواء كنت في مرحلة الماجستير، الدكتوراه، أو بناء مشروعك البحثي الخاص، أقدم لك الخبرة الإحصائية
+                    والمنهجية التي تحتاجها للوصول إلى هدفك.</p>
+                <a href="advising.html" class="btn btn-accent btn-lg"
+                    style="border-radius: 50px; padding: 16px 40px; font-size: 1.1rem;">احجز استشارتك الآن</a>
+            </div>
+        </section>
+
+        <!-- About Split Section -->
+        <section class="container">
+            <div class="section-split">
+                <div class="split-image">
+                    <img src="assets/img/1.png" alt="Mohamed Elnaggar">
+                </div>
+                <div class="split-content">
+                    <h2>أهلاً بك، أنا محمد النجار.</h2>
+                    <p class="lead" style="font-weight: 600; color: var(--accent);">باحث، محلل بيانات، ومؤسس Naggar
+                        Analytics.</p>
+                    <p>
+                        أعمل على سد الفجوة بين البيانات المعقدة والفهم العلمي العميق. بصفتي متخصصاً في المعلوماتية
+                        الحيوية (Bioinformatics) وعلم البيانات، ساعدت مئات الباحثين والمؤسسات على تحويل بياناتهم الخام
+                        إلى اكتشافات علمية منشورة في أرقى الدوريات العالمية.
+                    </p>
+                    <p>
+                        هدفي ليس فقط تحليل الأرقام، بل بناء قادة بحثيين قادرين على فهم أدواتهم واستخدامها ببراعة.
+                    </p>
+                    <a href="about.html" class="btn btn-outline" style="border-radius: 50px; margin-top: 10px;">المزيد
+                        عني</a>
                 </div>
             </div>
         </section>
 
-        <!-- SERVICES -->
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-divider"></div>
-                    <h2>كيف يمكنني مساعدتك؟</h2>
-                    <p>حلول متكاملة لكل مرحلة من مراحل رحلتك البحثية</p>
+        <!-- Services / Offerings -->
+        <section class="container">
+            <div class="services-grid-clean">
+                <div class="service-item-clean">
+                    <h3>📊 التحليل الإحصائي</h3>
+                    <p>منهجية دقيقة (Double-blind) لضمان حيادية النتائج، مع تقارير جاهزة للنشر الدولي في غضون 10 أيام.
+                    </p>
+                    <a href="stats.html"
+                        style="color: var(--accent); font-weight: 700; margin-top: 15px; display: inline-block;">تفاصيل
+                        الخدمة &larr;</a>
                 </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">🎯</div>
-                        <h3>الجلسة الاستشارية</h3>
-                        <p>جلسة فيديو خاصة (60 دقيقة) عبر Zoom لمناقشة مشروعك البحثي والحصول على توجيه مخصص.</p>
-                        <span class="service-price">ابتداءً من $100</span>
-                        <a href="advising.html" class="btn btn-accent">احجز موعدك</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">📊</div>
-                        <h3>التحليل الإحصائي</h3>
-                        <p>تحليل بيانات احترافي باستخدام SPSS, R, وGraphPad Prism مع صياغة دقيقة للنتائج.</p>
-                        <span class="service-price">باقات مرنة حسب المشروع</span>
-                        <a href="stats.html" class="btn btn-outline">اكتشف الباقات</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🧭</div>
-                        <h3>برنامج التوجيه والإرشاد</h3>
-                        <p>متابعة مستمرة لمشروعك البحثي من البداية حتى النشر في المجلات العلمية.</p>
-                        <span class="service-price">برنامج مخصص</span>
-                        <a href="advising.html" class="btn btn-outline">استفسر الآن</a>
-                    </div>
+                <div class="service-item-clean">
+                    <h3>🤝 الاستشارات الخاصة</h3>
+                    <p>جلسات فردية لحل العقبات البحثية، مناقشة المنهجية، أو التخطيط لمسارك الأكاديمي والمهني.</p>
+                    <a href="advising.html"
+                        style="color: var(--accent); font-weight: 700; margin-top: 15px; display: inline-block;">احجز
+                        موعدك &larr;</a>
+                </div>
+                <div class="service-item-clean">
+                    <h3>🎙️ بودكاست طويلب علم</h3>
+                    <p>محتوى صوتي ومرئي يرافقك في رحلتك، نناقش فيه أدوات البحث العلمي، قصص النجاح، وتحديات الباحثين.</p>
+                    <a href="podcast.html"
+                        style="color: var(--accent); font-weight: 700; margin-top: 15px; display: inline-block;">استمع
+                        للحلقات &larr;</a>
                 </div>
             </div>
         </section>
 
-        <!-- COURSES & YOUTUBE -->
-        <section class="cards-section">
-            <div class="container">
-                <div class="cards-header">
-                    <div class="section-divider" style="margin: 0 auto 16px;"></div>
-                    <h2>مصادر البحث والإحصاء</h2>
-                    <p style="max-width:500px;margin:0 auto;">دورات احترافية، سلاسل تعليمية على يوتيوب، ومحتوى مجاني لكل
-                        باحث</p>
-                </div>
-                <div class="cards-grid">
-                    <!-- Udemy Card -->
-                    <a href="https://www.udemy.com/course/searching-databases/?referralCode=0A0C71230D05A267E1B7"
-                        target="_blank" class="card card-udemy">
-                        <div class="card-body">
-                            <span class="udemy-label">🔥 دورة احترافية على Udemy</span>
-                            <h3>Master database searching</h3>
-                            <p>المهارة الأهم لكل باحث: كيف تبحث بكفاءة لإعداد مراجعة منهجية.</p>
-                        </div>
-                        <div class="udemy-meta">
-                            <strong>4.6</strong> ★★★★☆ &nbsp;|&nbsp; <strong>1 ساعة</strong> &nbsp;|&nbsp;
-                            <strong>+720</strong> طالب<br><br>
-                            <span class="udemy-btn">التسجيل الآن</span>
-                        </div>
-                    </a>
-
-                    <!-- Playlist 1 -->
-                    <a href="https://www.youtube.com/playlist?list=PL9GrBMsvivVWZ2Ztg5VXzKhxVF2F1q5Ld" target="_blank"
-                        class="card">
-                        <div class="card-thumb">
-                            <div class="card-play"></div>
-                            <img src="https://pub-5ffbaa38106d451ba0b52807cf3ad274.r2.dev/Biostats%20101%20Thumbnail.png"
-                                alt="الإحصاء الحيوي 101">
-                        </div>
-                        <div class="card-body">
-                            <h3>الإحصاء الحيوي 101</h3>
-                            <h3>Biostats 101 </h3>
-
-                            <p>دليلك العملي لفهم المبادئ الإحصائية الأساسية.</p>
-                        </div>
-                    </a>
-
-                    <!-- Playlist 2 -->
-                    <a href="https://www.youtube.com/playlist?list=PL9GrBMsvivVWMywC_8aSJqU6RdwLmbVmC" target="_blank"
-                        class="card">
-                        <div class="card-thumb">
-                            <div class="card-play"></div>
-                            <img src="https://pub-5ffbaa38106d451ba0b52807cf3ad274.r2.dev/sys%20reviews.jpg"
-                                alt="المراجعات المنهجية">
-                        </div>
-                        <div class="card-body">
-                            <h3>المراجعات المنهجية</h3>
-                            <h3>Systematic Reviews & Meta-analysis</h3>
-                            <p>تعلم كيفية إجراء مراجعات منهجية دقيقة.</p>
-                        </div>
-                    </a>
-
-                    <!-- Playlist 3 -->
-                    <a href="https://www.youtube.com/playlist?list=PL9GrBMsvivVUzs49w_nFdKu74AtwFdH5H" target="_blank"
-                        class="card">
-                        <div class="card-thumb">
-                            <div class="card-play"></div>
-                            <img src="https://pub-5ffbaa38106d451ba0b52807cf3ad274.r2.dev/basics%20101.webp"
-                                alt="أساسيات البحث العلمي">
-                        </div>
-                        <div class="card-body">
-                            <h3>أساسيات البحث العلمي</h3>
-                            <h3>Research 101</h3>
-                            <p>كل ما تحتاجه للبدء في رحلتك البحثية بنجاح.</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ARTICLES -->
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-divider"></div>
-                    <h2>المقالات والمصادر</h2>
-                </div>
-                <div class="articles-list">
-                    <a href="master-stats.html" class="article-row">
-                        <h4>ازاي تعمل الإحصاء بتاعت الرسالة بتاعتك</h4><span class="article-line"></span><span
-                            class="article-date">Oct 7, 2024</span>
-                    </a>
-                    <a href="/reviews-types" class="article-row">
-                        <h4>الفرق بين أنواع الريفيوهات العلمية</h4><span class="article-line"></span><span
-                            class="article-date">Oct 7, 2024</span>
-                    </a>
-                    <a href="/risk-of-bias-assesment" class="article-row">
-                        <h4>الدليل الشامل للrisk of bias assessment</h4><span class="article-line"></span><span
-                            class="article-date">Oct 5, 2024</span>
-                    </a>
-                    <a href="/telegram-bot" class="article-row">
-                        <h4>أداة التليجرام لتعلم البحث العلمي</h4><span class="article-line"></span><span
-                            class="article-date">Jan 10, 2024</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- TESTIMONIALS -->
-        <section class="testimonials-section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-divider"></div>
-                    <h2>ماذا يقول عملاؤنا؟</h2>
-                </div>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <p class="quote-text">«هذه الجلسة كانت خطوة حاسمة في رحلتي للدكتوراه، فقد أوضحت كل أفكاري
-                            ووجهتني
-                            جيداً في الاتجاه الصحيح.»</p>
-                        <div class="client-name">ماجد الأحمد</div>
-                        <span class="client-role">جامعة كينغز كوليدج لندن</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="quote-text">«كان عندي لبس في PRISMA، والاستشارة وضّحت لي الخطوات وسهّلت تطبيقها.»</p>
-                        <div class="client-name">أحمد الرائس</div>
-                        <span class="client-role">وزارة الصحة، الكويت</span>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="quote-text">«أرى هذه الجلسة ضرورية لأي طالب دراسات عليا ليفهم حقاً ما سيواجهه ويختصر
-                            عليه
-                            الكثير من الوقت.»</p>
-                        <div class="client-name">منى الزهراني</div>
-                        <span class="client-role">جامعة الملك سعود</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-        <!-- ABOUT TEASER -->
-        <section class="about-teaser">
-            <div class="container">
-                <div class="about-teaser-inner">
-                    <div class="about-teaser-photo">
-                        <img src="assets/img/without bg.webp" alt="محمد النجار">
-                    </div>
-                    <div class="about-teaser-body">
-                        <div class="section-divider"></div>
-                        <h2>عن محمد النجار</h2>
-                        <p>باحث متخصص في المعلوماتية الحيوية، أسعى لتمكين الباحثين العرب بالأدوات الإحصائية والبحثية
-                            اللازمة. من خلال «فريق تترابلود» وقناتي التعليمية، نهدف إلى تبسيط العلوم ونشر ثقافة البحث
-                            العلمي
-                            الرصين.</p>
-                        <a href="about.html" class="btn btn-outline">اقرأ المزيد</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-        <!-- NEWSLETTER -->
+        <!-- Newsletter (Same as main site) -->
         <section class="newsletter-section">
             <div class="container">
                 <div class="newsletter-inner">
@@ -372,10 +262,9 @@
                 </div>
             </div>
         </footer>
+    </main>
 
-    </div><!-- /.page-content -->
-
-    <!-- Scripts -->
+    <!-- GSAP Animations -->
     <script src="assets/js/vendor/gsap.min.js"></script>
     <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
     <script src="assets/js/main.js"></script>
