@@ -754,16 +754,28 @@ p {
 }
 
 .card-play::after {
-    content: '▶';
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.9);
+    content: '';
+    width: 60px;
+    height: 42px;
+    background: #FF0000;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
-    color: var(--text);
+    transition: background 0.3s ease;
+}
+
+.card-play::before {
+    content: '';
+    position: absolute;
+    border-left: 15px solid #fff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    z-index: 3;
+}
+
+.card:hover .card-play::after {
+    background: #CC0000;
 }
 
 .card-body {
