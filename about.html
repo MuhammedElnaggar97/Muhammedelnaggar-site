@@ -21,7 +21,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        /* Professional About Page Styles - Preserving Original Colors */
+        /* Professional About Page Styles */
         .page-header-simple {
             padding: 120px 0 60px;
             text-align: center;
@@ -63,13 +63,6 @@
             border-radius: var(--radius-lg);
             border: 1px solid var(--border);
             text-align: center;
-            transition: var(--transition);
-        }
-
-        .stat-card-pro:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-            box-shadow: var(--shadow-md);
         }
 
         .stat-num {
@@ -88,103 +81,108 @@
             text-transform: uppercase;
         }
 
-        /* Timeline Pro */
-        .timeline-pro {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto 100px;
+        /* Resume Sections */
+        .resume-section {
+            margin-bottom: 80px;
         }
 
-        .timeline-pro::before {
-            content: '';
-            position: absolute;
-            right: 40px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--border);
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 35px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
         }
 
-        .timeline-step {
-            position: relative;
-            padding-right: 80px;
-            margin-bottom: 50px;
+        .section-header i {
+            font-size: 1.5rem;
+            color: var(--accent);
         }
 
-        .timeline-step::after {
-            content: '';
-            position: absolute;
-            right: 34px;
-            top: 12px;
-            width: 14px;
-            height: 14px;
-            background: var(--bg);
-            border: 3px solid var(--accent);
-            border-radius: 50%;
-            z-index: 2;
+        .section-header h2 {
+            font-size: 1.8rem;
+            margin: 0;
         }
 
-        .step-info {
+        /* Experience Card */
+        .experience-card {
             background: var(--surface);
             padding: 30px;
             border-radius: var(--radius-lg);
             border: 1px solid var(--border);
+            margin-bottom: 25px;
+            display: flex;
+            gap: 20px;
             transition: var(--transition);
         }
 
-        .step-info:hover {
+        .experience-card:hover {
             border-color: var(--accent);
             box-shadow: var(--shadow);
+            transform: translateY(-2px);
         }
 
-        .step-year {
+        .org-logo {
+            flex: 0 0 60px;
+            height: 60px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 5px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .org-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .exp-details {
+            flex: 1;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .exp-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        .exp-date {
             font-size: 0.85rem;
             font-weight: 700;
             color: var(--accent);
             background: rgba(95, 125, 118, 0.1);
             padding: 4px 12px;
             border-radius: 50px;
-            display: inline-block;
-            margin-bottom: 12px;
         }
 
-        .step-title {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-            color: var(--text);
-        }
-
-        .step-org {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 15px;
+        .exp-org-name {
             display: block;
+            color: var(--text-muted);
             font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
         }
 
-        .step-content {
+        .exp-content {
             font-size: 1rem;
             color: var(--text-secondary);
             line-height: 1.7;
         }
 
-        .step-media {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            overflow-x: auto;
-            padding-bottom: 10px;
-        }
-
-        .step-img {
-            flex: 0 0 200px;
-            height: 130px;
-            border-radius: 12px;
-            object-fit: cover;
-            border: 1px solid var(--border);
-        }
-
-        /* Skills Matrix Pro */
         .skills-grid-pro {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -206,12 +204,6 @@
             padding-bottom: 10px;
         }
 
-        .skill-tags-pro {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
         .tag-pro {
             background: var(--bg);
             padding: 6px 14px;
@@ -219,26 +211,24 @@
             font-size: 0.9rem;
             font-weight: 600;
             color: var(--text-secondary);
-            border: 1px solid transparent;
-            transition: var(--transition);
-        }
-
-        .tag-pro:hover {
-            color: var(--accent);
-            border-color: var(--accent);
+            margin: 4px;
+            display: inline-block;
         }
 
         @media (max-width: 768px) {
-            .timeline-pro::before {
-                right: 20px;
+            .experience-card {
+                flex-direction: column;
             }
 
-            .timeline-step {
-                padding-right: 50px;
+            .org-logo {
+                flex: none;
+                width: 50px;
+                height: 50px;
             }
 
-            .timeline-step::after {
-                right: 14px;
+            .exp-header {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
     </style>
@@ -274,200 +264,273 @@
                 </div>
                 <h1>محمد النجار</h1>
                 <p class="pro-subtitle">Bioinformatics | Machine Learning | Science Communication</p>
-                <p style="max-width: 600px; margin: 20px auto 0; color: var(--text-muted);">
-                    المؤسس والرئيس التنفيذي لشركة Naggar Analytics. باحث متخصص في تحليل البيانات الضخمة والمعلوماتية
-                    الحيوية، وشغوف بتبسيط العلوم للجمهور العربي.
+                <p style="max-width: 600px; margin: 20px auto 30px; color: var(--text-muted);">
+                    المؤسس والرئيس التنفيذي لشركة Naggar Analytics. باحث في مجالات المعلوماتية الحيوية والتعلم الآلي،
+                    أسعى لتبسيط العلوم وبناء حلول بيانات دقيقة.
                 </p>
+
+                <div class="influence-strip">
+                    <div class="stat-card-pro">
+                        <span class="stat-num">1,000,000+</span>
+                        <span class="stat-label">مشاهدة على اليوتيوب</span>
+                    </div>
+                    <div class="stat-card-pro">
+                        <span class="stat-num">25,000+</span>
+                        <span class="stat-label">متابع على المنصات</span>
+                    </div>
+                    <div class="stat-card-pro">
+                        <span class="stat-num">10+</span>
+                        <span class="stat-label">أبحاث دولية منشورة</span>
+                    </div>
+                </div>
             </header>
 
-            <!-- INFLUENCE SECTION -->
-            <section class="influence-strip">
-                <div class="stat-card-pro">
-                    <span class="stat-num">1,000,000+</span>
-                    <span class="stat-label">مشاهدة على اليوتيوب</span>
+            <!-- PROFESSIONAL EXPERIENCE -->
+            <section class="resume-section">
+                <div class="section-header">
+                    <h2>💼 الخبرة المهنية | Professional Experience</h2>
                 </div>
-                <div class="stat-card-pro">
-                    <span class="stat-num">25,000+</span>
-                    <span class="stat-label">متابع على المنصات</span>
-                </div>
-                <div class="stat-card-pro">
-                    <span class="stat-num">10+</span>
-                    <span class="stat-label">أبحاث دولية منشورة</span>
-                </div>
-            </section>
 
-            <!-- SKILLS MATRIX -->
-            <section class="skills-grid-pro">
-                <div class="skill-box-pro">
-                    <h3>🔬 مهارات البحث والبيانات</h3>
-                    <div class="skill-tags-pro">
-                        <span class="tag-pro">Bioinformatics</span>
-                        <span class="tag-pro">Machine Learning</span>
-                        <span class="tag-pro">Biostatistics</span>
-                        <span class="tag-pro">R / Python / SPSS</span>
-                        <span class="tag-pro">Single Cell Analysis</span>
-                        <span class="tag-pro">Meta-Analysis</span>
-                        <span class="tag-pro">Systematic Reviews</span>
-                        <span class="tag-pro">Scientific Writing</span>
+                <!-- Naggar Analytics -->
+                <div class="experience-card">
+                    <div class="org-logo">
+                        <img src="assets/img/1.png" alt="Naggar Analytics">
                     </div>
-                </div>
-                <div class="skill-box-pro">
-                    <h3>📢 التواصل والمحتوى</h3>
-                    <div class="skill-tags-pro">
-                        <span class="tag-pro">Science Communication</span>
-                        <span class="tag-pro">Public Speaking</span>
-                        <span class="tag-pro">Content Creation</span>
-                        <span class="tag-pro">Professional Podcasting</span>
-                        <span class="tag-pro">Leadership & Strategy</span>
-                        <span class="tag-pro">Project Management</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- JOURNEY TIMELINE -->
-            <h2 style="text-align: center; margin-bottom: 60px;">الرحلة المهنية والأكاديمية</h2>
-            <div class="timeline-pro">
-
-                <!-- 2026 - Present -->
-                <div class="timeline-step">
-                    <div class="step-info">
-                        <span class="step-year">2026 - الآن</span>
-                        <h3 class="step-title">المؤسس والرئيس التنفيذي</h3>
-                        <span class="step-org">Naggar Analytics | نجار أناليتيكس</span>
-                        <p class="step-content">تأسيس وقيادة شركة متخصصة في تقديم الاستشارات الإحصائية المتقدمة والأبحاث
-                            عالية الجودة للباحثين والمؤسسات العلمية حول العالم.</p>
+                    <div class="exp-details">
+                        <div class="exp-header">
+                            <h3 class="exp-title">المؤسس والرئيس التنفيذي | Founder & CEO</h3>
+                            <span class="exp-date">2026 - الآن</span>
+                        </div>
+                        <span class="exp-org-name">Naggar Analytics | نجار أناليتيكس</span>
+                        <p class="exp-content">قيادة رؤية الشركة لتطوير ونشر حلول إحصائية وبحثية متقدمة تعتمد على الدقة
+                            والحيادية العلمية.</p>
                     </div>
                 </div>
 
-                <!-- 2026 - Master's -->
-                <div class="timeline-step">
-                    <div class="step-info">
-                        <span class="step-year">2026 (متوقع)</span>
-                        <h3 class="step-title">ماجستير المعلوماتية الحيوية</h3>
-                        <span class="step-org">الجامعة الألمانية بالقاهرة (GUC)</span>
-                        <p class="step-content">تخصص دقيق في دمج البيانات الحيوية مع التكنولوجيا لحل أعقد المشكلات
-                            الجينية والطبية.</p>
+                <!-- Tech Director -->
+                <div class="experience-card">
+                    <div class="org-logo" style="background: #f8fafc;">
+                        <span style="font-weight: 900; color: var(--accent);">RA</span>
+                    </div>
+                    <div class="exp-details">
+                        <div class="exp-header">
+                            <h3 class="exp-title">المدير التقني | Technical Director</h3>
+                            <span class="exp-date">2025 - الآن</span>
+                        </div>
+                        <span class="exp-org-name">Research Assistant for Research and Studies | الرياض</span>
+                        <p class="exp-content">الإشراف الفني الكامل على العمليات البحثية والاستشارات التقنية لضمان
+                            التميز الأكاديمي.</p>
                     </div>
                 </div>
 
-                <!-- 2025 -->
-                <div class="timeline-step">
-                    <div class="step-info">
-                        <span class="step-year">2025</span>
-                        <h3 class="step-title">المدير التقني | Technical Director</h3>
-                        <span class="step-org">Research Assistant for Research and Studies | الرياض</span>
-                        <p class="step-content">الإشراف العلمي والتقني الكامل في المملكة العربية السعودية، وتطوير
-                            منهجيات البحث والاستشارات.</p>
+                <!-- Mendel AI -->
+                <div class="experience-card">
+                    <div class="org-logo">
+                        <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/mendel-logo.webp" alt="Mendel AI">
                     </div>
-                </div>
-
-                <!-- 2024 -->
-                <div class="timeline-step">
-                    <div class="step-info">
-                        <span class="step-year">2024</span>
-                        <h3 class="step-title">دبلوم التعلم الآلي | Machine Learning</h3>
-                        <span class="step-org">الجامعة الألمانية بالقاهرة (GUC)</span>
-                        <p class="step-content">دراسة معمقة في خوارزميات الذكاء الاصطناعي وكيفية تطبيقها على مجموعات
-                            البيانات الضخمة.</p>
-                    </div>
-                </div>
-
-                <!-- clinical data specialist -->
-                <div class="timeline-step">
-                    <div class="step-info">
-                        <span class="step-year">2023 - 2024</span>
-                        <h3 class="step-title">Clinical Data Specialist</h3>
-                        <span class="step-org">Mendel AI | Silicon Valley</span>
-                        <p class="step-content">تحليل البيانات السريرية المعقدة لمرضى السرطان وتطوير محركات الذكاء
-                            الاصطناعي لفهم السجلات الطبية غير المنظمة.</p>
-                    </div>
-                </div>
-
-                <!-- Mendeley Advisor -->
-                <div class="timeline-step">
-                    <div class="step-info">
-                        <span class="step-year">Elsevier Expert</span>
-                        <h3 class="step-title">Mendeley Advisor</h3>
-                        <span class="step-org">Elsevier | Global</span>
-                        <p class="step-content">مستشار معتمد عالمياً لشركة إلزيفير، قمت بتدريب آلاف الباحثين وطلاب
-                            الدراسات العليا على أدوات البحث العلمي.</p>
+                    <div class="exp-details">
+                        <div class="exp-header">
+                            <h3 class="exp-title">Clinical Data Specialist</h3>
+                            <span class="exp-date">2023 - 2024</span>
+                        </div>
+                        <span class="exp-org-name">Mendel AI | Silicon Valley</span>
+                        <p class="exp-content">تحليل البيانات السريرية في مجال الأورام باستخدام تقنيات الذكاء الاصطناعي
+                            لرفع دقة السجلات الطبية.</p>
                     </div>
                 </div>
 
                 <!-- Guidepoint -->
-                <div class="timeline-step">
-                    <div class="step-info">
-                        <span class="step-year">International Consultant</span>
-                        <h3 class="step-title">Subject Matter Expert</h3>
-                        <span class="step-org">Guidepoint | New York</span>
-                        <p class="step-content">تقديم استشارات متخصصة لمجموعات استثمارية دولية وشركات عالمية في مجالات
-                            التقنيات الحيوية والطب.</p>
+                <div class="experience-card">
+                    <div class="org-logo">
+                        <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/Guidepoint-Logo-large.jpg"
+                            alt="Guidepoint">
+                    </div>
+                    <div class="exp-details">
+                        <div class="exp-header">
+                            <h3 class="exp-title">Subject Matter Expert</h3>
+                            <span class="exp-date">خبير معتمد</span>
+                        </div>
+                        <span class="exp-org-name">Guidepoint | New York</span>
+                        <p class="exp-content">تقديم استشارات متخصصة لشركات ومجموعات استثمارية عالمية في قطاع التقنيات
+                            الحيوية والطب.</p>
                     </div>
                 </div>
 
-                <!-- 2021 -->
-                <div class="timeline-step">
-                    <div class="step-info">
-                        <span class="step-year">2021</span>
-                        <h3 class="step-title">بكالوريوس الكيمياء الحيوية</h3>
-                        <span class="step-org">جامعة عين شمس</span>
-                        <p class="step-content">الأساس العلمي لرحلة البحث، مركزاً على الكيمياء الحيوية والبيولوجيا
-                            الجزيئية.</p>
+                <!-- CMCCM -->
+                <div class="experience-card">
+                    <div class="org-logo">
+                        <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/cmccm.png" alt="CMCCM">
+                    </div>
+                    <div class="exp-details">
+                        <div class="exp-header">
+                            <h3 class="exp-title">باحث مساعد | Research Assistant</h3>
+                            <span class="exp-date">CMCCM</span>
+                        </div>
+                        <span class="exp-org-name">كلية الطب، جامعة قناة السويس</span>
+                        <p class="exp-content">العمل في مركز التميز في البيولوجيا الجزيئية والطب لتقديم الدعم البحثي
+                            وتطوير التجارب المعملية.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EDUCATION -->
+            <section class="resume-section">
+                <div class="section-header">
+                    <h2>🎓 المسار الأكاديمي | Education</h2>
+                </div>
+
+                <!-- MSc -->
+                <div class="experience-card">
+                    <div class="org-logo">
+                        <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/guc.png" alt="GUC">
+                    </div>
+                    <div class="exp-details">
+                        <div class="exp-header">
+                            <h3 class="exp-title">ماجستير المعلوماتية الحيوية | MSc Bioinformatics</h3>
+                            <span class="exp-date">2026 (متوقع)</span>
+                        </div>
+                        <span class="exp-org-name">الجامعة الألمانية بالقاهرة (GUC)</span>
+                    </div>
+                </div>
+
+                <!-- Diploma -->
+                <div class="experience-card">
+                    <div class="org-logo">
+                        <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/guc.png" alt="GUC">
+                    </div>
+                    <div class="exp-details">
+                        <div class="exp-header">
+                            <h3 class="exp-title">دبلوم التعلم الآلي | Machine Learning Diploma</h3>
+                            <span class="exp-date">2024</span>
+                        </div>
+                        <span class="exp-org-name">الجامعة الألمانية بالقاهرة (GUC)</span>
+                    </div>
+                </div>
+
+                <!-- BSc -->
+                <div class="experience-card">
+                    <div class="org-logo">
+                        <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/Ain_Shams_logo.png"
+                            alt="Ain Shams">
+                    </div>
+                    <div class="exp-details">
+                        <div class="exp-header">
+                            <h3 class="exp-title">بكالوريوس الكيمياء الحيوية | BSc Biochemistry</h3>
+                            <span class="exp-date">2021</span>
+                        </div>
+                        <span class="exp-org-name">جامعة عين شمس</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VOLUNTEERING & LEADERSHIP -->
+            <section class="resume-section">
+                <div class="section-header">
+                    <h2>🌱 التطوع والقيادة | Volunteering & Leadership</h2>
+                </div>
+
+                <!-- Elsevier -->
+                <div class="experience-card">
+                    <div class="org-logo">
+                        <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/Mendeley.png" alt="Elsevier">
+                    </div>
+                    <div class="exp-details">
+                        <div class="exp-header">
+                            <h3 class="exp-title">Mendeley Advisor</h3>
+                            <span class="exp-date">إلزيفير</span>
+                        </div>
+                        <span class="exp-org-name">Elsevier | Global</span>
+                        <p class="exp-content">مستشار معتمد لتدريب الباحثين على أدوات البحث العلمي الحديثة وإدارة
+                            المراجع.</p>
                     </div>
                 </div>
 
                 <!-- Tetraploid -->
-                <div class="timeline-step">
-                    <div class="step-info">
-                        <span class="step-year">مؤسس فريق Tetraploid</span>
-                        <h3 class="step-title">تأسيس مجموعة بحثية مستقلة</h3>
-                        <span class="step-org">Tetraploid Team</span>
-                        <p class="step-content">قيادة أول فريق بحثي مستقل في الوطن العربي ينشر أبحاثاً في مجلات دولية
-                            مرموقة مثل Nature Portfolio (Scientific Reports).</p>
+                <div class="experience-card">
+                    <div class="org-logo">
+                        <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/logo%20tetra.png"
+                            alt="Tetraploid">
+                    </div>
+                    <div class="exp-details">
+                        <div class="exp-header">
+                            <h3 class="exp-title">المؤسس والقائد | Founder & Leader</h3>
+                            <span class="exp-date">فريق بحثي</span>
+                        </div>
+                        <span class="exp-org-name">Tetraploid Team</span>
+                        <p class="exp-content">تأسيس مجموعة بحثية مستقلة نجحت في نشر أبحاث دولية رائدة في دوريات Nature
+                            Portfolio.</p>
                     </div>
                 </div>
 
                 <!-- ZCF -->
-                <div class="timeline-step">
-                    <div class="step-info">
-                        <span class="step-year">القيادة الطلابية</span>
-                        <h3 class="step-title">أصدقاء مدينة زويل (ZCF)</h3>
-                        <span class="step-org">رئيس اللجنة التنظيمية</span>
-                        <p class="step-content">إدارة أكبر منظمة طلابية لنشر العلوم والتكنولوجيا في مصر تحت رعاية مدينة
-                            زويل للعلوم والتكنولوجيا.</p>
-                        <div class="step-media">
-                            <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/zcf%201.jpg" class="step-img"
-                                alt="ZCF Activity">
+                <div class="experience-card">
+                    <div class="org-logo">
+                        <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/zcf%20logo%20.jpeg" alt="ZCF">
+                    </div>
+                    <div class="exp-details">
+                        <div class="exp-header">
+                            <h3 class="exp-title">رئيس اللجنة التنظيمية | Organizational President</h3>
+                            <span class="exp-date">مدينة زويل</span>
                         </div>
+                        <span class="exp-org-name">أصدقاء مدينة زويل (ZCF)</span>
+                        <p class="exp-content">إدارة الأنشطة والفعاليات لنشر الثقافة العلمية في المجتمع المصري.</p>
                     </div>
                 </div>
 
-                <!-- GOL / Stanford -->
-                <div class="timeline-step">
-                    <div class="step-info">
-                        <span class="step-year">2014 - 2017</span>
-                        <h3 class="step-title">Global Leadership Fellow</h3>
-                        <span class="step-org">Stanford GOL | Amideast | US Embassy</span>
-                        <p class="step-content">قيادة العمليات اللوجستية وتطوير المهارات القيادية في مشاريع مدعومة
-                            عالمياً من جامعة ستانفورد والسفارة الأمريكية بالقاهرة.</p>
-                        <div class="step-media">
-                            <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/ccc%20photo%201.jpg"
-                                class="step-img" alt="Amideast">
-                            <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/GOL%20photo.jpg"
-                                class="step-img" alt="GOL">
+                <!-- Stanford -->
+                <div class="experience-card">
+                    <div class="org-logo">
+                        <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/GOL%20logo%20.jpg"
+                            alt="Stanford GOL">
+                    </div>
+                    <div class="exp-details">
+                        <div class="exp-header">
+                            <h3 class="exp-title">Global Leadership Fellow</h3>
+                            <span class="exp-date">Stanford GOL / Amideast</span>
+                        </div>
+                        <span class="exp-org-name">السفارة الأمريكية بالقاهرة</span>
+                        <p class="exp-content">قيادة العمليات اللوجستية لمبادرات القيادة العالمية تحت إشراف جامعة
+                            ستانفورد.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SKILLS MATRIX -->
+            <section class="resume-section">
+                <div class="section-header">
+                    <h2>🛠️ المهارات والقدرات | Skills</h2>
+                </div>
+                <div class="skills-grid-pro">
+                    <div class="skill-box-pro">
+                        <h3>🔬 علوم البيانات والبيولوجيا</h3>
+                        <div class="skill-tags-pro">
+                            <span class="tag-pro">Bioinformatics</span>
+                            <span class="tag-pro">Single Cell Analysis</span>
+                            <span class="tag-pro">Machine Learning</span>
+                            <span class="tag-pro">R / Python / SPSS</span>
+                            <span class="tag-pro">Meta-Analysis</span>
+                            <span class="tag-pro">Scientific Writing</span>
+                        </div>
+                    </div>
+                    <div class="skill-box-pro">
+                        <h3>📢 القيادة والتواصل</h3>
+                        <div class="skill-tags-pro">
+                            <span class="tag-pro">Science Communication</span>
+                            <span class="tag-pro">Public Speaking</span>
+                            <span class="tag-pro">Content Strategy</span>
+                            <span class="tag-pro">Leadership & Mentoring</span>
+                            <span class="tag-pro">Project Management</span>
                         </div>
                     </div>
                 </div>
-
-            </div>
+            </section>
 
             <!-- FINAL QUOTE -->
-            <section style="margin: 80px 0 100px;">
+            <section style="margin: 80px 0 120px;">
                 <div
                     style="background: var(--surface); padding: 50px; border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--border); position: relative;">
                     <span
                         style="font-size: 5rem; line-height: 1; position: absolute; top: -20px; right: 40px; color: var(--accent); opacity: 0.1;">"</span>
-                    <h3 style="font-size: 1.8rem; margin-bottom: 20px;">نصيحة لكل طموح</h3>
                     <p style="font-size: 1.5rem; color: var(--text); font-weight: 700;">
                         "استخدم عقلك، كن مبدعاً، وتحلَّ بالمهارات التي تتطلب العمل الجاد والمثابرة."
                     </p>
@@ -529,20 +592,9 @@
     <script src="assets/js/main.js"></script>
     <script>
         gsap.registerPlugin(ScrollTrigger);
-
-        gsap.from(".stat-card-pro", {
-            y: 30, opacity: 0, duration: 0.8, stagger: 0.15, ease: "power2.out",
-            scrollTrigger: { trigger: ".influence-strip", start: "top 85%" }
-        });
-
-        gsap.from(".timeline-step", {
-            x: 50, opacity: 0, duration: 1, stagger: 0.2, ease: "power3.out",
-            scrollTrigger: { trigger: ".timeline-pro", start: "top 80%" }
-        });
-
-        gsap.from(".skill-box-pro", {
-            y: 40, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power2.out",
-            scrollTrigger: { trigger: ".skills-grid-pro", start: "top 85%" }
+        gsap.from(".experience-card", {
+            y: 30, opacity: 0, duration: 0.8, stagger: 0.1, ease: "power2.out",
+            scrollTrigger: { trigger: ".resume-section", start: "top 85%" }
         });
     </script>
 </body>
