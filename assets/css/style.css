@@ -1101,70 +1101,89 @@ p {
     border-top: 1px solid var(--border);
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 36px;
-    padding-bottom: 36px;
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    gap: 20px;
 }
 
-.footer-col h3 {
-    font-size: 1rem;
-    margin-bottom: 14px;
+@media (max-width: 768px) {
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 0;
+    }
+}
+
+.footer-left h3 {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
     font-weight: 700;
 }
 
-.footer-about p {
-    font-size: 0.88rem;
-    color: var(--text-muted);
-    margin-bottom: 14px;
-}
-
-.social-links {
-    display: flex;
-    gap: 8px;
-}
-
-.social-links a {
-    padding: 6px 14px;
-    border-radius: 50px;
-    background: var(--surface);
-    border: 1px solid var(--border);
+.footer-left .copyright {
     font-size: 0.82rem;
-    font-weight: 600;
-    transition: var(--transition);
+    color: var(--text-muted);
 }
 
-.social-links a:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-}
-
-.footer-links {
+.footer-right {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    align-items: flex-end;
+    gap: 10px;
 }
 
-.footer-links a {
-    font-size: 0.88rem;
+@media (max-width: 768px) {
+    .footer-right {
+        align-items: center;
+    }
+}
+
+.footer-email {
+    font-size: 0.9rem;
     color: var(--text-muted);
     transition: var(--transition);
 }
 
-.footer-links a:hover {
+.footer-email:hover {
     color: var(--accent);
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons a {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    color: var(--text-muted);
+}
+
+.social-icons a svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.social-icons a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
 }
 
 .footer-bottom {
-    text-align: center;
-    padding: 16px 0;
-    border-top: 1px solid var(--border);
-}
-
-.footer-bottom p {
-    font-size: 0.82rem;
-    color: var(--text-muted);
+    display: none;
+    /* Removed bottom bar since we merged it */
 }
 
 /* ============================
