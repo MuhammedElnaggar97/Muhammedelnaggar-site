@@ -751,6 +751,12 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .card-play {
+    opacity: 1;
 }
 
 .card-play::after {
@@ -762,7 +768,6 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.3s ease;
 }
 
 .card-play::before {
@@ -772,10 +777,6 @@ p {
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
     z-index: 3;
-}
-
-.card:hover .card-play::after {
-    background: #CC0000;
 }
 
 .card-body {
