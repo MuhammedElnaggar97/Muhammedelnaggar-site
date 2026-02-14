@@ -13,16 +13,255 @@
 
         gtag('config', 'G-YBZ9P9EPNN');
     </script>
-    <title>عن محمد - استشارات بحثية</title>
+    <title>عن محمد النجار - رحلة البحث والابتكار</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Custom Styles for Redesigned About Page */
+        :root {
+            --timeline-line: var(--border);
+            --timeline-dot: var(--accent);
+        }
+
+        .about-hero {
+            padding: 120px 0 60px;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(var(--accent-rgb), 0.05) 0%, transparent 70%);
+        }
+
+        .profile-container {
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--surface);
+            box-shadow: var(--shadow-lg);
+            background: var(--surface);
+        }
+
+        .hero-name {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-tagline {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            padding: 60px 0;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .skills-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: var(--background);
+            padding: 30px;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-md);
+        }
+
+        .skill-category h3 {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.25rem;
+        }
+
+        .skill-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-pill {
+            padding: 6px 14px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .skill-pill:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(var(--accent-rgb), 0.05);
+        }
+
+        /* Hierarchical Timeline */
+        .hierarchy-timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .hierarchy-timeline::before {
+            content: '';
+            position: absolute;
+            right: 50px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent) 0%, var(--border) 100%);
+        }
+
+        .timeline-milestone {
+            position: relative;
+            margin-bottom: 60px;
+            padding-right: 80px;
+        }
+
+        .timeline-milestone::after {
+            content: '';
+            position: absolute;
+            right: 44px;
+            top: 10px;
+            width: 14px;
+            height: 14px;
+            background: var(--surface);
+            border: 3px solid var(--accent);
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 0 0 4px var(--background);
+        }
+
+        .milestone-year {
+            position: absolute;
+            right: 110px;
+            top: 4px;
+            font-weight: 800;
+            color: var(--accent);
+            font-size: 0.9rem;
+            background: rgba(var(--accent-rgb), 0.1);
+            padding: 2px 10px;
+            border-radius: 50px;
+        }
+
+        .milestone-content {
+            background: var(--surface);
+            padding: 24px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .milestone-content:hover {
+            box-shadow: var(--shadow-md);
+            border-color: rgba(var(--accent-rgb), 0.3);
+        }
+
+        .milestone-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .milestone-logo {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 10px;
+            background: #fff;
+            padding: 4px;
+            border: 1px solid var(--border);
+        }
+
+        .milestone-title h3 {
+            font-size: 1.15rem;
+            margin-bottom: 4px;
+        }
+
+        .milestone-title p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .milestone-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .milestone-tags {
+            margin-top: 15px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .milestone-tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            background: var(--background);
+            border-radius: 4px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .hierarchy-timeline::before {
+                right: 20px;
+            }
+
+            .timeline-milestone {
+                padding-right: 45px;
+            }
+
+            .timeline-milestone::after {
+                right: 14px;
+            }
+
+            .milestone-year {
+                position: static;
+                display: inline-block;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
+
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="index.html" class="brand">
@@ -44,197 +283,204 @@
     </nav>
 
     <main class="page-content visible">
-        <div class="master-site-wrapper" style="padding-top: 100px;">
-            <section class="about-me-page">
-                <h1 style="text-align: center;">محمد النجار</h1>
-                <p style="text-align: center; font-size: 24px; color: #555; margin-bottom: 40px;">Bioinformatics |
-                    Machine Learning | Science Communication</p>
 
-                <h2>🎓 المؤهلات الأكاديمية | Education</h2>
-                <div class="edu-grid">
-                    <div class="edu-card">
-                        <div class="title-with-logo">
-                            <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/guc.png"
-                                class="step-logo guc-logo" alt="GUC">
-                            <h3>ماجستير المعلوماتية الحيوية (2026)</h3>
+        <!-- HERO SECTION -->
+        <section class="about-hero">
+            <div class="container">
+                <div class="profile-container">
+                    <img src="assets/img/1.png" alt="Mohamed Elnaggar" class="profile-img">
+                </div>
+                <h1 class="hero-name">محمد النجار</h1>
+                <p class="hero-tagline">
+                    باحث في المعلوماتية الحيوية | خبير في التعلم الآلي | المؤسس والرئيس التنفيذي لشركة Naggar Analytics
+                    <br>
+                    <small style="font-size: 0.9rem; opacity: 0.8;">الرياض، المملكة العربية السعودية 🇸🇦</small>
+                </p>
+            </div>
+        </section>
+
+        <!-- SKILLS MATRIX -->
+        <section class="skills-section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 50px;">القدرات والخبرات التقنية</h2>
+                <div class="skills-matrix">
+                    <!-- Tech Skills -->
+                    <div class="skill-category">
+                        <h3>🔬 علوم البيانات والبحث</h3>
+                        <div class="skill-pills">
+                            <span class="skill-pill">Bioinformatics</span>
+                            <span class="skill-pill">Machine Learning</span>
+                            <span class="skill-pill">Biostatistics</span>
+                            <span class="skill-pill">R Language</span>
+                            <span class="skill-pill">Python</span>
+                            <span class="skill-pill">SPSS / Jamovi</span>
+                            <span class="skill-pill">Single Cell Analysis</span>
+                            <span class="skill-pill">Meta-Analysis</span>
                         </div>
-                        <p style="font-family: sans-serif !important; font-size: 14px;">MSc Bioinformatics - GUC</p>
                     </div>
-
-                    <div class="edu-card">
-                        <div class="title-with-logo">
-                            <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/guc.png"
-                                class="step-logo guc-logo" alt="GUC">
-                            <h3>دبلوم التعلم الآلي (2024)</h3>
+                    <!-- Soft Skills -->
+                    <div class="skill-category">
+                        <h3>📢 التواصل والقيادة</h3>
+                        <div class="skill-pills">
+                            <span class="skill-pill">Science Communication</span>
+                            <span class="skill-pill">Leadership</span>
+                            <span class="skill-pill">Public Speaking</span>
+                            <span class="skill-pill">Content Creation</span>
+                            <span class="skill-pill">Project Management</span>
+                            <span class="skill-pill">Strategic Planning</span>
                         </div>
-                        <p style="font-family: sans-serif !important; font-size: 14px;">Machine Learning Diploma - GUC
-                        </p>
-                    </div>
-
-                    <div class="edu-card">
-                        <div class="title-with-logo">
-                            <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/Ain_Shams_logo.png"
-                                class="step-logo" alt="ASU">
-                            <h3>بكالوريوس الكيمياء الحيوية (2021)</h3>
-                        </div>
-                        <p style="font-family: sans-serif !important; font-size: 14px;">BSc Biochemistry - ASU</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <h2>💼 الخبرة المهنية | Professional Experience</h2>
-                <div class="prof-grid">
-                    <div class="edu-card current-role">
-                        <div class="title-with-logo">
-                            <h3 style="color: var(--accent-color);">المدير التقني | Technical Director</h3>
-                        </div>
-                        <p><strong>Research Assistant for Research and Studies</strong></p>
-                        <p>الرياض، السعودية (أغسطس 2025 - الآن). الإشراف العلمي والتقني الكامل.</p>
-                    </div>
-
-                    <div class="edu-card">
-                        <div class="title-with-logo">
-                            <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/mendel-logo.webp"
-                                class="step-logo" alt="Mendel AI">
-                            <h3>Clinical Data Specialist</h3>
-                        </div>
-                        <p><strong>Mendel AI</strong></p>
-                        <p>تحليل ومعالجة البيانات السريرية باستخدام الذكاء الاصطناعي.</p>
-                    </div>
-
-                    <div class="edu-card">
-                        <div class="title-with-logo">
-                            <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/Mendeley.png"
-                                class="step-logo" alt="Mendeley">
-                            <h3>Mendeley Advisor</h3>
-                        </div>
-                        <p><strong>Elsevier</strong></p>
-                        <p>مستشار معتمد لشركة Elsevier لتدريب الباحثين.</p>
-                    </div>
-
-                    <div class="edu-card">
-                        <div class="title-with-logo">
-                            <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/Guidepoint-Logo-large.jpg"
-                                class="step-logo" alt="Guidepoint">
-                            <h3>Subject Matter Expert</h3>
-                        </div>
-                        <p><strong>Guidepoint New York</strong></p>
-                        <p>تقديم استشارات تخصصية لشبكة الخبراء العالمية.</p>
-                    </div>
-
-                    <div class="edu-card" style="grid-column: 1 / -1;">
-                        <div class="title-with-logo">
-                            <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/cmccm.png" class="step-logo"
-                                alt="CMCCM">
-                            <h3>Research Assistant - CMCCM</h3>
-                        </div>
-                        <p><strong>كلية الطب، جامعة قناة السويس</strong></p>
-                        <p>باحث مساعد في مركز التميز في البيولوجيا الجزيئية والطب.</p>
-                    </div>
+        <!-- THE HIERARCHICAL JOURNEY -->
+        <section class="journey-section">
+            <div class="container">
+                <div style="text-align: center; margin-top: 80px;">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">الجدول الزمني للرحلة</h2>
+                    <p style="color: var(--text-muted);">تسلسل هرمي للمؤهلات والخبرات المهنية</p>
                 </div>
 
-                <h2>🚀 رحلة التأثير والقيادة</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="title-with-logo">
-                            <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/GOL%20logo%20.jpg"
-                                class="step-logo" alt="GOL Logo">
-                            <h3 style="margin:0;">رئيس اللوجستيات - فريق GOL (2014)</h3>
-                        </div>
-                        <div class="volunteer-box">
-                            <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/GOL%20photo.jpg"
-                                class="volunteer-square-img" alt="GOL Photo">
-                            <p>قيادة العمليات اللوجستية بمقر السفارة الأمريكية بالقاهرة - مشروع مدعوم من جامعة Stanford.
-                            </p>
-                        </div>
-                    </div>
+                <div class="hierarchy-timeline">
 
-                    <div class="timeline-item">
-                        <div class="title-with-logo">
-                            <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/CCC%20logo.jpg"
-                                class="step-logo" alt="CCC Logo">
-                            <h3 style="margin:0;">Competitive College Club - Amideast</h3>
-                        </div>
-                        <div class="volunteer-box">
-                            <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/ccc%20photo%201.jpg"
-                                class="volunteer-square-img" alt="Ambassador Meeting">
-                            <p>تطوير المهارات القيادية والأكاديمية تحت إشراف مؤسسة Amideast ولقاء السفير الأمريكي.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="title-with-logo">
-                            <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/zcf%20logo%20.jpeg"
-                                class="step-logo" alt="ZCF Logo">
-                            <h3 style="margin:0;">أصدقاء مدينة زويل (ZCF)</h3>
-                        </div>
-                        <div class="volunteer-box">
-                            <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/zcf%201.jpg"
-                                class="volunteer-square-img" alt="ZCF Activity">
-                            <p>رئاسة اللجنة التنظيمية لأصدقاء مدينة زويل لنشر العلوم والتكنولوجيا في المجتمع المصري.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="title-with-logo">
-                            <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/logo%20tetra.png"
-                                class="step-logo" alt="Tetraploid Logo">
-                            <h3 style="margin:0;">مؤسس فريق Tetraploid Team للبحث العلمي</h3>
-                        </div>
-                        <div class="volunteer-box">
-                            <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/logo%20tetra.png"
-                                class="volunteer-square-img" alt="Tetraploid Team"
-                                style="background: white; object-fit: contain; padding: 5px;">
-                            <div>
-                                <p>تأسيس وقيادة فريق بحثي مستقل يركز على الأبحاث الطبية والحيوية. نجح الفريق تحت قيادتي
-                                    في
-                                    نشر عدة أبحاث علمية في مجلات دولية مرموقة.</p>
+                    <!-- 2026 Milestone - CEO -->
+                    <div class="timeline-milestone">
+                        <span class="milestone-year">2026 - الآن</span>
+                        <div class="milestone-content" style="border-right: 4px solid var(--accent);">
+                            <div class="milestone-header">
+                                <img src="assets/img/1.png" class="milestone-logo" alt="Naggar Analytics">
+                                <div class="milestone-title">
+                                    <h3>المؤسس والرئيس التنفيذي</h3>
+                                    <p>Naggar Analytics</p>
+                                </div>
+                            </div>
+                            <p class="milestone-desc">قيادة رؤية الشركة لتقديم حلول إحصائية متقدمة وأبحاث عالية الدقة
+                                للباحثين والمؤسسات العلمية.</p>
+                            <div class="milestone-tags">
+                                <span class="milestone-tag">Executive Leadership</span>
+                                <span class="milestone-tag">Business Strategy</span>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <h2>🛠️ المهارات والخبرات | Skills</h2>
-                <div class="skills-grid">
-                    <div class="edu-card">
-                        <h3 style="margin-bottom:15px; color: var(--highlight-color);">🔬 المهارات العلمية والبحثية</h3>
-                        <div style="display: flex; flex-wrap: wrap;">
-                            <span class="skill-tag">R</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">SPSS</span>
-                            <span class="skill-tag">JASP</span>
-                            <span class="skill-tag">Jamovi</span>
-                            <span class="skill-tag">Bioinformatics</span>
-                            <span class="skill-tag">Single Cell Analysis</span>
-                            <span class="skill-tag">Biostatistics</span>
-                            <span class="skill-tag">Meta-Analysis</span>
-                            <span class="skill-tag">Systematic Review</span>
-                            <span class="skill-tag">Research Methodology</span>
-                            <span class="skill-tag">Scientific Writing</span>
-                            <span class="skill-tag">Molecular Biology Techniques</span>
-                            <span class="skill-tag">MS Office</span>
+                    <!-- 2026 - Master's -->
+                    <div class="timeline-milestone">
+                        <span class="milestone-year">2026 (متوقع)</span>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/guc.png"
+                                    class="milestone-logo" alt="GUC">
+                                <div class="milestone-title">
+                                    <h3>ماجستير المعلوماتية الحيوية</h3>
+                                    <p>الجامعة الألمانية بالقاهرة (GUC)</p>
+                                </div>
+                            </div>
+                            <p class="milestone-desc">تخصص متقدم في دمج علوم الأحياء مع التحليل الحاسوبي والبيانات
+                                الجينية المعقدة.</p>
                         </div>
                     </div>
-                    <div class="edu-card">
-                        <h3 style="margin-bottom:15px; color: var(--accent-color);">🎨 المهارات الإبداعية والقيادية</h3>
-                        <div style="display: flex; flex-wrap: wrap;">
-                            <span class="skill-tag">Content Creation</span>
-                            <span class="skill-tag">Photo Editing</span>
-                            <span class="skill-tag">Video Editing</span>
-                            <span class="skill-tag">Public Speaking</span>
-                            <span class="skill-tag">Leadership</span>
-                            <span class="skill-tag">Communication Skills</span>
+
+                    <!-- 2025 - Technical Director -->
+                    <div class="timeline-milestone">
+                        <span class="milestone-year">2025</span>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <div class="milestone-title">
+                                    <h3>المدير التقني | Technical Director</h3>
+                                    <p>Research Assistant for Research and Studies - الرياض</p>
+                                </div>
+                            </div>
+                            <p class="milestone-desc">الإشراف على العمليات العلمية والتقنية وتوجيه الفرق البحثية لضمان
+                                جودة المخرجات العلمية.</p>
                         </div>
                     </div>
-                </div>
 
+                    <!-- 2024 - ML Diploma -->
+                    <div class="timeline-milestone">
+                        <span class="milestone-year">2024</span>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/guc.png"
+                                    class="milestone-logo" alt="GUC">
+                                <div class="milestone-title">
+                                    <h3>دبلوم التعلم الآلي</h3>
+                                    <p>الجامعة الألمانية بالقاهرة (GUC)</p>
+                                </div>
+                            </div>
+                            <p class="milestone-desc">دراسة مكثفة للخوارزميات والذكاء الاصطناعي وتطبيقاته في تحليل
+                                البيانات الضخمة.</p>
+                        </div>
+                    </div>
+
+                    <!-- Clinical Data Specialist -->
+                    <div class="timeline-milestone">
+                        <span class="milestone-year">2023</span>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/mendel-logo.webp"
+                                    class="milestone-logo" alt="Mendel AI">
+                                <div class="milestone-title">
+                                    <h3>Clinical Data Specialist</h3>
+                                    <p>Mendel AI</p>
+                                </div>
+                            </div>
+                            <p class="milestone-desc">تحليل البيانات السريرية وتحويل النصوص الطبية غير المنظمة إلى
+                                بيانات مهيكلة باستخدام AI.</p>
+                        </div>
+                    </div>
+
+                    <!-- BSc 2021 -->
+                    <div class="timeline-milestone">
+                        <span class="milestone-year">2021</span>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/Ain_Shams_logo.png"
+                                    class="milestone-logo" alt="Ain Shams">
+                                <div class="milestone-title">
+                                    <h3>بكالوريوس الكيمياء الحيوية</h3>
+                                    <p>جامعة عين شمس</p>
+                                </div>
+                            </div>
+                            <p class="milestone-desc">تأسيس أكاديمي قوي في العمليات الحيوية والكيمياء التحليلية.</p>
+                        </div>
+                    </div>
+
+                    <!-- Leadership / Founder Tetraploid -->
+                    <div class="timeline-milestone">
+                        <span class="milestone-year">الرواد</span>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <img src="https://pub-65e17d7db3b940e69a344bc85657534e.r2.dev/logo%20tetra.png"
+                                    class="milestone-logo" alt="Tetraploid">
+                                <div class="milestone-title">
+                                    <h3>مؤسس فريق Tetraploid Team</h3>
+                                    <p>مبادرة بحثية مستقلة</p>
+                                </div>
+                            </div>
+                            <p class="milestone-desc">قيادة فريق من الباحثين لنشر أبحاث في مجلات دولية مرموقة مثل Nature
+                                (Scientific Reports).</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- QUOTE -->
+        <section style="padding: 100px 0; background: var(--background);">
+            <div class="container" style="text-align: center;">
                 <div
-                    style="background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-top: 40px; border: 1px solid var(--highlight-color);">
-                    <h3 style="color: var(--accent-color); font-size: 32px; margin-top: 0;">نصيحة لكل طموح</h3>
-                    <p style="font-size: 24px; line-height: 1.6;">"استخدم عقلك، كن مبدعاً، وتحلَّ بالمهارات التي تتطلب
-                        العمل الجاد والمثابرة."</p>
+                    style="max-width: 800px; margin: 0 auto; padding: 40px; background: var(--surface); border-radius: 40px; border: 1px solid var(--border); box-shadow: var(--shadow-lg);">
+                    <span
+                        style="font-size: 4rem; color: var(--accent); opacity: 0.2; display: block; height: 30px; line-height: 1;">"</span>
+                    <h3 style="font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.5; margin-bottom: 20px;">
+                        استخدم عقلك، كن مبدعاً، وتحلَّ بالمهارات التي تتطلب العمل الجاد والمثابرة.
+                    </h3>
+                    <p style="color: var(--accent); font-weight: 700; font-size: 1.1rem;">— محمد النجار</p>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
 
         <!-- NEWSLETTER -->
         <section class="newsletter-section">
@@ -286,6 +532,32 @@
     <script src="assets/js/vendor/gsap.min.js"></script>
     <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        // Custom Reveal Animations for Timeline
+        gsap.from(".timeline-milestone", {
+            scrollTrigger: {
+                trigger: ".hierarchy-timeline",
+                start: "top 80%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power2.out"
+        });
+
+        gsap.from(".skill-category", {
+            scrollTrigger: {
+                trigger: ".skills-matrix",
+                start: "top 85%",
+            },
+            x: 30,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power2.out"
+        });
+    </script>
 </body>
 
 </html>
