@@ -1,0 +1,26 @@
+/* Marker Highlight Effect - Theme Aligned */
+.marker-highlight {
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    /* Prevent breaking inside highlighted words */
+}
+
+/* The highlighter stroke */
+.marker-highlight::after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    /* Slight overflow */
+    right: -2px;
+    /* Slight overflow */
+    bottom: 0.1em;
+    /* Position at the bottom of the text */
+    height: 0.4em;
+    /* Height of the highlight */
+    background-color: rgba(22, 160, 133, 0.4);
+    /* Tealy/Greenish opacity to match theme */
+    z-index: -1;
+    border-radius: 2px;
+    transform: rotate(-1deg);
+}

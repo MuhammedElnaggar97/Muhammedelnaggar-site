@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* ===================== STATS COUNTER ===================== */
-(function() {
+(function () {
     const counters = document.querySelectorAll('.counter');
     if (!counters.length) return;
 
@@ -262,11 +262,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const runCounter = (el) => {
         const target = +el.dataset.target;
+        const start = +el.dataset.start || 0; // Support start value
         const duration = 2000; // 2 seconds
         const stepTime = 20;
         const steps = duration / stepTime;
-        const increment = target / steps;
-        let current = 0;
+        const increment = (target - start) / steps;
+        let current = start;
 
         const timer = setInterval(() => {
             current += increment;
