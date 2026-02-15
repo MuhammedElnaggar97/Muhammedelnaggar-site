@@ -13,63 +13,81 @@
 
         gtag('config', 'G-YBZ9P9EPNN');
     </script>
-    <title>بودكاست ومصادر - استشارات بحثية</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <title>Naggar | نجار — استشارات بحثية وإحصاء حيوي</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="brand">
-                <img src="assets/img/logo20.png" alt="Naggar Logo" class="brand-logo">
-            </a>
-            <div class="nav-controls">
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="courses.html" class="nav-link">🎓 الدورات التدريبية</a></li>
-                    <li><a href="advising.html" class="nav-link">🤝 حجز الاستشارات</a></li>
-                    <li><a href="articles.html" class="nav-link">📰 المقالات</a></li>
-                    <li><a href="about.html" class="nav-link">👤 عن محمد</a></li>
-                </ul>
-                <button class="theme-toggle" id="themeToggleBtn" aria-label="تبديل الوضع">🌙</button>
-                <a href="advising.html" class="nav-cta">ابدأ استشارة</a>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
-            </div>
-        </div>
-    </nav>
 
-    <main class="page-content visible">
-        <div class="master-site-wrapper" style="padding-top: 100px;">
-            <div class="podcast-hero" style="text-align: center; margin-bottom: 60px;">
-                <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 20px;">بودكاست ومصادر تعليمية</h1>
-                <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
-                    مجموعة مختارة من البودكاست والمصادر التي تساعدك في رحلتك العلمية والبحثية.
-                </p>
-            </div>
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <video class="preloader-video" id="preloaderVideo" autoplay muted playsinline>
+            <source src="assets/animation.webm" type="video/webm">
+        </video>
+    </div>
 
-            <div class="podcast-grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 80px;">
-                <div class="podcast-card"
-                    style="background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 30px; transition: transform 0.3s ease;">
-                    <h3>بودكاست طويلب علم</h3>
-                    <p>بودكاست يجمع بين العلم والحكايات، نتحدث فيه عن رحلة البحث العلمي وتحدياتها.</p>
-                    <a href="https://www.youtube.com/playlist?list=PL9GrBMsvivVXepashqv9Ws02J2UFClzti" target="_blank"
-                        class="btn btn-accent" style="margin-top: 20px; display: inline-block;">استمع الآن</a>
-                </div>
+    <!-- MAIN CONTENT (hidden until load) -->
+    <div class="page-content" id="pageContent" style="opacity: 0;">
 
-                <div class="podcast-card"
-                    style="background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 30px; transition: transform 0.3s ease;">
-                    <h3>أساسيات البحث العلمي</h3>
-                    <p>سلسلة دروس مخصصة للمبتدئين في عالم البحث العلمي، من الفكرة وحتى النشر.</p>
-                    <a href="https://www.youtube.com/playlist?list=PL9GrBMsvivVWZ2Ztg5VXzKhxVF2F1q5Ld" target="_blank"
-                        class="btn btn-outline" style="margin-top: 20px; display: inline-block;">شاهد السلسلة</a>
+        <!-- NAVBAR -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="brand">
+                    <img src="assets/img/logo20.png" alt="Naggar Logo" class="brand-logo">
+                </a>
+                <div class="nav-controls">
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="courses.html" class="nav-link">🎓 الدورات التدريبية</a></li>
+                        <li><a href="advising.html" class="nav-link">🤝 حجز الاستشارات</a></li>
+                        <li><a href="articles.html" class="nav-link">📰 المقالات</a></li>
+                        <li><a href="about.html" class="nav-link">👤 عن محمد</a></li>
+                    </ul>
+                    <button class="theme-toggle" id="themeToggleBtn" aria-label="تبديل الوضع">🌙</button>
+                    <a href="advising.html" class="nav-cta">ابدأ استشارة</a>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
                 </div>
             </div>
-        </div>
+        </nav>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-inner">
+                    <div class="hero-text">
+                        <h1>المقالات والمصادر</h1>
+                        <p class="hero-desc">
+                            مكتبة متجددة من المقالات والأدلة العملية التي تغطي جوانب البحث العلمي والإحصاء.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ARTICLES -->
+        <section class="section" style="padding-top: 40px;">
+            <div class="container">
+                <div class="articles-list">
+                    <a href="master-stats.html" class="article-row">
+                        <h4>ازاي تعمل الإحصاء بتاعت الرسالة بتاعتك</h4><span class="article-line"></span><span
+                            class="article-date">Oct 7, 2024</span>
+                    </a>
+                    <a href="/reviews-types" class="article-row">
+                        <h4>الفرق بين أنواع الريفيوهات العلمية</h4><span class="article-line"></span><span
+                            class="article-date">Oct 7, 2024</span>
+                    </a>
+                    <a href="/risk-of-bias-assesment" class="article-row">
+                        <h4>الدليل الشامل للrisk of bias assessment</h4><span class="article-line"></span><span
+                            class="article-date">Oct 5, 2024</span>
+                    </a>
+                    <a href="/telegram-bot" class="article-row">
+                        <h4>أداة التليجرام لتعلم البحث العلمي</h4><span class="article-line"></span><span
+                            class="article-date">Jan 10, 2024</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
 
         <!-- NEWSLETTER -->
         <section class="newsletter-section">
@@ -115,9 +133,10 @@
                 </div>
             </div>
         </footer>
-    </main>
 
-    <!-- GSAP Animations -->
+    </div><!-- /.page-content -->
+
+    <!-- Scripts -->
     <script src="assets/js/vendor/gsap.min.js"></script>
     <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
     <script src="assets/js/main.js"></script>
