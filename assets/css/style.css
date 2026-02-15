@@ -2040,7 +2040,7 @@ p {
    ============================ */
 @media (max-width: 1024px) {
     .hero-inner {
-        flex-direction: column-reverse;
+        flex-direction: column;
         text-align: center;
     }
 
