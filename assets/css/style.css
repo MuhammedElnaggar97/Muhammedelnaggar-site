@@ -2709,6 +2709,7 @@ p {
 .callout-box h2 {
     font-size: 1.3rem;
 }
+
 /* ============================
    HERO LOGOS & DARK MODE REFINEMENTS
    ============================ */
@@ -2759,8 +2760,16 @@ p {
 }
 
 /* Specific scale adjustments */
-.hero-logo-item:nth-child(1) img { transform: scale(1.3); } /* GUC */
-.hero-logo-item:nth-child(3) img { transform: scale(1.3); } /* Cochrane */
+.hero-logo-item:nth-child(1) img {
+    transform: scale(1.3);
+}
+
+/* GUC */
+.hero-logo-item:nth-child(3) img {
+    transform: scale(1.3);
+}
+
+/* Cochrane */
 
 .hero-logo-item:nth-child(1):hover img,
 .hero-logo-item:nth-child(3):hover img {
@@ -2773,6 +2782,7 @@ p {
         flex-wrap: wrap;
         gap: 15px;
     }
+
     .hero-logo-item {
         width: 80px;
         height: 80px;
@@ -2788,6 +2798,7 @@ p {
         gap: 15px;
         padding: 0 10px;
     }
+
     .stat-item {
         background: var(--surface);
         padding: 20px 10px;
@@ -2813,4 +2824,173 @@ p {
 
 [data-theme="dark"] .trust-item span {
     color: #f1f5f9 !important;
+}
+
+/* ============================
+   MODERN ADVISING HERO
+   ============================ */
+.advising-hero-modern {
+    padding: 160px 0 100px;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-flex {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    direction: rtl;
+}
+
+.hero-text-side {
+    flex: 1.5;
+    text-align: right;
+}
+
+.hero-image-side {
+    flex: 0 0 380px;
+    /* Smaller and contained */
+}
+
+.epic-subtitle {
+    display: block;
+    color: var(--accent);
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.title-wrapper {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.hero-text-side h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    /* Slightly smaller as requested */
+    font-weight: 900;
+    line-height: 1.2;
+    color: var(--text);
+    position: relative;
+    display: inline-block;
+}
+
+.price-hint {
+    font-size: 0.85rem;
+    color: #22c55e;
+    font-weight: 800;
+    position: absolute;
+    top: -10px;
+    left: -65px;
+    /* Positioned at the end (left) in RTL */
+    background: rgba(34, 197, 94, 0.1);
+    padding: 2px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+    line-height: 1;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .hero-text-side h1 {
+        font-size: 2.2rem;
+    }
+
+    .price-hint {
+        font-size: 0.75rem;
+        top: -8px;
+        left: -55px;
+    }
+}
+
+.hero-desc-modern {
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 40px;
+    max-width: 600px;
+    font-weight: 500;
+    border-right: 4px solid var(--accent);
+    padding-right: 20px;
+}
+
+.stats-badge-modern {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: #FFF9E6;
+    padding: 12px 28px;
+    border-radius: 18px;
+    margin-bottom: 48px;
+    border: 1px solid rgba(181, 137, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(181, 137, 0, 0.1);
+}
+
+[data-theme="dark"] .stats-badge-modern {
+    background: rgba(255, 184, 0, 0.05);
+    border-color: rgba(255, 184, 0, 0.1);
+}
+
+.stats-badge-modern .count-text {
+    font-weight: 800;
+    color: #B58900;
+    font-size: 1.1rem;
+}
+
+.stats-badge-modern .stars {
+    color: #FFB800;
+    font-size: 1.2rem;
+}
+
+.btn-black-modern {
+    background: #000;
+    color: #fff !important;
+    padding: 14px 36px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.4s ease;
+}
+
+[data-theme="dark"] .btn-black-modern {
+    background: #fff;
+    color: #000 !important;
+}
+
+.video-frame {
+    position: relative;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.15);
+    border: 10px solid var(--surface);
+}
+
+.video-frame img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+@media (max-width: 992px) {
+    .hero-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image-side {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .hero-text-side {
+        text-align: center;
+    }
 }
