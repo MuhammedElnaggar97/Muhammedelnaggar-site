@@ -250,3 +250,42 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 });
+
+/* ===================== STATS COUNTER ===================== */
+(function() {
+    const counters = document.querySelectorAll('.counter');
+    if (!counters.length) return;
+
+    const toArabic = (num) => {
+        return num.toString().replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+    };
+
+    const runCounter = (el) => {
+        const target = +el.dataset.target;
+        const duration = 2000; // 2 seconds
+        const stepTime = 20;
+        const steps = duration / stepTime;
+        const increment = target / steps;
+        let current = 0;
+
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            el.innerText = toArabic(Math.floor(current));
+        }, stepTime);
+    };
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                runCounter(entry.target);
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(c => observer.observe(c));
+})();
