@@ -1,0 +1,13 @@
+/* CSS for nav icons */
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    vertical-align: middle;
+}
+
+.nav-link svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2px;
+}
