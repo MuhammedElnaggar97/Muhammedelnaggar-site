@@ -49,6 +49,8 @@
     align-items: center;
     justify-content: center;
     transition: background 0.3s;
+    z-index: 2;
+    /* Ensure it's above image */
 }
 
 .resource-card:hover .resource-play-overlay {
@@ -67,6 +69,10 @@
     /* Youtube Red */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-size: 20px;
+    /* Ensure icon size */
+    padding-left: 4px;
+    /* Optical center adjustment for play triangle */
 }
 
 .resource-card:hover .play-icon {
