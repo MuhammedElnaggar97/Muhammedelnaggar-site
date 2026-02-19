@@ -3,66 +3,12 @@
    Site Logic
    ============================================== */
 
-// ===================== PRELOADER =====================
+// ===================== PAGE LOAD =====================
 (function () {
-    var preloader = document.getElementById('preloader');
-    var video = document.getElementById('preloaderVideo');
     var content = document.getElementById('pageContent');
-    if (!preloader || !content) return;
-
-    // Check if user has already seen preloader in this session (Force skip for now)
-    if (true) {
-        // Skip preloader
-        preloader.style.display = 'none';
+    if (content) {
         content.classList.add('visible');
-        preloader.remove();
-        return;
     }
-
-    var videoEnded = false;
-    var pageLoaded = false;
-
-    function revealPage() {
-        if (!videoEnded || !pageLoaded) return;
-
-        // Mark as seen in this session
-        sessionStorage.setItem('naggar_preloader_seen', 'true');
-
-        // Fade out preloader, reveal content
-        preloader.classList.add('hidden');
-        content.classList.add('visible');
-
-        // Clean up preloader from DOM after transition
-        setTimeout(function () {
-            preloader.remove();
-        }, 700);
-    }
-
-    // Video finished playing
-    if (video) {
-        video.addEventListener('ended', function () {
-            videoEnded = true;
-            revealPage();
-        });
-        // Fallback: if video can't play (unsupported format), skip after 1s
-        video.addEventListener('error', function () {
-            videoEnded = true;
-            revealPage();
-        });
-        // Safety timeout: never block the site more than 5 seconds
-        setTimeout(function () {
-            videoEnded = true;
-            revealPage();
-        }, 5000);
-    } else {
-        videoEnded = true;
-    }
-
-    // Page fully loaded (all images, fonts, etc.)
-    window.addEventListener('load', function () {
-        pageLoaded = true;
-        revealPage();
-    });
 })();
 
 document.addEventListener('DOMContentLoaded', function () {

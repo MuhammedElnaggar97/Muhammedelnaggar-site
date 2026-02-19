@@ -44,30 +44,35 @@
     font-family: 'Handicrafts';
     src: url('../fonts/TheYearofHandicrafts-Regular.otf') format('opentype');
     font-weight: 400;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Handicrafts';
     src: url('../fonts/TheYearofHandicrafts-Medium.otf') format('opentype');
     font-weight: 500;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Handicrafts';
     src: url('../fonts/TheYearofHandicrafts-SemiBold.otf') format('opentype');
     font-weight: 600;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Handicrafts';
     src: url('../fonts/TheYearofHandicrafts-Bold.otf') format('opentype');
     font-weight: 700;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Handicrafts';
     src: url('../fonts/TheYearofHandicrafts-Black.otf') format('opentype');
     font-weight: 900;
+    font-display: swap;
 }
 
 /* --- Reset --- */

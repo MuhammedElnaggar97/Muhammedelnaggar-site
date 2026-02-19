@@ -13,6 +13,8 @@
 
         gtag('config', 'G-YBZ9P9EPNN');
     </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preload" href="assets/css/style.css" as="style">
     <title>Naggar | نجار — استشارات بحثية وإحصاء حيوي</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/nav-icons.css">
@@ -23,21 +25,15 @@
 
 <body>
 
-    <!-- PRELOADER -->
-    <div class="preloader" id="preloader">
-        <video class="preloader-video" id="preloaderVideo" autoplay muted playsinline>
-            <source src="assets/animation.webm" type="video/webm">
-        </video>
-    </div>
-
-    <!-- MAIN CONTENT (hidden until load) -->
-    <div class="page-content" id="pageContent" style="opacity: 0;">
+    <!-- MAIN CONTENT -->
+    <div class="page-content" id="pageContent">
 
         <!-- NAVBAR -->
         <nav class="navbar" id="navbar">
             <div class="nav-container">
                 <a href="index.html" class="brand">
-                    <img src="assets/img/logo20.png" alt="Naggar Logo" class="brand-logo">
+                    <img src="assets/img/logo20.png" alt="Naggar Logo" class="brand-logo" fetchpriority="high"
+                        loading="eager">
                 </a>
                 <div class="nav-controls">
                     <ul class="nav-links" id="navLinks">
@@ -121,19 +117,20 @@
                     <div class="hero-logos-container">
                         <!-- GUC -->
                         <div class="hero-logo-item" title="German University in Cairo">
-                            <img src="assets/img/guc.png" alt="GUC Logo">
+                            <img src="assets/img/guc.png" alt="GUC Logo" fetchpriority="high" loading="eager">
                         </div>
                         <!-- CPD -->
                         <div class="hero-logo-item" title="The CPD Certification Service">
-                            <img src="assets/img/cpd.png" alt="CPD Certified">
+                            <img src="assets/img/cpd.png" alt="CPD Certified" fetchpriority="high" loading="eager">
                         </div>
                         <!-- Cochrane -->
                         <div class="hero-logo-item" title="Cochrane Collaboration">
-                            <img src="assets/img/Cochrane_Logo_Stacked_RGB.png" alt="Cochrane Logo">
+                            <img src="assets/img/Cochrane_Logo_Stacked_RGB.png" alt="Cochrane Logo" fetchpriority="high"
+                                loading="eager">
                         </div>
                         <!-- Nature -->
                         <div class="hero-logo-item" title="Nature Portfolio">
-                            <img src="assets/img/Nature.png" alt="Nature Logo">
+                            <img src="assets/img/Nature.png" alt="Nature Logo" fetchpriority="high" loading="eager">
                         </div>
                     </div>
                 </div>
@@ -170,23 +167,30 @@
                 <h3>نفخر بخدمة طلاب هذه الجامعات</h3>
                 <div class="trust-track-wrapper">
                     <div class="trust-track">
-                        <div class="trust-item"><img src="https://i.imgur.com/jnzYafu.png"><span>كلية الملك في
+                        <div class="trust-item"><img src="https://i.imgur.com/jnzYafu.png" loading="lazy"><span>كلية
+                                الملك في
                                 لندن</span>
                         </div>
-                        <div class="trust-item"><img src="https://i.imgur.com/pCPbVwi.png"><span>جامعة نوتنغهام</span>
+                        <div class="trust-item"><img src="https://i.imgur.com/pCPbVwi.png" loading="lazy"><span>جامعة
+                                نوتنغهام</span>
                         </div>
-                        <div class="trust-item"><img src="https://i.imgur.com/Df2upTu.png"><span>جامعة الملك سعود</span>
+                        <div class="trust-item"><img src="https://i.imgur.com/Df2upTu.png" loading="lazy"><span>جامعة
+                                الملك سعود</span>
                         </div>
-                        <div class="trust-item"><img src="https://i.imgur.com/sGZ8qzB.png"><span>جامعة عين شمس</span>
+                        <div class="trust-item"><img src="https://i.imgur.com/sGZ8qzB.png" loading="lazy"><span>جامعة
+                                عين شمس</span>
                         </div>
-                        <div class="trust-item"><img src="https://i.imgur.com/MY5jImA.png"><span>جامعة القاهرة</span>
+                        <div class="trust-item"><img src="https://i.imgur.com/MY5jImA.png" loading="lazy"><span>جامعة
+                                القاهرة</span>
                         </div>
-                        <div class="trust-item"><img src="https://i.imgur.com/wkQdJfS.png"><span>الجامعة
+                        <div class="trust-item"><img src="https://i.imgur.com/wkQdJfS.png" loading="lazy"><span>الجامعة
                                 البريطانية</span>
                         </div>
-                        <div class="trust-item"><img src="https://i.imgur.com/skaYHU4.png"><span>جامعة الملك خالد</span>
+                        <div class="trust-item"><img src="https://i.imgur.com/skaYHU4.png" loading="lazy"><span>جامعة
+                                الملك خالد</span>
                         </div>
-                        <div class="trust-item"><img src="https://i.imgur.com/V1WnmMu.png"><span>جامعة دبلن</span></div>
+                        <div class="trust-item"><img src="https://i.imgur.com/V1WnmMu.png" loading="lazy"><span>جامعة
+                                دبلن</span></div>
                         <div class="trust-item"><img src="https://i.imgur.com/JwYG3B5.png"><span>جامعة كاوست</span>
                         </div>
                         <div class="trust-item"><img src="https://i.imgur.com/jnzYafu.png"><span>كلية الملك في
@@ -219,7 +223,7 @@
                             <!-- Local Course Image -->
                             <img src="assets/img/Searching Databases.svg" alt="Master database searching"
                                 style="object-fit: cover; width: 100%; height: 100%; background: #f8f9fa;"
-                                onerror="this.src='https://placehold.co/600x400?text=Course+Image'">
+                                loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Course+Image'">
                             <div class="product-badge">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     class="icon-bag">
@@ -431,7 +435,7 @@
             <div class="container">
                 <div class="about-teaser-inner">
                     <div class="about-teaser-photo">
-                        <img src="assets/img/without bg.webp" alt="محمد النجار">
+                        <img src="assets/img/without bg.webp" alt="محمد النجار" loading="lazy">
                     </div>
                     <div class="about-teaser-body">
                         <div class="section-divider"></div>
