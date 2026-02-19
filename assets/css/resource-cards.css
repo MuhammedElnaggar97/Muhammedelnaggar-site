@@ -1,6 +1,8 @@
 /* Wide Resource Cards */
 .resource-card {
     display: flex;
+    flex-direction: column;
+    /* Vertical layout by default for web/mobile grid */
     background: var(--surface);
     border-radius: 16px;
     overflow: hidden;
@@ -9,8 +11,6 @@
     border: 1px solid var(--border);
     transition: all 0.3s ease;
     height: 100%;
-    align-items: center;
-    /* Center content vertically */
 }
 
 .resource-card:hover {
@@ -21,13 +21,12 @@
 }
 
 .resource-thumb {
-    width: 200px;
-    /* Fixed width for thumbnail */
+    width: 100%;
+    /* Full width for vertical cards */
     flex-shrink: 0;
     position: relative;
-    height: 100%;
-    min-height: 160px;
-    /* Ensure height matches content */
+    height: 200px;
+    /* Fixed height for consistency */
 }
 
 .resource-thumb img {
@@ -44,40 +43,35 @@
 .resource-play-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background 0.3s;
     z-index: 2;
-    /* Ensure it's above image */
 }
 
 .resource-card:hover .resource-play-overlay {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .play-icon {
-    width: 48px;
+    width: 68px;
     height: 48px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 50%;
+    background: rgba(255, 0, 0, 0.8);
+    /* Adjusted opacity */
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ff0000;
-    /* Youtube Red */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    font-size: 20px;
-    /* Ensure icon size */
-    padding-left: 4px;
-    /* Optical center adjustment for play triangle */
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .resource-card:hover .play-icon {
     transform: scale(1.1);
-    background: #fff;
+    background: #FF0000;
 }
 
 .resource-content {
@@ -120,26 +114,36 @@
 .locked-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.2);
+    /* Much more transparent, no blur */
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 3;
     pointer-events: none;
+    transition: all 0.4s ease;
 }
 
 [data-theme="dark"] .locked-overlay {
-    background: rgba(15, 23, 42, 0.4);
+    background: rgba(15, 23, 42, 0.3);
 }
 
 .lock-icon {
-    font-size: 2rem;
-    color: var(--accent);
-    background: var(--surface);
-    padding: 15px;
+    font-size: 1.8rem;
+    color: #fff;
+    background: var(--accent);
+    padding: 12px;
     border-radius: 50%;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid #fff;
+}
+
+.resource-card.gated .resource-content {
+    opacity: 1;
+}
+
+.resource-card:not(.gated) .resource-content {
+    opacity: 1;
 }
 
 .resource-form-container {
@@ -205,21 +209,22 @@
 /* Mobile responsive */
 @media (max-width: 768px) {
     .resource-card {
-        flex-direction: column;
-        align-items: flex-start;
+        height: auto;
     }
 
     .resource-thumb {
-        width: 100%;
         height: 180px;
     }
 
     .resource-content {
         padding: 20px;
-        width: 100%;
     }
 
     .resource-form {
         flex-direction: column;
+    }
+
+    .resource-btn {
+        width: 100%;
     }
 }
