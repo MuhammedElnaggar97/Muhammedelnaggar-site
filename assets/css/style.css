@@ -157,6 +157,7 @@ body {
     overflow-x: hidden;
     font-weight: 500;
     -webkit-font-smoothing: antialiased;
+    font-size: 1.12rem;
 }
 
 .container {
@@ -858,7 +859,7 @@ p {
 
 .article-row h4 {
     flex: 1;
-    font-size: 1.05rem;
+    font-size: 1.25rem;
     font-weight: 600;
     transition: var(--transition);
 }
@@ -875,7 +876,7 @@ p {
 }
 
 .article-date {
-    font-size: 0.82rem;
+    font-size: 0.95rem;
     color: var(--text-muted);
     white-space: nowrap;
     font-weight: 500;
