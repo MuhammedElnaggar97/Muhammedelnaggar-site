@@ -25,8 +25,8 @@
     /* Full width for vertical cards */
     flex-shrink: 0;
     position: relative;
-    height: 200px;
-    /* Fixed height for consistency */
+    aspect-ratio: 16 / 9;
+    height: auto;
 }
 
 .resource-thumb img {
@@ -213,7 +213,7 @@
     }
 
     .resource-thumb {
-        height: 180px;
+        height: auto;
     }
 
     .resource-content {

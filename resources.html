@@ -20,6 +20,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/nav-icons.css">
+    <link rel="stylesheet" href="assets/css/product-cards.css">
     <link rel="stylesheet" href="assets/css/resource-cards.css">
     <style>
         .page-header {
@@ -66,8 +67,14 @@
 
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 1024px) {
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
@@ -218,65 +225,85 @@
                     <h2>سلاسل اليوتيوب التعليمية</h2>
                     <div class="line"></div>
                 </div>
-                <div class="grid-3" data-gsap="stagger-up">
+                <div class="products-grid" data-gsap="stagger-up">
                     <a href="https://www.youtube.com/playlist?list=PL9GrBMsvivVWZ2Ztg5VXzKhxVF2F1q5Ld" target="_blank"
-                        class="resource-card">
-                        <div class="resource-thumb">
+                        class="product-card">
+                        <div class="product-image">
                             <img src="https://pub-5ffbaa38106d451ba0b52807cf3ad274.r2.dev/Biostats%20101%20Thumbnail.png"
                                 alt="Biostats 101">
-                            <div class="resource-play-overlay">
-                                <div class="play-icon">
-                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-                                        <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                </div>
+                            <div class="product-badge"
+                                style="background: rgba(255, 0, 0, 0.1); color: #FF0000; box-shadow: none;">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                                يوتيوب
                             </div>
                         </div>
-                        <div class="resource-content">
-                            <h3 class="resource-title">الإحصاء الحيوي 101</h3>
-                            <div class="resource-subtitle">Biostats 101</div>
-                            <p class="resource-desc">دليلك العملي لفهم المبادئ الإحصائية الأساسية واستخدامها في بحثك
-                                العلمي.</p>
+                        <div class="product-content">
+                            <h3 class="product-title">الإحصاء الحيوي 101</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 16px;">
+                                دليلك العملي لفهم المبادئ الإحصائية الأساسية واستخدامها في بحثك العلمي.
+                            </p>
+                            <div class="product-meta">
+                                <span class="product-price" style="color: #22c55e;">مجاناً</span>
+                                <span class="product-action"
+                                    style="background: #FF0000; box-shadow: 0 4px 12px rgba(255,0,0,0.2);">شاهد الآن
+                                    &larr;</span>
+                            </div>
                         </div>
                     </a>
 
                     <a href="https://www.youtube.com/playlist?list=PL9GrBMsvivVWMywC_8aSJqU6RdwLmbVmC" target="_blank"
-                        class="resource-card">
-                        <div class="resource-thumb">
+                        class="product-card">
+                        <div class="product-image">
                             <img src="https://pub-5ffbaa38106d451ba0b52807cf3ad274.r2.dev/sys%20reviews.jpg"
                                 alt="Systematic Reviews">
-                            <div class="resource-play-overlay">
-                                <div class="play-icon">
-                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-                                        <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                </div>
+                            <div class="product-badge"
+                                style="background: rgba(255, 0, 0, 0.1); color: #FF0000; box-shadow: none;">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                                يوتيوب
                             </div>
                         </div>
-                        <div class="resource-content">
-                            <h3 class="resource-title">المراجعات المنهجية</h3>
-                            <div class="resource-subtitle">Systematic Reviews & Meta-analysis</div>
-                            <p class="resource-desc">كيفية إجراء مراجعة منهجية وتحليل بعدي من البداية حتى النشر.</p>
+                        <div class="product-content">
+                            <h3 class="product-title">المراجعات المنهجية</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 16px;">
+                                كيفية إجراء مراجعة منهجية وتحليل بعدي من البداية حتى النشر.
+                            </p>
+                            <div class="product-meta">
+                                <span class="product-price" style="color: #22c55e;">مجاناً</span>
+                                <span class="product-action"
+                                    style="background: #FF0000; box-shadow: 0 4px 12px rgba(255,0,0,0.2);">شاهد الآن
+                                    &larr;</span>
+                            </div>
                         </div>
                     </a>
 
                     <a href="https://www.youtube.com/playlist?list=PL9GrBMsvivVUzs49w_nFdKu74AtwFdH5H" target="_blank"
-                        class="resource-card">
-                        <div class="resource-thumb">
+                        class="product-card">
+                        <div class="product-image">
                             <img src="https://pub-5ffbaa38106d451ba0b52807cf3ad274.r2.dev/basics%20101.webp"
                                 alt="Research 101">
-                            <div class="resource-play-overlay">
-                                <div class="play-icon">
-                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-                                        <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                </div>
+                            <div class="product-badge"
+                                style="background: rgba(255, 0, 0, 0.1); color: #FF0000; box-shadow: none;">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                                يوتيوب
                             </div>
                         </div>
-                        <div class="resource-content">
-                            <h3 class="resource-title">أساسيات البحث العلمي</h3>
-                            <div class="resource-subtitle">Research 101</div>
-                            <p class="resource-desc">كورس مكثف يغطي كل ما تحتاجه للبدء في رحلتك البحثية بنجاح.</p>
+                        <div class="product-content">
+                            <h3 class="product-title">أساسيات البحث العلمي</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 16px;">
+                                كورس مكثف يغطي كل ما تحتاجه للبدء في رحلتك البحثية بنجاح.
+                            </p>
+                            <div class="product-meta">
+                                <span class="product-price" style="color: #22c55e;">مجاناً</span>
+                                <span class="product-action"
+                                    style="background: #FF0000; box-shadow: 0 4px 12px rgba(255,0,0,0.2);">شاهد الآن
+                                    &larr;</span>
+                            </div>
                         </div>
                     </a>
                 </div>
