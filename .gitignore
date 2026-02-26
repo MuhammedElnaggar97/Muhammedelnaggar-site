@@ -1,0 +1,9 @@
+.DS_Store
+.claude/
+.git/worktrees/
+*.code-workspace
+node_modules/
+.env
+.next/
+dist/
+build/
