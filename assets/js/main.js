@@ -141,57 +141,88 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // ===================== GSAP SCROLL REVEAL =====================
-    if (typeof gsap !== 'undefined') {
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
         // Simple Fade Up
         document.querySelectorAll('[data-gsap="fade-up"]').forEach(el => {
-            gsap.from(el, {
-                scrollTrigger: {
-                    trigger: el,
-                    start: "top 85%",
-                    toggleActions: "play none none none"
-                },
-                y: 30,
-                opacity: 0,
-                duration: 1,
-                ease: "power2.out"
-            });
+            gsap.fromTo(el,
+                { y: 30, opacity: 0 },
+                {
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    },
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power2.out",
+                    onStart: function () { el.style.transition = 'none'; },
+                    onComplete: function () {
+                        el.style.transition = '';
+                        gsap.set(el, { clearProps: "all" });
+                    }
+                }
+            );
         });
 
-        // Stagger Reveal for Testimonials
-        const staggerEl = document.querySelector('[data-gsap="stagger-up"]');
-        if (staggerEl) {
-            gsap.from(staggerEl.children, {
-                scrollTrigger: {
-                    trigger: staggerEl,
-                    start: "top 80%"
-                },
-                y: 40,
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.2,
-                ease: "power2.out"
-            });
-        }
+        // Stagger Reveal
+        document.querySelectorAll('[data-gsap="stagger-up"]').forEach(staggerEl => {
+            const children = Array.from(staggerEl.children);
+            if (children.length > 0) {
+                gsap.fromTo(children,
+                    { y: 40, opacity: 0 },
+                    {
+                        scrollTrigger: {
+                            trigger: staggerEl,
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        },
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        stagger: 0.15,
+                        ease: "power2.out",
+                        onStart: function () { this.targets().forEach(t => t.style.transition = 'none'); },
+                        onComplete: function () {
+                            this.targets().forEach(t => {
+                                t.style.transition = '';
+                                gsap.set(t, { clearProps: "all" });
+                            });
+                        }
+                    }
+                );
+            }
+        });
 
         // Horizontal Reveal
         document.querySelectorAll('[data-gsap="fade-right"]').forEach(el => {
-            gsap.from(el, {
-                scrollTrigger: { trigger: el, start: "top 85%" },
-                x: -50,
-                opacity: 0,
-                duration: 1,
-                ease: "power2.out"
-            });
+            gsap.fromTo(el,
+                { x: -50, opacity: 0 },
+                {
+                    scrollTrigger: { trigger: el, start: "top 85%" },
+                    x: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power2.out",
+                    clearProps: "all"
+                }
+            );
         });
 
         document.querySelectorAll('[data-gsap="fade-left"]').forEach(el => {
-            gsap.from(el, {
-                scrollTrigger: { trigger: el, start: "top 85%" },
-                x: 50,
-                opacity: 0,
-                duration: 1,
-                ease: "power2.out"
-            });
+            gsap.fromTo(el,
+                { x: 50, opacity: 0 },
+                {
+                    scrollTrigger: { trigger: el, start: "top 85%" },
+                    x: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power2.out",
+                    clearProps: "all"
+                }
+            );
         });
     }
 

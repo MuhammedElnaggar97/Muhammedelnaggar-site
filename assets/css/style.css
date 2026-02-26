@@ -580,9 +580,7 @@ p {
 .trust-section {
     padding: 60px 0;
     text-align: center;
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    background: transparent;
 }
 
 .trust-section h2 {

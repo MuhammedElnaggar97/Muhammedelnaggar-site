@@ -18,7 +18,7 @@
     <meta name="author" content="Muhamed Elnaggar">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://muhamedelnaggar.com/articles.html">
-    <link rel="icon" href="assets/img/logo.png" type="image/png">
+    <link rel="icon" href="assets/img/favicon.png" type="image/png">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Naggar | نجار">
@@ -39,6 +39,26 @@
     <title>Naggar | نجار</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/nav-icons.css">
+    <style>
+        .page-header {
+            padding: 120px 0 60px;
+            background: var(--surface);
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .page-header p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -97,19 +117,13 @@
             </div>
         </nav>
 
-        <!-- HERO -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-inner">
-                    <div class="hero-text">
-                        <h1>المقالات والمصادر</h1>
-                        <p class="hero-desc">
-                            مكتبة متجددة من المقالات والأدلة العملية التي تغطي جوانب البحث العلمي والإحصاء.
-                        </p>
-                    </div>
-                </div>
+        <!-- HEADER -->
+        <header class="page-header">
+            <div class="container" data-gsap="fade-up">
+                <h1>المقالات والمصادر</h1>
+                <p>مكتبة متجددة من المقالات والأدلة العملية التي تغطي جوانب البحث العلمي والإحصاء.</p>
             </div>
-        </section>
+        </header>
 
         <!-- ARTICLES -->
         <section class="section" style="padding-top: 40px;">
