@@ -11,12 +11,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #F4F7F9;
+    background: var(--bg);
     transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-[data-theme="dark"] .preloader {
-    background: #0F172A;
 }
 
 .preloader.hidden {
@@ -42,35 +38,35 @@
 /* --- Fonts --- */
 @font-face {
     font-family: 'Handicrafts';
-    src: url('../fonts/TheYearofHandicrafts-Regular.otf') format('opentype');
+    src: url('../fonts/TheYearofHandicrafts-Regular.woff2') format('woff2');
     font-weight: 400;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Handicrafts';
-    src: url('../fonts/TheYearofHandicrafts-Medium.otf') format('opentype');
+    src: url('../fonts/TheYearofHandicrafts-Medium.woff2') format('woff2');
     font-weight: 500;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Handicrafts';
-    src: url('../fonts/TheYearofHandicrafts-SemiBold.otf') format('opentype');
+    src: url('../fonts/TheYearofHandicrafts-SemiBold.woff2') format('woff2');
     font-weight: 600;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Handicrafts';
-    src: url('../fonts/TheYearofHandicrafts-Bold.otf') format('opentype');
+    src: url('../fonts/TheYearofHandicrafts-Bold.woff2') format('woff2');
     font-weight: 700;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Handicrafts';
-    src: url('../fonts/TheYearofHandicrafts-Black.otf') format('opentype');
+    src: url('../fonts/TheYearofHandicrafts-Black.woff2') format('woff2');
     font-weight: 900;
     font-display: swap;
 }
