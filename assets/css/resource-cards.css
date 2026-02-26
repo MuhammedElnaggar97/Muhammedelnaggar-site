@@ -1,77 +1,65 @@
-/* Wide Resource Cards */
+/* Modern Resource Cards Inspired by moedesigns.io */
 .resource-card {
     display: flex;
     flex-direction: column;
-    /* Vertical layout by default for web/mobile grid */
     background: var(--surface);
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
     text-decoration: none;
     color: inherit;
     border: 1px solid var(--border);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     height: 100%;
+    position: relative;
 }
 
 .resource-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    /* Soft shadow */
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     border-color: var(--accent);
 }
 
 .resource-thumb {
     width: 100%;
-    /* Full width for vertical cards */
-    flex-shrink: 0;
     position: relative;
-    aspect-ratio: 16 / 9;
-    height: auto;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--bg);
 }
 
 .resource-thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .resource-card:hover .resource-thumb img {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
-.resource-play-overlay {
+/* Category Badge */
+.resource-badge {
     position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s;
-    z-index: 2;
+    top: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(4px);
+    color: #1a1a1a;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    z-index: 5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.resource-card:hover .resource-play-overlay {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.play-icon {
-    width: 68px;
-    height: 48px;
-    background: rgba(255, 0, 0, 0.8);
-    /* Adjusted opacity */
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+[data-theme="dark"] .resource-badge {
+    background: rgba(15, 23, 42, 0.8);
     color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.resource-card:hover .play-icon {
-    transform: scale(1.1);
-    background: #FF0000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .resource-content {
@@ -79,152 +67,167 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 12px;
 }
 
 .resource-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 6px;
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.4;
+    color: var(--text);
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.resource-card:hover .resource-title {
+    color: var(--accent);
 }
 
 .resource-subtitle {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: var(--accent);
-    margin-bottom: 12px;
-    font-weight: 600;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .resource-desc {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
     line-height: 1.6;
+    margin-bottom: 8px;
 }
 
-/* Gated Resource Card */
+/* Play Overlay for Videos */
+.resource-play-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: background 0.3s;
+    z-index: 2;
+}
+
+.play-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(22, 160, 133, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.resource-card:hover .play-icon {
+    transform: scale(1.15) rotate(5deg);
+}
+
+/* Gated/Form Styles */
 .resource-card.gated {
     cursor: default;
 }
 
-.resource-card.gated:hover {
-    transform: none;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+.resource-form-container {
+    margin-top: auto;
+}
+
+.resource-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.resource-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg);
+    font-size: 0.9rem;
+    color: var(--text);
+    transition: border-color 0.3s;
+}
+
+.resource-input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.resource-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 12px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.resource-btn:hover {
+    filter: brightness(1.1);
+    transform: scale(1.02);
+}
+
+.btn-download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px;
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+[data-theme="dark"] .btn-download {
+    background: #fff;
+    color: #1a1a1a;
+}
+
+.btn-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .locked-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.2);
-    /* Much more transparent, no blur */
+    background: rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 3;
     pointer-events: none;
-    transition: all 0.4s ease;
-}
-
-[data-theme="dark"] .locked-overlay {
-    background: rgba(15, 23, 42, 0.3);
 }
 
 .lock-icon {
-    font-size: 1.8rem;
-    color: #fff;
-    background: var(--accent);
-    padding: 12px;
+    width: 48px;
+    height: 48px;
+    background: #fff;
+    color: #1a1a1a;
     border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border: 2px solid #fff;
-}
-
-.resource-card.gated .resource-content {
-    opacity: 1;
-}
-
-.resource-card:not(.gated) .resource-content {
-    opacity: 1;
-}
-
-.resource-form-container {
-    margin-top: 15px;
-}
-
-.resource-form {
     display: flex;
-    gap: 8px;
-}
-
-.resource-input {
-    flex: 1;
-    padding: 10px 14px;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    background: var(--surface);
-    font-size: 0.9rem;
-}
-
-.resource-btn {
-    padding: 10px 18px;
-    background: var(--accent);
-    color: #fff;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    white-space: nowrap;
-}
-
-.resource-success {
-    display: none;
-    color: #22c55e;
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-top: 10px;
-    text-align: center;
-}
-
-.download-link {
-    display: none;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.btn-download {
-    display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 12px 24px;
-    background: #22c55e;
-    color: #fff;
-    border-radius: 10px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: transform 0.2s;
-}
-
-.btn-download:hover {
-    transform: scale(1.05);
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Mobile responsive */
 @media (max-width: 768px) {
     .resource-card {
-        height: auto;
-    }
-
-    .resource-thumb {
-        height: auto;
-    }
-
-    .resource-content {
-        padding: 20px;
-    }
-
-    .resource-form {
-        flex-direction: column;
-    }
-
-    .resource-btn {
-        width: 100%;
+        max-width: 100%;
     }
 }

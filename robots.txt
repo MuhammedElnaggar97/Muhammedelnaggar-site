@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://muhamedelnaggar.com/sitemap.xml
+
+# Block old/backup
+Disallow: /old-site/
+Disallow: /.claude/
+
+# Allow CSS/JS/Images
+Allow: /assets/

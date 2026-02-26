@@ -4,58 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YBZ9P9EPNN"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-YBZ9P9EPNN');
-    </script>
-    <meta name="description"
-        content="تعلم كيفية إجراء التحليلات الإحصائية لرسالتك بطريقة صحيحة من البداية حتى النهاية بخطوات عملية">
-    <meta name="author" content="Muhamed Elnaggar">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://muhamedelnaggar.com/master-stats.html">
-    <link rel="icon" href="assets/img/logo.png" type="image/png">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Naggar | نجار">
-    <meta property="og:description"
-        content="تعلم كيفية إجراء التحليلات الإحصائية لرسالتك بطريقة صحيحة من البداية حتى النهاية بخطوات عملية">
-    <meta property="og:url" content="https://muhamedelnaggar.com/master-stats.html">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://muhamedelnaggar.com/assets/img/logo.png">
-    <meta property="og:locale" content="ar_AR">
-    <meta property="og:site_name" content="محمد النجار | Muhamed Elnaggar">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Naggar | نجار">
-    <meta name="twitter:description"
-        content="تعلم كيفية إجراء التحليلات الإحصائية لرسالتك بطريقة صحيحة من البداية حتى النهاية بخطوات عملية">
-    <meta name="twitter:image" content="https://muhamedelnaggar.com/assets/img/logo.png">
-
-    <!-- Article JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "ازاي تعمل الإحصاء بتاعت الرسالة بتاعتك",
-      "author": {
-        "@type": "Person",
-        "name": "Muhamed Elnaggar",
-        "url": "https://muhamedelnaggar.com/about.html"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Naggar Analytics"
-      },
-      "url": "https://muhamedelnaggar.com/master-stats.html"
-    }
-    </script>
-    <title>Naggar | نجار</title>
+    <title>عنوان المقال - محمد النجار</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -89,6 +38,17 @@
             direction: rtl;
         }
 
+        .img {
+            max-width: 800px;
+            margin: 30px auto 0;
+        }
+
+        ::selection {
+            background-color: var(--highlight-color);
+            color: var(--bg-color);
+        }
+
+        /* --- أنماط المقالة التفصيلية (blog-content) --- */
         .img {
             max-width: 800px;
             margin: 30px auto 0;
@@ -155,6 +115,17 @@
 
 
 
+        /* --- Dark mode override for bullet points in the blog content --- */
+        @media (prefers-color-scheme: dark) {
+            .blog-content ul li {
+                color: #fff !important;
+            }
+
+            .blog-content ul li::marker {
+                color: var(--highlight-color) !important;
+            }
+        }
+
         /* --- Mobile Responsiveness --- */
         @media (max-width: 600px) {
 
@@ -174,6 +145,10 @@
             .blog-content p,
             .blog-content ul li {
                 font-size: 20px;
+            }
+
+            .article-line {
+                display: none;
             }
         }
     </style>
@@ -226,96 +201,59 @@
     </nav>
 
     <main class="page-content visible">
-        <div class="master-site-wrapper">
-            <div class="img">
-                <img src="https://pub-beafae14dfd644eeb2e6a0771114bc95.r2.dev/master-stats.jpg"
-                    alt="master statistics image">
-            </div>
-
-            <div class="blog-content">
-                <h1>ازاي تعمل الإحصاء بتاعت الرسالة بتاعتك</h1>
-                <p>
-                    أهلا بك صديقي الباحث في مقال جديد و مهم جدا لطلبة الدراسات العليا من الماجستير و الدكتوراه.
-                    دايما بنسمع إن الماجستير و الدكتوراه بيكون فيهم شغل إحصاء و لكن البعض معندوش تصور الموضوع بيتم ازاي.
-                </p>
-
-                <p>
-                    أول حاجة لازم تعملها انك تتواصل مع حد عنده خبره في الإحصاء بعد تحديد عنوان الرسالة، علشان الشخص ده
-                    هيساعدك تحسب حجم العينه بشكل صحيح و هيعرفك ايه التحليلات الإحصائية المطلوبة للإجابة علي السؤال ده و
-                    هينظملك الشيت اللي هتبدأ تجمع فيه الداتا علشان تتجمع بشكل صحيح.
-                </p>
-                <p>
-                    بعد كدا، تعمل التجربه بتاعتك و تجمع الداتا و النتايج بتاعتك، بعدها لازم تعرف ان الإحصاء للشغل بتاعك
-                    غالبا بينقسم لشقين:
-                </p>
-                <b>الشق الأول: التحليلات الوصفية</b>
-                <p>
-                    يعني بعض الاختبارات كدا بتتم علشان توصف النتايج اللي جمعتها، زي مثلا المتوسط و الانحراف المعياري و
-                    غيره.
-                </p>
-                <img src="https://pub-beafae14dfd644eeb2e6a0771114bc95.r2.dev/master-stats.png"
-                    alt="Master statistics image 1" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-                <p>
-                    فمثلا لو جمعت الداتا من ٣٠ مريض، هتقدر تعبر عن متوسط اعمار ال٣٠ مريض في كلمة واحدة و كمان مدي تنوع
-                    الداتا بتاعتك عن طريق الانحراف المعياري و المدي و غيره.
-                </p>
-
-                <b>الشق الثاني: التحليلات الinferential</b>
-                <p>
-                    او اللي بنستخدم فيها العينة بتاعتنا علشان نعبر بيها علي المجموعة الأكبرري الصوره اللي تحت كدا.
-                </p>
-                <img src="https://pub-beafae14dfd644eeb2e6a0771114bc95.r2.dev/master-stats2.png"
-                    alt="Master statistics image 2" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-                <p>
-                    و ديه بتكون شويه تحليلات إحصائية مختلفة زي مثلا الT-Test, ANOVA, Corrolation, Regression و هكذا.
-                </p>
-                <p>
-                    مهم إنك تختار شخص احصائي عنده خبره علشان أغلب المبتدأين حاليا بيستخدموا الذكاء الاصطناعي و بالرغم من
-                    انه
-                    بيطلع نتايج الا انه ساعات كتيره جدا بيعمل حاجة اسمها الlogical error أو بمعني تاني أي داتا هتديهالوا
-                    هيطلعلك نتايج، و لو قولتله اعمل تحليل احصائي لاي حاجة هيعملها بدون حتي الاهتمام بالافتراضات السابقة
-                    للتحليل الاحصائي و بدون التفكير المنطقي عن الترابط ما بين المتغيرات و علاقتهم ببعض.
-                </p>
-                <p>
-                    لو عايز تتعلم الإحصاء الحيوية بشكل مبسط تقدر تتفرج علي السلسلة الجميلة ديه:
-                    <br>
-                    <a href="https://youtube.com/playlist?list=PL9GrBMsvivVWZ2Ztg5VXzKhxVF2F1q5Ld&si=dVF6ZqvSRogp8F7W"
-                        target="_blank">
-                        Biostatistics Basics Series 101 - سلسلة أساسيات الإحصاء الحيوي
-                    </a>
-                </p>
-
-
-            </div>
-
-
-
-            <section class="section">
-                <div class="container">
-                    <div class="section-header">
-                        <div class="section-divider"></div>
-                        <h2>مقالات أخرى</h2>
-                    </div>
-                    <div class="articles-list">
-                        <a href="risk-of-bias-assesment.html" class="article-row">
-                            <h4>الدليل الشامل للrisk of bias assessment</h4>
-                            <span class="article-line"></span>
-                            <span class="article-date">Oct 5, 2024</span>
-                        </a>
-                        <a href="reviews-types.html" class="article-row">
-                            <h4>الفرق بين أنواع الريفيوهات العلمية</h4>
-                            <span class="article-line"></span>
-                            <span class="article-date">Oct 7, 2024</span>
-                        </a>
-                        <a href="telegram-bot.html" class="article-row">
-                            <h4>أداة التليجرام لتعلم البحث العلمي</h4>
-                            <span class="article-line"></span>
-                            <span class="article-date">Jan 10, 2024</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
+        <div class="img">
+            <img src="https://placehold.co/1000x500" alt="صورة المقال">
         </div>
+
+        <div class="blog-content">
+            <h1>عنوان المقال الرئيسي</h1>
+
+            <p>
+                مقدمة المقال هنا. ابدأ بفقرة جذابة تلخص أهمية الموضوع للباحث.
+            </p>
+
+            <b>عنوان فرعي للموضوع</b>
+
+            <p>
+                هنا يتم كتابة المحتوى التفصيلي للمقال. يمكنك تقسيم النص إلى فقرات لزيادة سهولة القراءة.
+            </p>
+
+            <ul>
+                <li>النقطة الأولى المهمة</li>
+                <li>النقطة الثانية المهمة</li>
+                <li>النقطة الثالثة المهمة</li>
+            </ul>
+
+        </div>
+
+
+
+        <!-- 4. Other Articles Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-divider"></div>
+                    <h2>مقالات أخرى</h2>
+                </div>
+                <div class="articles-list">
+                    <a href="master-stats.html" class="article-row">
+                        <h4>ازاي تعمل الإحصاء بتاعت الرسالة بتاعتك</h4>
+                        <span class="article-line"></span>
+                        <span class="article-date">Oct 5, 2024</span>
+                    </a>
+                    <a href="risk-of-bias-assesment.html" class="article-row">
+                        <h4>الدليل الشامل للrisk of bias assessment</h4>
+                        <span class="article-line"></span>
+                        <span class="article-date">Oct 5, 2024</span>
+                    </a>
+                    <a href="telegram-bot.html" class="article-row">
+                        <h4>أداة التليجرام لتعلم البحث العلمي</h4>
+                        <span class="article-line"></span>
+                        <span class="article-date">Jan 10, 2024</span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <!-- NEWSLETTER -->
         <section class="newsletter-section">
@@ -363,7 +301,7 @@
         </footer>
     </main>
 
-    <!-- GSAP Animations -->
+    <!-- Scripts -->
     <script src="assets/js/vendor/gsap.min.js"></script>
     <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
     <script src="assets/js/main.js"></script>

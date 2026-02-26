@@ -578,51 +578,60 @@ p {
    TRUST SLIDER
    ============================ */
 .trust-section {
-    padding: 50px 0;
+    padding: 60px 0;
     text-align: center;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
-.trust-section h3 {
-    font-size: 1rem;
+.trust-section h2 {
+    font-size: 1.1rem;
     color: var(--text-muted);
-    font-weight: 600;
-    margin-bottom: 28px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .trust-track-wrapper {
     overflow: hidden;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    position: relative;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
 .trust-track {
     display: flex;
-    gap: 40px;
-    animation: marquee 35s linear infinite;
+    gap: 60px;
+    animation: marquee 40s linear infinite;
     width: max-content;
+    padding: 10px 0;
 }
 
 .trust-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    min-width: 100px;
-    opacity: 0.5;
-    transition: var(--transition);
+    gap: 12px;
+    min-width: 140px;
+    opacity: 0.6;
+    transition: all 0.4s ease;
+    cursor: default;
 }
 
 .trust-item:hover {
     opacity: 1;
+    transform: translateY(-5px);
 }
 
 .trust-item img {
-    height: 48px;
-    width: 48px;
+    height: 56px;
+    width: auto;
+    max-width: 120px;
     object-fit: contain;
-    border-radius: 10px;
     filter: grayscale(100%);
-    transition: var(--transition);
+    transition: all 0.4s ease;
 }
 
 .trust-item:hover img {
@@ -642,7 +651,7 @@ p {
     }
 
     100% {
-        transform: translateX(50%);
+        transform: translateX(calc(50%));
     }
 }
 
@@ -2814,17 +2823,27 @@ p {
     }
 }
 
-/* DARK MODE LOGOS - PURE WHITE */
+/* DARK MODE LOGOS - LIGHT & VISIBLE */
+[data-theme="dark"] .hero-logo-item,
+[data-theme="dark"] .trust-item {
+    opacity: 0.9;
+}
+
+[data-theme="dark"] .hero-logo-item:hover,
+[data-theme="dark"] .trust-item:hover {
+    opacity: 1;
+}
+
 [data-theme="dark"] .hero-logo-item img,
 [data-theme="dark"] .trust-item img {
     filter: brightness(0) invert(1) !important;
-    opacity: 0.9 !important;
+    opacity: 1 !important;
     mix-blend-mode: normal !important;
 }
 
 [data-theme="dark"] .hero-logo-item:hover img,
 [data-theme="dark"] .trust-item:hover img {
-    filter: none !important;
+    filter: brightness(0) invert(1) !important;
     opacity: 1 !important;
 }
 

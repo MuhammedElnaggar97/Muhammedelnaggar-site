@@ -69,11 +69,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // ===================== META / SEO =====================
     var defaultImage = 'assets/img/logo.png';
     var pageMeta = {
-        'index.html': { title: 'Naggar | نجار — استشارات بحثية وإحصاء حيوي', description: 'محمد النجار — باحث في الإحصاء الحيوي والمعلوماتية الحيوية. استشارات بحثية وتحليل إحصائي.', url: 'https://muhamedelnaggar.com/' },
-        'about.html': { title: 'عن محمد | Naggar', description: 'تعرف على رحلة محمد النجار في المعلوماتية الحيوية والإحصاء.', url: 'https://muhamedelnaggar.com/about' },
-        'stats.html': { title: 'تحليل إحصائي | Naggar', description: 'خدمات تحليل إحصائي احترافية باستخدام SPSS و R.', url: 'https://muhamedelnaggar.com/stats' },
-        'podcast.html': { title: 'بودكاست ومصادر | Naggar', description: 'مكتبة شاملة من المصادر البحثية.', url: 'https://muhamedelnaggar.com/podcast' },
-        'advising.html': { title: 'حجز استشارة | Naggar', description: 'احجز جلسة استشارية خاصة مع محمد النجار.', url: 'https://muhamedelnaggar.com/advising' }
+        'index.html': { title: 'Naggar | نجار', description: 'محمد النجار — باحث في الإحصاء الحيوي والمعلوماتية الحيوية. استشارات بحثية وتحليل إحصائي.', url: 'https://muhamedelnaggar.com/' },
+        'about.html': { title: 'Naggar | نجار', description: 'تعرف على رحلة محمد النجار في المعلوماتية الحيوية والإحصاء.', url: 'https://muhamedelnaggar.com/about' },
+        'stats.html': { title: 'Naggar | نجار', description: 'خدمات تحليل إحصائي احترافية باستخدام SPSS و R.', url: 'https://muhamedelnaggar.com/stats' },
+        'podcast.html': { title: 'Naggar | نجار', description: 'مكتبة شاملة من المصادر بحثية.', url: 'https://muhamedelnaggar.com/podcast' },
+        'advising.html': { title: 'Naggar | نجار', description: 'احجز جلسة استشارية خاصة مع محمد النجار.', url: 'https://muhamedelnaggar.com/advising' }
     };
     var meta = pageMeta[page] || pageMeta['index.html'];
     document.title = meta.title;
