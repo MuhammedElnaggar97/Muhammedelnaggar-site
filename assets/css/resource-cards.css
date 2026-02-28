@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     background: var(--surface);
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
     text-decoration: none;
     color: inherit;
@@ -11,12 +11,56 @@
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     height: 100%;
     position: relative;
+    padding: 16px;
 }
 
 .resource-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
     border-color: var(--accent);
+}
+
+/* Card Header (Dots and Badge) */
+.resource-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.resource-dots {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 2px;
+}
+
+.resource-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(22, 160, 133, 0.08);
+    color: var(--text);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+[data-theme="dark"] .resource-badge {
+    background: rgba(22, 160, 133, 0.15);
+}
+
+.resource-badge-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+    border-radius: 6px;
 }
 
 .resource-thumb {
@@ -24,7 +68,9 @@
     position: relative;
     aspect-ratio: 16 / 10;
     overflow: hidden;
+    border-radius: 12px;
     background: var(--bg);
+    margin-bottom: 20px;
 }
 
 .resource-thumb img {
@@ -35,43 +81,19 @@
 }
 
 .resource-card:hover .resource-thumb img {
-    transform: scale(1.08);
-}
-
-/* Category Badge */
-.resource-badge {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(4px);
-    color: #1a1a1a;
-    padding: 6px 14px;
-    border-radius: 100px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    z-index: 5;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-[data-theme="dark"] .resource-badge {
-    background: rgba(15, 23, 42, 0.8);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
 }
 
 .resource-content {
-    padding: 24px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
+    padding: 0 8px;
 }
 
 .resource-title {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 800;
     line-height: 1.4;
     color: var(--text);
@@ -81,14 +103,6 @@
 
 .resource-card:hover .resource-title {
     color: var(--accent);
-}
-
-.resource-subtitle {
-    font-size: 0.85rem;
-    color: var(--accent);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .resource-desc {
@@ -112,8 +126,8 @@
 }
 
 .play-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background: var(--accent);
     border-radius: 50%;
     display: flex;
@@ -125,31 +139,31 @@
 }
 
 .resource-card:hover .play-icon {
-    transform: scale(1.15) rotate(5deg);
+    transform: scale(1.1) rotate(5deg);
 }
 
-/* Gated/Form Styles */
-.resource-card.gated {
-    cursor: default;
-}
-
+/* Gated/Form Styles (Used inside custom product pages now) */
 .resource-form-container {
-    margin-top: auto;
+    margin-top: 24px;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
 }
 
 .resource-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .resource-input {
     width: 100%;
-    padding: 12px 16px;
+    padding: 14px 16px;
     border: 1px solid var(--border);
     border-radius: 12px;
     background: var(--bg);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text);
     transition: border-color 0.3s;
 }
@@ -161,7 +175,7 @@
 
 .resource-btn {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     background: var(--accent);
     color: #fff;
     border-radius: 12px;
@@ -173,7 +187,7 @@
 
 .resource-btn:hover {
     filter: brightness(1.1);
-    transform: scale(1.02);
+    transform: translateY(-2px);
 }
 
 .btn-download {
@@ -225,7 +239,6 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Mobile responsive */
 @media (max-width: 768px) {
     .resource-card {
         max-width: 100%;
